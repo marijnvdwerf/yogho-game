@@ -1,0 +1,3231 @@
+segment seg000
+
+		public start
+%include "seg000/start.asm"
+%include "seg000/sub_163.asm"
+%include "seg000/sub_176.asm"
+%include "seg000/exit_0.asm"
+%include "seg000/sub_1A7.asm"
+%include "seg000/SaveVectors.asm"
+%include "seg000/restoreInterrupts.asm"
+%include "seg000/StartExit.asm"
+%include "seg000/sub_264.asm"
+%include "seg000/write_stderr.asm"
+%include "seg000/sub_2AD.asm"
+%include "seg000/sub_2B3.asm"
+
+dataSeg:
+		dw 0
+		db    2
+		db  80h
+%include "seg000/sub_2C8.asm"
+%include "seg000/sub_32B.asm"
+%include "seg000/configureGpu.asm"
+%include "seg000/restoreGfx.asm"
+%include "seg000/setKeyboardInterruot.asm"
+%include "seg000/restoreKeyboardInterrupt.asm"
+%include "seg000/initTimer.asm"
+%include "seg000/clearGPU.asm"
+%include "seg000/sub_4AA.asm"
+%include "seg000/copyFunctionPointers.asm"
+
+off_50F:
+		dd sub_4636, sub_2648, sub_3BE9, sub_3D31, sub_2347, sub_4092, collision, sub_3FD6, loc_3FE5, sub_4023,	sub_3B8B
+		dd loc_3BD6, unk_3B7C, sub_3BC7, renderFlag, renderYoghoDrink, renderSleepSaw, photoManFrame, sub_4515,	drawHand_4328
+		dd scoretrailmake_40D0,	sub_1AA8, sub_4710, sub_5DA, drawchar_177D, drawNumber
+%include "seg000/wait_577.asm"
+		db 90h
+%include "seg000/sub_581.asm"
+%include "seg000/vga_598.asm"
+%include "seg000/vga_5A9.asm"
+%include "seg000/restoreTimerInterrupt.asm"
+%include "seg000/sub_5DA.asm"
+%include "seg000/onTimer.asm"
+
+timerInterruptBackup:
+		dd	0
+
+byte_8EC:
+		db 0, 0, 2, 0, 8, 0, 0Ch, 0, 10h, 0, 14h, 0, 18h, 0, 20h, 0, 30h, 0, 40h, 0, 40h, 0, 40h, 0, 40h, 0, 40h
+		db 0, 30h, 0, 8, 0
+%include "seg000/sub_90C.asm"
+%include "seg000/updatePalette.asm"
+%include "seg000/onKeyboardServiceRequired.asm"
+
+byte_A39:
+		db 80h
+		db 0
+		db 0
+		db 0
+		db 80h
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 0
+		db 8
+		db 0
+		db 0
+		db 2
+		db 0
+		db 1
+		db 0
+		db 0
+		db 4
+
+isEscaped:
+		db 0
+		db 0
+
+keyboardInterruptBackup:
+		dd 0
+%include "seg000/onCtrlC.asm"
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+%include "seg000/loadimage.asm"
+%include "seg000/mem_B04.asm"
+%include "seg000/draw_image.asm"
+%include "seg000/drawImage.asm"
+
+word_C4A:
+		dw 1200h
+		dw 0C00h
+		dw 600h
+		dw 0
+%include "seg000/selectPalette.asm"
+%include "seg000/initMouse.asm"
+%include "seg000/mousedealloc.asm"
+%include "seg000/mousecallroutineswitch.asm"
+%include "seg000/onMouse.asm"
+%include "seg000/sub_D0F.asm"
+%include "seg000/sub_D84.asm"
+%include "seg000/sub_DDF.asm"
+%include "seg000/sub_E1A.asm"
+%include "seg000/sub_E7C.asm"
+%include "seg000/sub_EF6.asm"
+%include "seg000/sub_F9C.asm"
+
+word_100F:
+		dw 0
+
+word_1011:
+		dw 0
+
+word_1013:
+		dw 0
+
+word_1015:
+		dw 0
+
+word_1017:
+		dw 0
+
+word_1019:
+		dw 0
+
+word_101B:
+		dw 0
+
+word_101D:
+		dw 0
+
+word_101F:
+		dw 0
+
+_cameraOffset:
+		dw 0
+
+_cameraOffsetX:
+		dw 0
+
+word_1025:
+		dw 0
+
+off_1027:
+		dw sub_102F
+		dw sub_1082
+		dw sub_117F
+		dw sub_11D6
+%include "seg000/sub_102F.asm"
+%include "seg000/sub_1082.asm"
+%include "seg000/sub_117F.asm"
+%include "seg000/sub_11D6.asm"
+%include "seg000/sub_12D7.asm"
+%include "seg000/sub_12E3.asm"
+%include "seg000/render.asm"
+
+stru_1746:
+    struct_3(draws_13A44, seg seg006)
+%include "seg000/draw_char.asm"
+%include "seg000/drawchar_177D.asm"
+%include "seg000/drawchar_17B5.asm"
+%include "seg000/drawNumber.asm"
+%include "seg000/makeItemObjects.asm"
+%include "seg000/saveSimpleItem.asm"
+%include "seg000/MakeSmartItem.asm"
+%include "seg000/sub_19F7.asm"
+%include "seg000/sub_1AA8.asm"
+%include "seg000/sub_1AD7.asm"
+%include "seg000/sub_1AFB.asm"
+%include "seg000/collision_1B03.asm"
+%include "seg000/sub_1BA4.asm"
+%include "seg000/sub_1BD4.asm"
+%include "seg000/sub_1C03.asm"
+%include "seg000/sub_1C16.asm"
+%include "seg000/sub_1CBE.asm"
+%include "seg000/sub_1D26.asm"
+%include "seg000/sub_1DD1.asm"
+%include "seg000/sub_2064.asm"
+%include "seg000/sub_206C.asm"
+%include "seg000/sub_207C.asm"
+		align 2
+%include "seg000/sub_20CA.asm"
+%include "seg000/sub_20CD.asm"
+%include "seg000/sub_20D6.asm"
+%include "seg000/sub_20E5.asm"
+%include "seg000/sub_20F7.asm"
+%include "seg000/sub_21A3.asm"
+%include "seg000/sub_2259.asm"
+%include "seg000/sub_2274.asm"
+%include "seg000/sub_232A.asm"
+
+byte_2345:
+		db 0, 0
+%include "seg000/sub_2347.asm"
+%include "seg000/sub_2648.asm"
+
+word_2814:
+		dw 0
+
+word_2816:
+		dw 0
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+
+word_2BB8:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0
+
+word_2C18:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0
+
+unk_2CDA:
+		db    0
+		db    0
+		db    0
+		db    0
+
+unk_2CDE:
+		db    0
+		db    0
+		db    0
+		db    0
+
+unk_2CE2:
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+
+word_2D64:
+		dw 0FFFFh
+		db 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
+		db 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
+		db 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
+		db 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
+
+word_2DA6:
+		dw 0FFFFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+
+unk_2E70:
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+		db 0FFh
+
+word_3158:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0
+
+word_31B8:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+		dw 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh, 0FFFFh
+
+word_3838:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0
+
+word_3898:
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
+		dw 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+		db    0
+
+renderFn:
+		dd 0
+
+unk_3B7C:
+		db  3Eh
+		db 0F7h
+		db  86h
+		db  6Dh
+		db    1
+		db    1
+		db    0
+		db  74h
+		db    6
+		db 0C7h
+		db    6
+		db 0D4h
+		db    0
+		db    0
+		db    0
+%include "seg000/sub_3B8B.asm"
+%include "seg000/sub_3BA4.asm"
+%include "seg000/sub_3BC7.asm"
+%include "seg000/sub_3BE9.asm"
+%include "seg000/sub_3BFA.asm"
+
+off_3D0D:
+		dw sub_3FBE, sub_3D25, sub_3DFB, sub_3E0A, sub_3E37,	sub_3E8E
+
+off_3D19:
+		dw sub_3FBE, sub_3E9A, sub_3EB0, sub_3EE4, sub_3F3C,	sub_3E8E
+%include "seg000/sub_3D25.asm"
+%include "seg000/sub_3D31.asm"
+%include "seg000/sub_3D41.asm"
+%include "seg000/sub_3D6E.asm"
+%include "seg000/sub_3D7D.asm"
+%include "seg000/sub_3D8E.asm"
+%include "seg000/sub_3DFB.asm"
+%include "seg000/sub_3E0A.asm"
+%include "seg000/sub_3E37.asm"
+%include "seg000/sub_3E8E.asm"
+%include "seg000/sub_3E9A.asm"
+%include "seg000/sub_3EB0.asm"
+%include "seg000/sub_3EE4.asm"
+%include "seg000/sub_3F3C.asm"
+%include "seg000/sub_3FBE.asm"
+%include "seg000/sub_3FD6.asm"
+		db 90h
+%include "seg000/sub_4023.asm"
+%include "seg000/sub_4092.asm"
+%include "seg000/scoretrailmake_40D0.asm"
+%include "seg000/renderScoreTrails.asm"
+%include "seg000/collision.asm"
+%include "seg000/sub_42D8.asm"
+%include "seg000/drawHand_4328.asm"
+%include "seg000/sub_4361.asm"
+%include "seg000/renderFlag.asm"
+%include "seg000/renderSleepSaw.asm"
+%include "seg000/renderYoghoDrink.asm"
+%include "seg000/photoManFrame.asm"
+%include "seg000/sub_4515.asm"
+%include "seg000/sub_45AD.asm"
+%include "seg000/sub_4633.asm"
+%include "seg000/sub_4636.asm"
+%include "seg000/sub_4710.asm"
+%include "seg000/sub_478C.asm"
+%include "seg000/musicsub_47BB.asm"
+%include "seg000/sub_47DF.asm"
+%include "seg000/sub_47F4.asm"
+%include "seg000/sub_4804.asm"
+%include "seg000/isCPU286.asm"
+%include "seg000/isWindows.asm"
+		align 2
+%include "seg000/copyBuffer.asm"
+%include "seg000/clearBuffer.asm"
+%include "seg000/decompressframe.asm"
+
+_height:
+		dw 0
+
+_width:
+		dw 0
+
+word_49A1:
+		dw 0
+%include "seg000/sub_49A3.asm"
+
+_framevar_x:
+		dw 0
+
+_framevar_y:
+		dw 0
+
+_Framevar_xend:
+		dw 0
+
+_framevar_yend:
+		dw 0
+
+_framevar_height:
+		dw 0
+
+_framevar_width:
+		dw 0
+		db 0, 0
+
+_framevar_xpos:
+		dw 0
+
+word_4A93:
+		dw 0
+		align 2
+%include "seg000/sub_4A96.asm"
+%include "seg000/sub_4AB3.asm"
+%include "seg000/sub_4AE5.asm"
+%include "seg000/sub_4AFC.asm"
+%include "seg000/fclose.asm"
+%include "seg000/sub_4B3F.asm"
+%include "seg000/sub_4B62.asm"
+%include "seg000/sub_4B76.asm"
+%include "seg000/fopen.asm"
+%include "seg000/sub_4BBD.asm"
+%include "seg000/fwrite.asm"
+%include "seg000/sub_4C04.asm"
+%include "seg000/exit.asm"
+%include "seg000/sub_4C6A.asm"
+%include "seg000/sub_4C7C.asm"
+%include "seg000/sub_4C8A.asm"
+		db 5Bh
+		db 0Eh
+		db 53h
+%include "seg000/sub_4C99.asm"
+		db 5Bh
+		db 0Eh
+		db 53h
+%include "seg000/sub_4CBA.asm"
+%include "seg000/sub_4CD8.asm"
+%include "seg000/sub_4D11.asm"
+%include "seg000/getDeviceInformation.asm"
+%include "seg000/sub_4D34.asm"
+%include "seg000/sub_4DB1.asm"
+%include "seg000/fseek.asm"
+%include "seg000/sub_4DF7.asm"
+%include "seg000/sub_4E0F.asm"
+%include "seg000/sub_4EB4.asm"
+%include "seg000/sub_4EBB.asm"
+%include "seg000/sub_4EC4.asm"
+%include "seg000/sub_4ECC.asm"
+%include "seg000/sub_4EE6.asm"
+%include "seg000/sub_4EF3.asm"
+%include "seg000/sub_4EFC.asm"
+%include "seg000/sub_4F2C.asm"
+
+off_534F:
+		dw loc_4FB2
+		dw loc_4F9C
+		dw loc_4FE7
+		dw loc_4FA7
+		dw loc_5015
+		dw loc_5022
+		dw loc_5060
+		dw loc_5067
+		dw loc_506C
+		dw loc_4FD0
+		dw loc_5095
+		dw loc_5073
+		dw loc_5077
+		dw loc_507B
+		dw loc_50F4
+		dw loc_51A1
+		dw loc_5144
+		dw loc_5164
+		dw loc_52E3
+		dw loc_531F
+		dw loc_531F
+		dw loc_531F
+		dw loc_4FC2
+		dw loc_4FC8
+%include "seg000/malloc.asm"
+%include "seg000/sub_539F.asm"
+%include "seg000/sub_53C1.asm"
+%include "seg000/sub_53F2.asm"
+%include "seg000/sub_53FE.asm"
+%include "seg000/stderr_540E.asm"
+%include "seg000/dealloc.asm"
+%include "seg000/sub_5443.asm"
+%include "seg000/sub_546B.asm"
+%include "seg000/sub_5507.asm"
+%include "seg000/sub_5524.asm"
+%include "seg000/sub_555E.asm"
+%include "seg000/sub_5597.asm"
+%include "seg000/sub_55B3.asm"
+%include "seg000/sub_55D6.asm"
+%include "seg000/sub_5636.asm"
+%include "seg000/sub_5676.asm"
+%include "seg000/sub_569F.asm"
+%include "seg000/sub_56B8.asm"
+%include "seg000/sub_56ED.asm"
+%include "seg000/sub_572F.asm"
+%include "seg000/sub_5782.asm"
+
+word_5786:
+		dw 0
+%include "seg000/sub_5788.asm"
+%include "seg000/sub_581B.asm"
+%include "seg000/sub_5843.asm"
+%include "seg000/sub_5848.asm"
+%include "seg000/sub_589F.asm"
+%include "seg000/sub_5920.asm"
+%include "seg000/sub_5961.asm"
+%include "seg000/sub_599B.asm"
+%include "seg000/sub_59F8.asm"
+%include "seg000/sub_5A60.asm"
+%include "seg000/sub_5B27.asm"
+%include "seg000/printf.asm"
+%include "seg000/sub_5B5D.asm"
+%include "seg000/sub_5B76.asm"
+%include "seg000/sub_5CAC.asm"
+%include "seg000/sub_5CBE.asm"
+%include "seg000/sub_5E66.asm"
+%include "seg000/sub_5F3E.asm"
+%include "seg000/write_to_handle.asm"
+%include "seg000/sub_6086.asm"
