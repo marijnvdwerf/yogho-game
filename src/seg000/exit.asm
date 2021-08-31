@@ -6,7 +6,7 @@ exit:
 		xor	ax, ax
 		push	ax
 		push	ax
-		push	[bp+arg_0]
+		push word [bp+arg_0]
 		call	sub_4C04
 		pop	bp
 		retf

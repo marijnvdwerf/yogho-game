@@ -1,27 +1,27 @@
 sub_1F7D8:
 %push local
-		mov	[cs:word_20429], 0
-		mov	[cs:byte_2042D], 0
+		mov word [cs:word_20429], 0
+		mov byte [cs:byte_2042D], 0
 		nop
 		cmp	ax, 0
 		jz	short loc_1F7F7
-		mov	[cs:byte_2042D], 1
+		mov byte [cs:byte_2042D], 1
 		nop
 		dec	ax
-		mov	[cs:word_20429], ax
+		mov word [cs:word_20429], ax
 loc_1F7F7:
 		call	sub_1FE70
-		mov	[cs:word_2041D], si
+		mov word [cs:word_2041D], si
 		mov	ax, ds
-		mov	[cs:word_2041F], ax
+		mov word [cs:word_2041F], ax
 		mov	al, [si+31h]
-		mov	[cs:byte_20421], al
-		mov	[cs:byte_20422], 1
+		mov byte [cs:byte_20421], al
+		mov byte [cs:byte_20422], 1
 		nop
 		mov	di,  byte_202D8
 		mov	cx, 9
 loc_1F819:
-		mov	[byte  cs:di], 0
+		mov	byte [cs:di], 0
 		inc	di
 		loop	loc_1F819
 		mov	bx, 0
@@ -31,39 +31,39 @@ loc_1F819:
 loc_1F82A:
 		mov	al, [bx+di]
 		cmp	al, 10h
-		jl	short loc_1F849
+		jl	loc_1F849
 		cmp	al, 1Fh
-		jg	short loc_1F849
+		jg	loc_1F849
 		sub	al, 10h
 		mov	bp, ax
-		mov	[cs:byte_20314+bx], al
-		mov	al, [byte  cs:unk_20414+bp]
-		mov	[cs:byte_202F4+bx], al
+		mov byte [cs:byte_20314+bx], al
+		mov	al, byte [cs:unk_20414+bp]
+		mov byte [cs:byte_202F4+bx], al
 		jmp	short loc_1F84F
 loc_1F849:
-		mov	[cs:byte_202F4+bx], 0FFh
+		mov byte [cs:byte_202F4+bx], 0FFh
 loc_1F84F:
 		inc	bx
 		cmp	bx, 20h
-		jnz	short loc_1F82A
+		jnz	loc_1F82A
 		mov	ax, [si+20h]
 		add	ax, 60h
 		add	ax, si
-		mov	[cs:word_20423], ax
+		mov word [cs:word_20423], ax
 		mov	bx, [si+22h]
 		mov	cx, bx
 		add	cx, [si+24h]
 		add	bx, bx
 		add	ax, bx
 loc_1F86D:
-		mov	[cs:word_20425], ax
+		mov word [cs:word_20425], ax
 loc_1F871:
-		mov	si, [cs:word_2041D]
-		cmp	[byte  si], 0FFh
+		mov	si, word [cs:word_2041D]
+		cmp	byte [si], 0FFh
 		jz	short loc_1F897
-		mov	[byte  si], 0FFh
-		mov	si, [cs:word_20423]
-		mov	bx, [cs:word_2041D]
+		mov	byte [si], 0FFh
+		mov	si, word [cs:word_20423]
+		mov	bx, word [cs:word_2041D]
 loc_1F888:
 		mov	ax, [si]
 		shl	ax, 4
@@ -71,11 +71,11 @@ loc_1F888:
 		mov	[si], ax
 		add	si, 2
 		dec	cx
-		jnz	short loc_1F888
+		jnz	loc_1F888
 loc_1F897:
-		mov	si, [cs:word_2041D]
+		mov	si, word [cs:word_2041D]
 		mov	cl, [si+22h]
-		mov	si, [cs:word_20423]
+		mov	si, word [cs:word_20423]
 		xor	bp, bp
 		mov	dx, 1
 loc_1F8A9:
@@ -95,7 +95,7 @@ loc_1F8C1:
 		add	ax, ax
 		jmp	short loc_1F8B0
 loc_1F8C8:
-		mov	[cs:byte_20485+bp], bl
+		mov byte [cs:byte_20485+bp], bl
 		mov	[di+20h], ax
 		mov	di,  unk_20585
 		mov	bx, dx
@@ -104,7 +104,7 @@ loc_1F8D5:
 		jz	short loc_1F909
 		add	di, 1Ah
 		dec	bx
-		jnz	short loc_1F8D5
+		jnz	loc_1F8D5
 		pusha
 		mov	bp, ax
 		mov	[cs:di], ax
@@ -121,24 +121,24 @@ loc_1F8EF:
 		add	si, 2
 		add	di, 2
 		dec	cx
-		jnz	short loc_1F8EF
+		jnz	loc_1F8EF
 		popa
 		inc	dx
 loc_1F909:
 		shl	bp, 1
 		add	di, 2
-		mov	[cs:word_204C5+bp], di
+		mov word [cs:word_204C5+bp], di
 		sar	bp, 1
 		add	si, 2
 		inc	bp
 		dec	cl
-		jnz	short loc_1F8A9
-		mov	[cs:word_20427], 0
-		mov	[cs:byte_2042B], 0
+		jnz	loc_1F8A9
+		mov word [cs:word_20427], 0
+		mov byte [cs:byte_2042B], 0
 		nop
-		mov	[cs:byte_202FC], 12h
+		mov byte [cs:byte_202FC], 12h
 		nop
-		mov	[cs:byte_2031C], 8
+		mov byte [cs:byte_2031C], 8
 		nop
 		mov	ax, 120h
 		mov	dl, ah
@@ -162,7 +162,7 @@ loc_1F959:
 		inc	ah
 		cmp	ah, 0F6h
 		jb	short loc_1F959
-		mov	[cs:byte_2042C], 1
+		mov byte [cs:byte_2042C], 1
 		nop
 		retn
 %pop

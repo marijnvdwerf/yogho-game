@@ -1,3 +1,4 @@
+%line 1
 sub_8548:
 %push local
 		push	0
@@ -5,7 +6,7 @@ sub_8548:
 		push	200
 		push	56
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	4ECAh
 		call	mem_B04
 		add	sp, 0Eh
@@ -14,13 +15,13 @@ sub_8548:
 		push	200
 		push	256
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	4ECAh
 		call	mem_B04
 		add	sp, 0Eh
 		call	sub_4A96
 		or	al, al
-		jnz	short loc_8602
+		jnz	loc_8602
 		push	( word_1C4F7+2)
 		nop
 		push	cs
@@ -54,7 +55,7 @@ sub_8548:
 		call	sub_1A388
 		or	ax, ax
 		jz	short loc_85EC
-		mov	[_controllerState], 0FFh
+		mov	byte [_controllerState], 0FFh
 		push	2147h
 		push	0
 		push	3
@@ -64,7 +65,7 @@ sub_8548:
 		add	sp, 6
 		jmp	short loc_8612
 loc_85EC:
-		mov	[_controllerState], 0
+		mov	byte [_controllerState], 0
 		push	20C9h
 		push	0
 		push	3

@@ -24,6 +24,10 @@ segment seg013
 %include "seg013/sub_1FC87.asm"
 %include "seg013/sub_1FC8E.asm"
 %include "seg013/sub_1FCAD.asm"
+
+nullsub_3:
+    retn
+
 %include "seg013/sub_1FD16.asm"
 %include "seg013/sub_1FDD1.asm"
 %include "seg013/sub_1FE64.asm"

@@ -1,3 +1,4 @@
+%line 1
 sub_8AB3:
 %push local
 		push	si
@@ -7,7 +8,7 @@ sub_8AB3:
 		add	sp, 4
 		push	100h
 		push	0
-		push	[word_1F5C7]
+		push	word [word_1F5C7]
 		push	0
 		nop
 		push	cs
@@ -17,7 +18,7 @@ sub_8AB3:
 		push	320
 		push	0
 		push	0
-		push	[_image1]
+		push	word [_image1]
 		push	0
 		call	loadimage
 		add	sp, 0Ch
@@ -25,7 +26,7 @@ sub_8AB3:
 		push	320
 		push	200
 		push	0
-		push	[_image1]
+		push	word [_image1]
 		push	0
 		call	loadimage
 		add	sp, 0Ch

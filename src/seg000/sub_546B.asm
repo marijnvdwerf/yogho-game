@@ -1,3 +1,4 @@
+%line 1
 sub_546B:
 %push local
 %define var_14 -14h
@@ -18,25 +19,25 @@ sub_546B:
 		push	di
 		push	ds
 		lea	cx, [bp+var_E]
-		mov	[word  bp+var_4], cx
-		mov	[word  bp+var_4+2], ss
-		mov	[byte  bp+var_E], 55h
-		mov	[byte  bp+var_E+1], 0CDh
+		mov	word [bp+var_4], cx
+		mov	word [bp+var_4+2], ss
+		mov	byte [bp+var_E], 55h
+		mov	byte [bp+var_E+1], 0CDh
 		mov	ax, [bp+arg_0]
 		mov	[bp+var_C], al
-		mov	[bp+var_B], 0CB5Dh
+		mov word [bp+var_B], 0CB5Dh
 		cmp	al, 25h
 		jb	short loc_54A9
 		cmp	al, 26h
 		ja	short loc_54A9
-		mov	[byte  bp+var_B], 36h
-		mov	[bp+var_B+1],  stru_1AAE1.anonymous_6
+		mov	byte [bp+var_B], 36h
+		mov	word [bp+var_B+1], stru_1AAE1 + SmartItem.anonymous_6
 		mov	[bp+var_8], cx
-		mov	[bp+var_6], 0CB5Dh
+		mov word [bp+var_6], 0CB5Dh
 loc_54A9:
 		mov	si, [bp+arg_6]
-		push	[word  si]
-		push	[word  si+6]
+		push	word [si]
+		push	word [si+6]
 		mov	si, [bp+arg_2]
 		mov	ax, [si]
 		mov	bx, [si+2]
@@ -54,13 +55,13 @@ loc_54A9:
 		push	es
 		mov	ds, [bp+var_14]
 		mov	si, [bp+arg_6]
-		pop	[word  si]
-		pop	[word  si+6]
+		pop	word [si]
+		pop	word [si+6]
 		mov	si, [bp+arg_4]
-		pop	[word  si+8]
-		pop	[word  si+0Eh]
-		pop	[word  si+0Ch]
-		and	[word  si+0Ch], 1
+		pop	word [si+8]
+		pop	word [si+0Eh]
+		pop	word [si+0Ch]
+		and	word [si+0Ch], 1
 		mov	[si+0Ah], di
 		mov	[si+6],	dx
 		mov	[si+4],	cx

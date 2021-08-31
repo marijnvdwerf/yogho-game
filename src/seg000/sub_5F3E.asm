@@ -14,7 +14,7 @@ sub_5F3E:
 		push	di
 		mov	di, [bp+arg_0]
 		mov	si, [bp+arg_2]
-		cmp	di, [handleCount]
+		cmp	di, word [handleCount]
 		jb	short loc_5F5D
 		mov	ax, 6
 		push	ax
@@ -30,7 +30,7 @@ loc_5F5D:
 loc_5F6B:
 		mov	bx, di
 		shl	bx, 1
-		test	[word_1F130+bx], 800h
+		test	word [word_1F130+bx], 800h
 		jz	short loc_5F8A
 		mov	ax, 2
 		push	ax
@@ -46,9 +46,9 @@ loc_5F6B:
 loc_5F8A:
 		mov	bx, di
 		shl	bx, 1
-		test	[word_1F130+bx], 4000h
-		jnz	short loc_5FA6
-		push	[bp+src]
+		test	word [word_1F130+bx], 4000h
+		jnz	loc_5FA6
+		push word [bp+src]
 		push	si
 		push	di
 		nop
@@ -59,20 +59,20 @@ loc_5F8A:
 loc_5FA6:
 		mov	bx, di
 		shl	bx, 1
-		and	[word_1F130+bx], 0FDFFh
+		and	word [word_1F130+bx], 0FDFFh
 		mov	[bp+var_6], si
 		mov	ax, [bp+src]
 		mov	[bp+var_2], ax
 		jmp	short loc_600A
 loc_5FBB:
-		dec	[bp+var_2]
+		dec	word [bp+var_2]
 		mov	bx, [bp+var_6]
-		inc	[bp+var_6]
+		inc	word [bp+var_6]
 		mov	al, [bx]
 		mov	[bp+var_3], al
 		cmp	al, 0Ah
-		jnz	short loc_5FD1
-		mov	[byte  si], 0Dh
+		jnz	loc_5FD1
+		mov	byte [si], 0Dh
 		inc	si
 loc_5FD1:
 		mov	al, [bp+var_3]
@@ -82,7 +82,7 @@ loc_5FD1:
 		mov	dx, si
 		sub	dx, ax
 		cmp	dx, 80h
-		jl	short loc_600E
+		jl	loc_600E
 		sub	si, ax
 		push	si
 		push	ax
@@ -95,7 +95,7 @@ loc_5FD1:
 		cmp	ax, si
 		jz	short loc_600A
 		cmp	dx, 0FFFFh
-		jnz	short loc_6002
+		jnz	loc_6002
 loc_5FFD:
 		mov	ax, 0FFFFh
 		jmp	short loc_6041
@@ -106,8 +106,8 @@ loc_6002:
 loc_600A:
 		lea	si, [bp+buffer]
 loc_600E:
-		cmp	[bp+var_2], 0
-		jnz	short loc_5FBB
+		cmp	word [bp+var_2], 0
+		jnz	loc_5FBB
 		lea	ax, [bp+buffer]
 		sub	si, ax
 		mov	ax, si

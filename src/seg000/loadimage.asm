@@ -1,3 +1,4 @@
+%line 1
 loadimage:
 %push local
 %define var_4 -4
@@ -49,9 +50,9 @@ loc_AE5:
 		loop	loc_AE5
 		add	di, [bp+var_2]
 		dec	bl
-		jnz	short loc_AE3
-		inc	[word  bp+src]
-		inc	[bp+arg2]
+		jnz	loc_AE3
+		inc	word [bp+src]
+		inc	word [bp+arg2]
 		js	short loc_AFE
 		dec	bh
 		jns	short loc_AB8

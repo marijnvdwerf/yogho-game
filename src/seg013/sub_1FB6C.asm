@@ -3,30 +3,30 @@ sub_1FB6C:
 		mov	bp, cx
 		mov	bx, bp
 		add	bx, bx
-		mov	dx, [word_203B4+bx]
+		mov	dx, word [word_203B4+bx]
 		xor	ah, ah
 		mov	al, [es:si+1]
 		cmp	al, 0
-		jnz	short loc_1FB85
-		mov	al, [ds:byte_202E1+bp]
+		jnz	loc_1FB85
+		mov	al, byte [ds:byte_202E1+bp]
 loc_1FB85:
-		mov	[ds:byte_202E1+bp], al
-		mov	[ds:byte_202EA+bp], 0
+		mov byte [ds:byte_202E1+bp], al
+		mov byte [ds:byte_202EA+bp], 0
 		nop
 		xchg	ax, bx
-		mov	bl, [byte_201D7+bx]
+		mov	bl, byte [byte_201D7+bx]
 		xchg	ax, bx
 		sub	dx, ax
 		cmp	dx, 0Ah
-		jge	short loc_1FBA1
+		jge	loc_1FBA1
 		mov	dx, 0
 loc_1FBA1:
-		mov	[word_20374+bx], dx
-		mov	[word_203B4+bx], dx
+		mov	word [word_20374+bx], dx
+		mov	word [word_203B4+bx], dx
 		mov	bx, dx
-		mov	ah, [ds:byte_20314+bp]
+		mov	ah, byte [ds:byte_20314+bp]
 		add	ah, 0B0h
-		mov	al, [ds:byte_20354+bp]
+		mov	al, byte [ds:byte_20354+bp]
 		or	al, 20h
 		or	bh, al
 		mov	dl, ah

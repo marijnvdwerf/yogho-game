@@ -1,3 +1,4 @@
+%line 1
 drawHighscore:
 %push local
 %define var_16 -16h
@@ -31,9 +32,9 @@ drawHighscore:
 loc_8B4B:
 		push	16
 		push	12
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	di
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		mov	al, [bp+si+var_12]
 		mov	ah, 0
 		and	ax, 63
@@ -49,7 +50,7 @@ loc_8B4B:
 		add	di, 0Ch
 		inc	si
 		cmp	di, 6Ch
-		jnz	short loc_8B4B
+		jnz	loc_8B4B
 		mov	ax, [bp+var_14]
 		mov	dx, [bp+var_16]
 		mov	[bp+var_4], ax
@@ -62,10 +63,10 @@ loc_8B93:
 		jz	short loc_8BDC
 		push	16
 		push	12
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	di
-		push	[_hiscoreGfx]
-		mov	al, [byte  bp+var_6]
+		push	word [_hiscoreGfx]
+		mov	al, byte [bp+var_6]
 		mov	ah, 0
 		and	ax, 0Fh
 		mov	dx, 0C0h
@@ -83,34 +84,34 @@ loc_8B93:
 		sub	di, 0Ch
 		dec	si
 		cmp	di, 6Ah
-		jnz	short loc_8B93
+		jnz	loc_8B93
 loc_8BDC:
-		cmp	[bp+var_7], 6
+		cmp	byte [bp+var_7], 6
 		jnb	short loc_8C05
 		push	16
 		push	16
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	128h
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		mov	al, [bp+var_7]
 		mov	ah, 0
 		shl	ax, 1
 		mov	bx, ax
-		push	[word_1CB30+bx]
+		push	word [word_1CB30+bx]
 		call	draw_image
 		add	sp, 0Ch
 loc_8C05:
-		cmp	[bp+var_14], 5
+		cmp	word [bp+var_14], 5
 		ja	short loc_8C2F
 		jb	short loc_8C13
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8C2F
 loc_8C13:
 		push	16
 		push	64
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	0
 		call	draw_image
 		add	sp, 0Ch
@@ -119,17 +120,17 @@ loc_8C13:
 		leave
 		retf
 loc_8C2F:
-		cmp	[bp+var_14], 10h
+		cmp word	[bp+var_14], 10h
 		ja	short loc_8C5A
 		jb	short loc_8C3D
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8C5A
 loc_8C3D:
 		push	16
 		push	64
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	204
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	400h
 		call	draw_image
 		add	sp, 0Ch
@@ -138,17 +139,17 @@ loc_8C3D:
 		leave
 		retf
 loc_8C5A:
-		cmp	[bp+var_14], 15h
+		cmp	word [bp+var_14], 15h
 		ja	short loc_8C85
 		jb	short loc_8C68
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8C85
 loc_8C68:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	800h
 		call	draw_image
 		add	sp, 0Ch
@@ -157,17 +158,17 @@ loc_8C68:
 		leave
 		retf
 loc_8C85:
-		cmp	[bp+var_14], 20h
+		cmp	word [bp+var_14], 20h
 		ja	short loc_8CB0
 		jb	short loc_8C93
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8CB0
 loc_8C93:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	0C00h
 		call	draw_image
 		add	sp, 0Ch
@@ -176,17 +177,17 @@ loc_8C93:
 		leave
 		retf
 loc_8CB0:
-		cmp	[bp+var_14], 30h
+		cmp	word [bp+var_14], 30h
 		ja	short loc_8CDB
 		jb	short loc_8CBE
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8CDB
 loc_8CBE:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	1000h
 		call	draw_image
 		add	sp, 0Ch
@@ -195,17 +196,17 @@ loc_8CBE:
 		leave
 		retf
 loc_8CDB:
-		cmp	[bp+var_14], 40h
+		cmp	word [bp+var_14], 40h
 		ja	short loc_8D06
 		jb	short loc_8CE9
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8D06
 loc_8CE9:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	1400h
 		call	draw_image
 		add	sp, 0Ch
@@ -214,17 +215,17 @@ loc_8CE9:
 		leave
 		retf
 loc_8D06:
-		cmp	[bp+var_14], 50h
+		cmp word [bp+var_14], 50h
 		ja	short loc_8D31
 		jb	short loc_8D14
-		cmp	[bp+var_16], 0
+		cmp	word [bp+var_16], 0
 		jnb	short loc_8D31
 loc_8D14:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	1800h
 		call	draw_image
 		add	sp, 0Ch
@@ -235,9 +236,9 @@ loc_8D14:
 loc_8D31:
 		push	10h
 		push	40h
-		push	[bp+var_2]
+		push	word [bp+var_2]
 		push	0CCh
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	1C00h
 		call	draw_image
 		add	sp, 0Ch

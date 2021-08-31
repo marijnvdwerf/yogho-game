@@ -10,7 +10,7 @@ sub_F9C:
 		mov	cx, bx
 		and	bx, 0F0h
 		add	bx, bx
-		mov	es, [word_1D556+bx]
+		mov	es, word [word_1D556+bx]
 		mov	bx, cx
 		mov	ch, al
 		mov	cl, bl
@@ -25,12 +25,12 @@ sub_F9C:
 		shr	ax, 5
 		add	ax, ax
 		add	si, ax
-		mov	ds, [cs:word_1011]
+		mov	ds, word [cs:word_1011]
 		mov	bx, [si]
 		mov	al, bh
 		xor	bh, cl
 		and	bx, 0FFEh
-		mov	ds, [cs:word_1013]
+		mov	ds, word [cs:word_1013]
 		mov	cl, al
 		shr	cl, 1
 		xor	cx, [bx]
@@ -41,7 +41,7 @@ sub_F9C:
 		and	ax, 1000h
 		and	bx, 6
 loc_FFD:
-		add	ax, [cs:word_1015]
+		add	ax, word [cs:word_1015]
 		mov	ds, ax
 		call	[cs:off_1027+bx]
 		pop	es

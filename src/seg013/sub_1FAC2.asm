@@ -1,8 +1,8 @@
 sub_1FAC2:
 %push local
-		mov	ax, [word_2041F]
+		mov	ax, word [word_2041F]
 		mov	es, ax
-		mov	si, [word_20481]
+		mov	si, word [word_20481]
 loc_1FACB:
 		mov	cl, [es:si]
 		test	cl, 0FFh
@@ -20,7 +20,7 @@ loc_1FAE2:
 		jz	short loc_1FAFF
 		and	cx, 1Fh
 		mov	bp, cx
-		mov	cl, [ds:byte_20314+bp]
+		mov	cl, byte [ds:byte_20314+bp]
 		xor	bh, bh
 		mov	bl, [es:si]
 		add	bl, bl

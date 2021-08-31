@@ -4,9 +4,9 @@ sub_D0F:
 		push	ds
 		push	di
 		push	si
-		mov	ax, [word_1D0F2]
-		mov	bx, [word_1D0F4]
-		mov	di, [word_1D0F6]
+		mov	ax, word [word_1D0F2]
+		mov	bx, word [word_1D0F4]
+		mov	di, word [word_1D0F6]
 		or	bx, bx
 		jz	short loc_D7F
 		cld

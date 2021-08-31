@@ -1,6 +1,5 @@
 segment seg000
 
-		public start
 %include "seg000/start.asm"
 %include "seg000/sub_163.asm"
 %include "seg000/sub_176.asm"
@@ -222,7 +221,7 @@ off_1027:
 %include "seg000/render.asm"
 
 stru_1746:
-    struct_3(draws_13A44, seg seg006)
+    struct_3(draws_13A44, seg draws_13A44)
 %include "seg000/draw_char.asm"
 %include "seg000/drawchar_177D.asm"
 %include "seg000/drawchar_17B5.asm"
@@ -3129,6 +3128,10 @@ word_4A93:
 %include "seg000/fopen.asm"
 %include "seg000/sub_4BBD.asm"
 %include "seg000/fwrite.asm"
+
+nullsub_1:
+    retf
+
 %include "seg000/sub_4C04.asm"
 %include "seg000/exit.asm"
 %include "seg000/sub_4C6A.asm"

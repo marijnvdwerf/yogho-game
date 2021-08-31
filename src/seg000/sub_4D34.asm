@@ -1,3 +1,4 @@
+%line 1
 sub_4D34:
 %push local
 %define var_22 -22h
@@ -24,17 +25,17 @@ sub_4D34:
 		mov	ax, [bp+arg_8]
 		mov	cx, [bp+arg_A]
 		or	cx, cx
-		jge	short loc_4D6A
-		cmp	[bp+arg_2], 0
+		jge	loc_4D6A
+		cmp	word [bp+arg_2], 0
 		jz	short loc_4D6A
-		mov	[byte  di], 2Dh
+		mov	byte [di], 2Dh
 		inc	di
 		neg	cx
 		neg	ax
 		sbb	cx, 0
 loc_4D6A:
 		lea	si, [bp+var_22]
-		jcxz	short loc_4D7E
+		jcxz	 loc_4D7E
 loc_4D6F:
 		xchg	ax, cx
 		sub	dx, dx
@@ -43,7 +44,7 @@ loc_4D6F:
 		div	bx
 		mov	[si], dl
 		inc	si
-		jcxz	short loc_4D85
+		jcxz	 loc_4D85
 		jmp	short loc_4D6F
 loc_4D7E:
 		sub	dx, dx
@@ -52,7 +53,7 @@ loc_4D7E:
 		inc	si
 loc_4D85:
 		or	ax, ax
-		jnz	short loc_4D7E
+		jnz	loc_4D7E
 		lea	cx, [bp+var_22]
 		neg	cx
 		add	cx, si

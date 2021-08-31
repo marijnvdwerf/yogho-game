@@ -1,20 +1,21 @@
+%line 1
 sub_45AD:
 %push local
 		mov	bx, ax
-		sub	bx, [word_1D11C]
-		cmp	bx, [word_1D120]
+		sub	bx, word [word_1D11C]
+		cmp	bx, word [word_1D120]
 		jnb	short loc_4630
 		mov	bx, dx
-		sub	bx, [word_1D11E]
-		cmp	bx, [word_1D122]
+		sub	bx, word [word_1D11E]
+		cmp	bx, word [word_1D122]
 		jnb	short loc_4630
-		dec	[ds:_smartItems.field_3E+bp]
+		dec	byte [ds:_smartItems + SmartItem.field_3E + bp]
 		jns	short loc_45D7
-		inc	[ds:_smartItems.photomanFrame+bp]
-		mov	[ds:_smartItems.field_3E+bp], 14h
+		inc	byte [ds:_smartItems + SmartItem.photomanFrame + bp]
+		mov	byte [ds:_smartItems + SmartItem.field_3E + bp], 14h
 loc_45D7:
 		xor	bx, bx
-		mov	bl, [ds:_smartItems.photomanFrame+bp]
+		mov	bl, [ds:_smartItems + SmartItem.photomanFrame + bp]
 		cmp	bl, 13
 		jz	short loc_4630
 		mov	si, bx
@@ -24,7 +25,7 @@ loc_45D7:
 		or	cx, cx
 		jz	short locret_462F
 loc_45F4:
-		cmp	[si+struct_4.anonymous_0], 0
+		cmp	word [si+struct_4.anonymous_0], 0
 		jz	short locret_462F
 		mov	bx, ax
 		mov	di, dx
@@ -35,10 +36,10 @@ loc_45F4:
 		push	ds
 		add	cx, [si+struct_4.anonymous_0]
 		dec	cx
-		mov	al, [ds:_smartItems.field_3B+bp]
+		mov	al, [ds:_smartItems + SmartItem.field_3B + bp]
 		cbw
 		add	bx, ax
-		mov	al, [ds:_smartItems.field_3A+bp]
+		mov	al, [ds:_smartItems + SmartItem.field_3A + bp]
 		cbw
 		add	di, ax
 		add	bx, [si+struct_4.field_2]

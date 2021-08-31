@@ -6,8 +6,8 @@ sub_599B:
 		push	si
 		push	di
 		mov	si, [bp+arg_0]
-		cmp	[word  si], 0
-		jge	short loc_59B2
+		cmp	word [si], 0
+		jge	loc_59B2
 		mov	dx, [si+6]
 		add	dx, [si]
 		inc	dx
@@ -21,35 +21,35 @@ loc_59B2:
 		mov	dx, ax
 		mov	di, ax
 loc_59BD:
-		test	[word  si+2], 40h
-		jnz	short loc_59F0
+		test	word [si+2], 40h
+		jnz	loc_59F0
 		mov	cx, [si+0Ah]
-		cmp	[word  si], 0
-		jge	short loc_59E9
+		cmp	word [si], 0
+		jge	loc_59E9
 		jmp	short loc_59D7
 loc_59CE:
 		dec	cx
 		mov	bx, cx
-		cmp	[byte  bx], 0Ah
-		jnz	short loc_59D7
+		cmp	byte [bx], 0Ah
+		jnz	loc_59D7
 		inc	di
 loc_59D7:
 		mov	ax, dx
 		dec	dx
 		or	ax, ax
-		jnz	short loc_59CE
+		jnz	loc_59CE
 		jmp	short loc_59F0
 loc_59E0:
 		mov	bx, cx
 		inc	cx
-		cmp	[byte  bx], 0Ah
-		jnz	short loc_59E9
+		cmp	byte [bx], 0Ah
+		jnz	loc_59E9
 		inc	di
 loc_59E9:
 		mov	ax, dx
 		dec	dx
 		or	ax, ax
-		jnz	short loc_59E0
+		jnz	loc_59E0
 loc_59F0:
 		mov	ax, di
 		pop	di

@@ -5,14 +5,14 @@ sub_21A3:
 		shr	bx, 4
 		mov	di, ax
 		shr	di, 4
-		cmp	di, [ds:_smartItems.anonymous_7+bp]
-		jnz	short loc_21BC
-		cmp	bx, [ds:_smartItems.anonymous_8+bp]
+		cmp	di, [ds:_smartItems + SmartItem.anonymous_7 + bp]
+		jnz	loc_21BC
+		cmp	bx, [ds:_smartItems + SmartItem.anonymous_8 + bp]
 		jz	short loc_223A
 loc_21BC:
 		push	es
-		mov	[ds:_smartItems.anonymous_7+bp], di
-		mov	[ds:_smartItems.anonymous_8+bp], bx
+		mov	[ds:_smartItems + SmartItem.anonymous_7 + bp], di
+		mov	[ds:_smartItems + SmartItem.anonymous_8 + bp], bx
 		and	bx, 0FFFEh
 		and	di, 0FFFEh
 		mov	ch, al
@@ -41,23 +41,23 @@ loc_21BC:
 		shr	bh, 4
 		and	bx, 1FFh
 		add	bx, bx
-		mov	bx, [word  fileName+bx]
+		mov	bx, word [fileName+bx]
 		and	cl, 6
 		add	bl, cl
 		xor	bh, bh
-		mov	bx, [word  rotationMasks.field_0+bx]
-		mov	[ds:_smartItems.anonymous_6+bp], bx
+		mov	bx, word [rotationMasks + struct_2.field_0+bx]
+		mov	[ds:_smartItems + SmartItem.anonymous_6 + bp], bx
 		pop	es
 		xor	dh, dh
 		mov	di, bx
 		add	bx, ax
 		add	di, dx
-		mov	cx, [word  (stru_1AA9D.field_40+3)+bx]
-		mov	bx, [(stru_1A76D.field_32+1)+di]
+		mov	cx, word [(stru_1AA9D + SmartItem.field_40+3)+bx]
+		mov	bx, [(stru_1A76D + SmartItem.field_32+1) + di]
 		pop	di
 		retf
 loc_223A:
-		mov	bx, [ds:_smartItems.anonymous_6+bp]
+		mov	bx, [ds:_smartItems + SmartItem.anonymous_6 + bp]
 		mov	di, bx
 		and	ax, 0Fh
 		and	dx, 0Fh
@@ -65,8 +65,8 @@ loc_223A:
 		add	dx, dx
 		add	bx, ax
 		add	di, dx
-		mov	cx, [word  (stru_1AA9D.field_40+3)+bx]
-		mov	bx, [(stru_1A76D.field_32+1)+di]
+		mov	cx, word [(stru_1AA9D + SmartItem.field_40+3)+bx]
+		mov	bx, [(stru_1A76D + SmartItem.field_32+1) + di]
 		pop	di
 		retf
 %pop

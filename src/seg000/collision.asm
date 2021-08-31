@@ -1,6 +1,6 @@
 collision:
 %push local
-		mov	di, [ds:_smartItems.ptr_10_val_00+bp]
+		mov	di, [ds:_smartItems + SmartItem.ptr_10_val_00 + bp]
 		mov	bx, [es:di+5]
 		add	bx, ax
 		sub	bx, [_playerHBLeft]
@@ -9,7 +9,7 @@ collision:
 		jbe	short loc_41C7
 loc_41B6:
 		xor	bx, bx
-		mov	[ds:_smartItems.anonymous_20+bp], bx
+		mov	[ds:_smartItems + SmartItem.anonymous_20 + bp], bx
 		retf
 loc_41BE:
 		xor	bx, bx
@@ -27,33 +27,33 @@ loc_41C7:
 loc_41D8:
 		add	cx, [es:di+0Bh]
 		js	short loc_41B6
-		mov	cx, [ds:_smartItems.anonymous_20+bp]
+		mov	cx, [ds:_smartItems + SmartItem.anonymous_20 + bp]
 		or	cx, cx
-		jnz	short loc_41BE
-		mov	bx, [word_1A560]
+		jnz	loc_41BE
+		mov	bx, word [word_1A560]
 		or	bx, bx
 		js	short loc_41FA
-		test	[word_1A582], 1
+		test	word [word_1A582], 1
 		jz	short loc_41FA
 		jmp	short loc_4241
 		align 2
 loc_41FA:
-		test	[byte  ds:(_smartItems.field_40+2)+bp], 80h
-		jnz	short loc_4235
+		test	byte [ds:(_smartItems + SmartItem.field_40+2) + bp], 80h
+		jnz	loc_4235
 		mov	bl, [es:di+13h]
-		cmp	[byte_1A514], 0
-		jnz	short loc_41BE
-		test	[word_1D0FC], 80h
-		jnz	short loc_41BE
-		sub	[byte_1A512], bl
-		or	[word_1D0FC], 80h
+		cmp	byte [byte_1A514], 0
+		jnz	loc_41BE
+		test	word [word_1D0FC], 80h
+		jnz	loc_41BE
+		sub	byte [byte_1A512], bl
+		or	word [word_1D0FC], 80h
 		mov	bx, [_playerX_0]
 		sub	bx, ax
 		and	bh, 40h
 		or	bh, 20h
 		inc	bh
-		mov	[byte_1A51D], bh
-		or	[byte_1A513], bh
+		mov	byte [byte_1A51D], bh
+		or	byte [byte_1A513], bh
 loc_4235:
 		mov	bx, 0FFFFh
 		or	bx, bx
@@ -71,14 +71,14 @@ loc_4241:
 		jb	short loc_423B
 		js	short loc_4266
 		mov	bx, [es:di+0Dh]
-		mov	[word_1A55E], bx
+		mov	word [word_1A55E], bx
 		mov	bx, [es:di+0Fh]
-		mov	[word_1A560], bx
+		mov	word [word_1A560], bx
 loc_4266:
 		dec	cx
 		mov	[ds:bp+173h], cl
 		and	cl, 3Fh
-		jnz	short loc_423B
+		jnz	loc_423B
 		push	ax
 		push	cs
 		call	near  sub_5DA
@@ -89,19 +89,19 @@ loc_4266:
 		push	cs
 		call	near  scoretrailmake_40D0
 		mov	bx, 0Bh
-		mov	[word  ds:_smartItems.ptr_renderFn+bp], bx
+		mov	word [ds:_smartItems + SmartItem.ptr_renderFn + bp], bx
 		xor	bx, bx
-		mov	[word  ds:_smartItems.field_3A+bp], bx
-		mov	bx, [word_1A536]
-		mov	[ds:_smartItems.anonymous_18+bp], bx
-		mov	bx, [word_1A538]
+		mov	word [ds:_smartItems + SmartItem.field_3A + bp], bx
+		mov	bx, word [word_1A536]
+		mov	[ds:_smartItems + SmartItem.anonymous_18 + bp], bx
+		mov	bx, word [word_1A538]
 		and	bx, 1
 		add	bx, 2
 		neg	bx
-		mov	[ds:_smartItems.anonymous_19+bp], bx
-		mov	bx, [word_1A53A]
-		mov	[ds:_smartItems.anonymous_16+bp], bx
-		mov	bx, [word_1A536]
+		mov	[ds:_smartItems + SmartItem.anonymous_19 + bp], bx
+		mov	bx, word [word_1A53A]
+		mov	[ds:_smartItems + SmartItem.anonymous_16 + bp], bx
+		mov	bx, word [word_1A536]
 		shr	bx, 1
 		and	bx, 1
 		inc	bx

@@ -9,13 +9,13 @@ sub_4EFC:
 		lea	ax, [bp-96h]
 		push	ax
 		push	di
-		push	[word  bp+8]
-		call	[word  bp+0Ah]
+		push	word [bp+8]
+		call	word [bp+0Ah]
 		or	ax, ax
-		jnz	short loc_4F1B
-		mov	[word  bp-16h], 1
+		jnz	loc_4F1B
+		mov	word [bp-16h], 1
 loc_4F1B:
-		mov	[word  bp-14h], 50h
+		mov	word [bp-14h], 50h
 		add	[bp-12h], di
 		lea	di, [bp-96h]
 		pop	es

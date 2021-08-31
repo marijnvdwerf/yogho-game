@@ -21,8 +21,8 @@ sub_4ECC:
 		sub	sp, 96h
 		push	si
 		push	di
-		mov	[bp+var_12], 0
-		mov	[word  bp-14h], 50h
-		mov	[bp+var_16], 0
+		mov word [bp+var_12], 0
+		mov	word [bp-14h], 50h
+		mov word [bp+var_16], 0
 		jmp	short sub_4F2C
 %pop

@@ -10,9 +10,9 @@ sub_5676:
 		cmp	ax, 0FFFFh
 		jz	short loc_569B
 		mov	bx, ax
-		mov	ax, [word_1F254]
+		mov	ax, word [word_1F254]
 		mov	[bx+2],	ax
-		mov	[word_1F254], bx
+		mov	word [word_1F254], bx
 		pop	ax
 		inc	ax
 		mov	[bx], ax

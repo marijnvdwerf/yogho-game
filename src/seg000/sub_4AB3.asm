@@ -16,19 +16,19 @@ loc_4ABE:
 		test	al, 1
 		jz	short loc_4AD7
 		test	al, 2
-		jnz	short loc_4ABE
+		jnz	loc_4ABE
 loc_4ACE:
 		inc	bx
 		in	al, dx
 		and	al, 1
-		jnz	short loc_4ACE
+		jnz	loc_4ACE
 		jmp	short loc_4ADD
 		nop
 loc_4AD7:
 		inc	cx
 		in	al, dx
 		and	al, 2
-		jnz	short loc_4AD7
+		jnz	loc_4AD7
 loc_4ADD:
 		mov	ax, bx
 		mov	dx, cx

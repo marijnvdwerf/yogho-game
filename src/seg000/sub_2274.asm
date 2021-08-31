@@ -6,7 +6,7 @@ sub_2274:
 		mov	di, ax
 		shr	di, 4
 		cmp	di, [ds:bp+141h]
-		jnz	short loc_228D
+		jnz	loc_228D
 		cmp	bx, [ds:bp+143h]
 		jz	short loc_230B
 loc_228D:
@@ -41,19 +41,19 @@ loc_228D:
 		shr	bh, 4
 		and	bx, 1FFh
 		add	bx, bx
-		mov	bx, [word  fileName+bx]
+		mov	bx, word [fileName+bx]
 		and	cl, 6
 		add	bl, cl
 		xor	bh, bh
-		mov	bx, [word  rotationMasks.field_0+bx]
-		mov	[ds:_smartItems.anonymous_6+bp], bx
+		mov	bx, word [rotationMasks + struct_2.field_0+bx]
+		mov	[ds:_smartItems + SmartItem.anonymous_6 + bp], bx
 		pop	es
 		xor	dh, dh
 		mov	di, bx
 		add	bx, ax
 		add	di, dx
-		mov	cx, [stru_1AE1E.x+bx]
-		mov	bx, [stru_1B15E.x+di]
+		mov	cx, [stru_1AE1E + SimpleItem.x+bx]
+		mov	bx, [stru_1B15E + SimpleItem.x+di]
 		pop	di
 		retf
 loc_230B:

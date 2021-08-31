@@ -27,8 +27,8 @@ loc_564E:
 		cmp	ax, 0FFFFh
 		jz	short loc_5672
 		mov	bx, ax
-		mov	[word_1F252], bx
-		mov	[word_1F254], bx
+		mov	word [word_1F252], bx
+		mov	word [word_1F254], bx
 		pop	ax
 		inc	ax
 		mov	[bx], ax

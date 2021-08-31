@@ -7,7 +7,7 @@ sub_478C:
 		push	es
 		push	si
 		push	di
-		mov	es, [word  _img2Ptr+2]
+		mov	es, word [_img2Ptr+2]
 		lds	si, [bp+arg_0]
 		xor	di, di
 		lodsb

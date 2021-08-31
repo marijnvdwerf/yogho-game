@@ -8,9 +8,9 @@ selectPalette:
 		mov	dx, [bp+arg_0]
 		mov	bx, [bp+arg_2]
 		mov	cx, [bp+arg_4]
-		mov	[_paletteIndex], bx
-		mov	[word_1D1CE], cx
-		mov	[_paletteOffset], dx
+		mov	word [_paletteIndex], bx
+		mov	word [word_1D1CE], cx
+		mov	word [_paletteOffset], dx
 		pop	bp
 		retf
 %pop

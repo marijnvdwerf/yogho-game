@@ -4,13 +4,13 @@ sub_581:
 loc_584:
 		push	ds
 		push	bx
-		mov	bx, seg	dseg
+		mov	bx, dseg
 		mov	ds, bx
-		mov	[_waitVar], ax
+		mov	word [_waitVar], ax
 loc_58E:
-		mov	ax, [_waitVar]
+		mov	ax, word [_waitVar]
 		or	ax, ax
-		jnz	short loc_58E
+		jnz	loc_58E
 		pop	bx
 		pop	ds
 		retf

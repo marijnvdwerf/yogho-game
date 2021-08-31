@@ -11,7 +11,7 @@ loc_4A9F:
 		jz	short loc_4AAC
 		in	al, dx
 		test	al, 1
-		jnz	short loc_4A9F
+		jnz	loc_4A9F
 		xor	ax, ax
 		jmp	short loc_4AAF
 		align 2

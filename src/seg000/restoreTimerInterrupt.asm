@@ -10,7 +10,7 @@ restoreTimerInterrupt:
 		mov	ax, 2508h
 		int	21h
 		pop	ds
-		mov	dl, [byte_1D8F4]
+		mov	dl, byte [byte_1D8F4]
 		mov	ax, 3301h
 		int	21h
 		retf

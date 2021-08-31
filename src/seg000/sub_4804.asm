@@ -1,6 +1,6 @@
 sub_4804:
 %push local
-		mov	[word_1D1DC], 0
+		mov	word [word_1D1DC], 0
 		push	bp
 		push	ds
 		push	es

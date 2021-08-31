@@ -5,7 +5,7 @@ isWindows:
 		or	al, al
 		jz	short loc_4884
 		cmp	al, 80h
-		jnz	short loc_488D
+		jnz	loc_488D
 loc_4884:
 		mov	ax, 4680h
 		int	2Fh

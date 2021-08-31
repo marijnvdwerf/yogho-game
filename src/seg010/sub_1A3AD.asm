@@ -15,58 +15,58 @@ sub_1A3AD:
 		cwd
 		mov	di, ax
 		xor	si, si
-		mov	ax, [word_1F5D4]
+		mov	ax, word [word_1F5D4]
 loc_1A3CE:
-		sub	ax, [word_1F5D0]
+		sub	ax, word [word_1F5D0]
 		mov	dx, 1Eh
 		imul	dx
 		mov	bx, 64h
 loc_1A3DA:
 		cwd
 		idiv	bx
-		mov	dx, [word_1F5D4]
+		mov	dx, word [word_1F5D4]
 		sub	dx, ax
 		cmp	dx, di
 		jle	short loc_1A3EA
 		add	si, 8
 loc_1A3EA:
-		mov	ax, [word_1F5D6]
-		sub	ax, [word_1F5D2]
+		mov	ax, word [word_1F5D6]
+		sub	ax, word [word_1F5D2]
 		mov	dx, 3Ch
 		imul	dx
 		mov	bx, 64h
 		cwd
 		idiv	bx
-		mov	dx, [word_1F5D6]
+		mov	dx, word [word_1F5D6]
 		sub	dx, ax
 		cmp	dx, cx
 		jle	short loc_1A409
 		add	si, 2
 loc_1A409:
-		mov	ax, [word_1F5CE]
-		sub	ax, [word_1F5D6]
+		mov	ax, word [word_1F5CE]
+		sub	ax, word [word_1F5D6]
 		mov	dx, 3Ch
 		imul	dx
 		mov	bx, 64h
 		cwd
 		idiv	bx
-		mov	dx, [word_1F5D6]
+		mov	dx, word [word_1F5D6]
 		add	dx, ax
 		cmp	dx, cx
-		jge	short loc_1A426
+		jge	loc_1A426
 		inc	si
 loc_1A426:
-		mov	ax, [word_1F5CC]
-		sub	ax, [word_1F5D4]
+		mov	ax, word [word_1F5CC]
+		sub	ax, word [word_1F5D4]
 		mov	dx, 50h
 		imul	dx
 		mov	bx, 64h
 		cwd
 		idiv	bx
-		mov	dx, [word_1F5D4]
+		mov	dx, word [word_1F5D4]
 		add	dx, ax
 		cmp	dx, di
-		jge	short loc_1A445
+		jge	loc_1A445
 		add	si, 4
 loc_1A445:
 		call	sub_4AE5

@@ -8,13 +8,13 @@ sub_90E2:
 		call	near  sub_9165
 		call	sub_581
 		call	vga_598
-		mov	[word_1F5BB], 0
-		mov	[word_1F5B9], 100h
+		mov	word [word_1F5BB], 0
+		mov	word [word_1F5B9], 100h
 		mov	ax, [bp+arg_0]
-		mov	[word_1F5B7], ax
+		mov	word [word_1F5B7], ax
 loc_9106:
-		cmp	[word_1F5B7], 0
-		jnz	short loc_9106
+		cmp	word [word_1F5B7], 0
+		jnz	loc_9106
 		call	sub_581
 		pop	bp
 		retf

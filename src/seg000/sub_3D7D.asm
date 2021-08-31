@@ -1,6 +1,6 @@
 sub_3D7D:
 %push local
-		mov	cx, [word  ds:(_smartItems+16h)+bp]
+		mov	cx, word [ds:(_smartItems+16h)+bp]
 		or	cx, cx
 		jz	short loc_3D89
 		jmp	near  sub_3E0A

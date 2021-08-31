@@ -1,3 +1,4 @@
+%line 1
 main:
 %push local
 %define var_4 -4
@@ -11,14 +12,14 @@ main:
 		push	di
 		mov	ax, [bp+arg_0]
 		mov	[_memorySubtracted], ax
-		mov	ax, seg	dseg
+		mov	ax, dseg
 		xor	dx, dx
 		mov	cl, 4
 		call	sub_4C99
 		add	ax, 0
 		adc	dx, 0
 		push	ax
-		mov	ax, seg	dseg
+		mov	ax, dseg
 		push	dx
 		xor	dx, dx
 		mov	cl, 4
@@ -30,22 +31,22 @@ main:
 loc_60DF:
 		sub	cx, ax
 		sbb	bx, dx
-		mov	[word_1A52C], bx
-		mov	[word_1A52A], cx
-		mov	ax, seg	dseg
-		sub	ax, seg	dseg
+		mov	word [word_1A52C], bx
+		mov	word [word_1A52A], cx
+		mov	ax, dseg
+		sub	ax, dseg
 		mov	[_memorySubtracted], ax
-		mov	[_levelContents3], seg dseg
+		mov	word [_levelContents3], dseg
 loc_60FA:
-		mov	[_levelContents2], 0
-		mov	ax, [word_1A52A]
-		or	ax, [word_1A52C]
-		jnz	short loc_610C
+		mov	word [_levelContents2], 0
+		mov	ax, word [word_1A52A]
+		or	ax, word [word_1A52C]
+		jnz	loc_610C
 		jmp	loc_61ED
 loc_610C:
-		mov	ax, [_levelContents3]
+		mov	ax, word [_levelContents3]
 		mov	es, ax
-		mov	si, [es:word_1A462]
+		mov	si, word [es:word_1A462]
 loc_6116:
 		mov	di, [es:si]
 		or	di, di
@@ -57,17 +58,17 @@ loc_6116:
 		jmp	short loc_6116
 loc_612B:
 		mov	bx, [bp+arg_2]
-		push	[word  bx]
+		push	word [bx]
 		nop
 		push	cs
 		call	near  setBasePath
 		add	sp, 2
-		les	bx, [dword  _levelContents2]
+		les	bx, [_levelContents2]
 		mov	al, [es:bx]
 loc_613F:
-		mov	[byte  aLevel00_dat+5], al
+		mov	byte [aLevel00_dat+5], al
 		mov	al, [es:bx+1]
-		mov	[byte  aLevel00_dat+6], al
+		mov	byte [aLevel00_dat+6], al
 		mov	si,  fileName
 		mov	di,  aLevel00_dat
 		push	ds
@@ -95,24 +96,24 @@ loc_613F:
 		call	sub_4B62
 		add	sp, 6
 		or	ax, ax
-		jnz	short loc_61ED
+		jnz	loc_61ED
 loc_6185:
 		push	5149h
-		cmp	[word_1A52C], 0
-		jg	short loc_619D
-		jl	short loc_6198
-		cmp	[word_1A52A], 0FFF0h
+		cmp	word [word_1A52C], 0
+		jg	loc_619D
+		jl	loc_6198
+		cmp	word [word_1A52A], 0FFF0h
 		jnb	short loc_619D
 loc_6198:
-		mov	ax, [word_1A52A]
+		mov	ax, word [word_1A52A]
 		jmp	short loc_61A0
 loc_619D:
 		mov	ax, 0FFF0h
 loc_61A0:
 		push	ax
-		push	[_levelContents3]
-		push	[_levelContents2]
-		push	[word_1A51E]
+		push	word [_levelContents3]
+		push word [_levelContents2]
+		push	word [word_1A51E]
 		call	fwrite
 		add	sp, 0Ah
 		or	ax, ax
@@ -123,24 +124,24 @@ loc_61A0:
 		leave
 		retf
 loc_61C0:
-		add	[_levelContents3], 0FFFh
-		sub	[word_1A52A], 0FFF0h
-		mov	ax, [word_1A52A]
-		sbb	[word_1A52C], 0
-		mov	dx, [word_1A52C]
+		add	word [_levelContents3], 0FFFh
+		sub	word [word_1A52A], 0FFF0h
+		mov	ax, word [word_1A52A]
+		sbb	word [word_1A52C], 0
+		mov	dx, word [word_1A52C]
 		or	dx, dx
-		jg	short loc_6185
-		jnz	short loc_61E1
+		jg	loc_6185
+		jnz	loc_61E1
 		or	ax, ax
 		ja	short loc_6185
 loc_61E1:
-		push	[word_1A51E]
+		push	word [word_1A51E]
 		call	fclose
 		add	sp, 2
 loc_61ED:
 		call	isWindows
 		cmp	al, 0FFh
-		jnz	short loc_6208
+		jnz	loc_6208
 		push	 aHetProgrammaKan
 		call	printf
 		add	sp, 2
@@ -153,7 +154,7 @@ loc_6208:
 		call	isCPU286
 		mov	[cpuFeatures], ax
 		or	ax, ax
-		jnz	short loc_6225
+		jnz	loc_6225
 		push	 aHelaasKuntUHetY
 		call	printf
 		add	sp, 2
@@ -182,7 +183,7 @@ loc_6225:
 		retf
 loc_6251:
 		mov	bx, [bp+arg_2]
-		push	[word  bx]
+		push	word [bx]
 		nop
 		push	cs
 		call	near  setBasePath
@@ -217,7 +218,7 @@ loc_6251:
 		jz	short loc_629E
 		jmp	loc_634C
 loc_629E:
-		push	[_hiscoreHandle]
+		push word [_hiscoreHandle]
 		call	sub_5920
 		add	sp, 2
 		or	dx, dx
@@ -232,50 +233,50 @@ loc_62B9:
 		push	0A0h
 		push	ds
 		push	 _highscores
-		push	[_hiscoreHandle]
+		push word [_hiscoreHandle]
 		call	sub_4BBD
 		add	sp, 0Ah
-		mov	[_writeStatus],	0
+		mov	word [_writeStatus],	0
 loc_62D5:
 		mov	bx, [_writeStatus]
 		shl	bx, 4
-		cmp	[_highscores.field_2+bx], 999h
+		cmp	word [_highscores + Highscore.field_2+bx], 999h
 		jb	short loc_6301
 		ja	short loc_62EE
-		cmp	[word  _highscores.field_0+bx], 9999h
+		cmp	word [_highscores + Highscore.field_0+bx], 9999h
 		jbe	short loc_6301
 loc_62EE:
 		mov	bx, [_writeStatus]
 		shl	bx, 4
-		mov	[_highscores.field_2+bx], 999h
-		mov	[word  _highscores.field_0+bx], 9999h
+		mov	word [_highscores + Highscore.field_2+bx], 999h
+		mov	word [_highscores + Highscore.field_0+bx], 9999h
 loc_6301:
 		mov	bx, [_writeStatus]
 		shl	bx, 4
-		cmp	[_highscores.field_F+bx], 5
+		cmp	word [_highscores + Highscore.field_F+bx], 5
 		jbe	short loc_631B
 		mov	bx, [_writeStatus]
 		shl	bx, 4
-		mov	[byte  bx+3403h], 5
+		mov	byte [bx+3403h], 5
 loc_631B:
-		mov	[word_1F5A7], 0
+		mov	word [word_1F5A7], 0
 		mov	ax, [_writeStatus]
 		shl	ax, 4
 		add	ax, 33F8h
 		mov	[bp+var_4], ax
 loc_632D:
 		mov	bx, [bp+var_4]
-		and	[byte  bx], 1Fh
-		inc	[bp+var_4]
-		inc	[word_1F5A7]
-		cmp	[word_1F5A7], 0Bh
+		and	byte [bx], 1Fh
+		inc	word [bp+var_4]
+		inc	word [word_1F5A7]
+		cmp	word [word_1F5A7], 0Bh
 		jb	short loc_632D
-		inc	[_writeStatus]
-		cmp	[_writeStatus],	0Ah
+		inc	word [_writeStatus]
+		cmp	word [_writeStatus],	0Ah
 		jb	short loc_62D5
 loc_634C:
 		mov	bx, [bp+arg_2]
-		push	[word  bx]
+		push	word [bx]
 		nop
 		push	cs
 		call	near  setBasePath
@@ -305,8 +306,8 @@ loc_634C:
 		sub	ax, 1A00h
 		mov	dx, [memPtr]
 		add	dx, ax
-		mov	[word  _img2Ptr+2], dx
-		mov	[word  _img2Ptr], 0
+		mov	word [_img2Ptr+2], dx
+		mov	word [_img2Ptr], 0
 		push	 _datHandle
 		push	1
 		push	 fileName
@@ -328,7 +329,7 @@ loc_63BD:
 		push	cs
 		call	near  initgpu
 		or	al, al
-		jnz	short loc_63CE
+		jnz	loc_63CE
 		jmp	loc_651A
 loc_63CE:
 		call	setKeyboardInterruot
@@ -342,18 +343,18 @@ loc_63CE:
 		push	cs
 		call	near  loadintoBuffer
 		add	sp, 0Ch
-		push	[memPtr]
+		push word [memPtr]
 		push	0
 		push	74
 		nop
 		push	cs
 		call	near  loadfromdat
 		add	sp, 6
-		mov	[word_1A532], ax
+		mov	word [word_1A532], ax
 		mov	ax, [memPtr]
-		mov	dx, [word_1A532]
-		mov	[word_1D1D2], ax
-		mov	[word_1D1D0], dx
+		mov	dx, word [word_1A532]
+		mov	word [word_1D1D2], ax
+		mov	word [word_1D1D0], dx
 		push	ax
 		push	dx
 		push	70
@@ -361,12 +362,12 @@ loc_63CE:
 		push	cs
 		call	near  loadfromdat
 		add	sp, 6
-		mov	dx, [word_1A532]
+		mov	dx, word [word_1A532]
 		add	dx, ax
-		mov	[word_1A532], dx
+		mov	word [word_1A532], dx
 		mov	ax, [memPtr]
-		mov	[word  _sfxMusic_0+2], ax
-		mov	[word  _sfxMusic_0],	dx
+		mov	word [_sfxMusic_0+2], ax
+		mov	word [_sfxMusic_0],	dx
 		push	ax
 		push	dx
 		push	71
@@ -374,31 +375,31 @@ loc_63CE:
 		push	cs
 		call	near  loadfromdat
 		add	sp, 6
-		mov	dx, [word_1A532]
+		mov	dx, word [word_1A532]
 		add	dx, ax
-		mov	[word_1A532], dx
-		mov	ax, [word_1A532]
+		mov	word [word_1A532], dx
+		mov	ax, word [word_1A532]
 		add	ax, 0Fh
 		mov	bx, 10h
 		cwd
 		idiv	bx
 		mov	dx, [memPtr]
 		add	dx, ax
-		mov	[word  _fruitImagePtr+2], dx
-		mov	[word  _fruitImagePtr], 0
-		push	[word_1D1D2]
-		push	[word_1D1D0]
+		mov	word [_fruitImagePtr+2], dx
+		mov	word [_fruitImagePtr], 0
+		push	word [word_1D1D2]
+		push	word [word_1D1D0]
 		call	sub_47DF
 		add	sp, 4
-		mov	[word_1A52C], 0
-		mov	[word_1A52A], 0
+		mov	word [word_1A52C], 0
+		mov	word [word_1A52A], 0
 loc_6477:
-		mov	[word_1D0FC], 8000h
+		mov	word [word_1D0FC], 8000h
 		nop
 		push	cs
 		call	near  sub_804D
 		cmp	ax, 0FFFFh
-		jnz	short loc_648A
+		jnz	loc_648A
 		jmp	loc_6510
 loc_648A:
 		nop
@@ -414,7 +415,7 @@ loc_6498:
 		nop
 		push	cs
 		call	near  sub_69AD
-		mov	ax, [word_1A522]
+		mov	ax, word [word_1A522]
 		cmp	ax, 1
 		jz	short loc_64B1
 		cmp	ax, 2
@@ -423,39 +424,39 @@ loc_6498:
 		jz	short loc_64D9
 		jmp	short loc_64DF
 loc_64B1:
-		dec	[word_1A51E]
-		mov	[word_1A522], 0
+		dec	word [word_1A51E]
+		mov	word [word_1A522], 0
 		jmp	short loc_64DF
 loc_64BD:
-		cmp	[_levelIndex], 11
+		cmp	byte [_levelIndex], 11
 		jz	short loc_64D1
-		cmp	[_memorySubtracted], 0
-		jnz	short loc_64DF
-		inc	[_levelIndex]
+		cmp	word [_memorySubtracted], 0
+		jnz	loc_64DF
+		inc	word [_levelIndex]
 		jmp	short loc_64DF
 loc_64D1:
-		mov	[word_1A51E], 0
+		mov	word [word_1A51E], 0
 		jmp	short loc_64DF
 loc_64D9:
-		mov	[word_1A51E], 0
+		mov	word [word_1A51E], 0
 loc_64DF:
-		mov	[bp+var_1], 0
+		mov word [bp+var_1], 0
 loc_64E3:
 		mov	al, [bp+var_1]
 		mov	ah, 0
 		mov	bx, ax
-		mov	[byte  bx+2CE8h], 0
-		inc	[bp+var_1]
-		cmp	[bp+var_1], 3Eh
+		mov	byte [bx+2CE8h], 0
+		inc	word [bp+var_1]
+		cmp	word [bp+var_1], 3Eh
 		jb	short loc_64E3
 loc_64F8:
-		cmp	[word_1A51E], 0
+		cmp	word [word_1A51E], 0
 		jle	short loc_6506
-		cmp	[word_1A522], 0
+		cmp	word [word_1A522], 0
 		jz	short loc_6498
 loc_6506:
-		cmp	[word_1A51E], 0
-		jg	short loc_6491
+		cmp	word [word_1A51E], 0
+		jg	loc_6491
 		jmp	loc_6477
 loc_6510:
 		call	sub_4804
@@ -465,7 +466,7 @@ loc_651A:
 		push	cs
 		call	near  sub_9250
 		mov	bx, [bp+arg_2]
-		push	[word  bx]
+		push	word [bx]
 		nop
 		push	cs
 		call	near  setBasePath
@@ -497,25 +498,25 @@ loc_651A:
 		call	sub_4B62
 		add	sp, 6
 		or	ax, ax
-		jnz	short loc_657E
+		jnz	loc_657E
 		push	 _writeStatus
 		push	0A0h
 		push	ds
 		push	 _highscores
-		push	[_hiscoreHandle]
+		push word [_hiscoreHandle]
 		call	fwrite
 		add	sp, 0Ah
 loc_657E:
-		cmp	[_datHandle], 0
+		cmp	word [_datHandle], 0
 		jz	short loc_6591
-		push	[_datHandle]
+		push word [_datHandle]
 loc_6589:
 		call	fclose
 		add	sp, 2
 loc_6591:
-		cmp	[memPtr], 0
+		cmp	word [memPtr], 0
 		jz	short loc_65A4
-		push	[memPtr]
+		push word [memPtr]
 		call	dealloc
 		add	sp, 2
 loc_65A4:

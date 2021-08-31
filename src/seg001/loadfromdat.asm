@@ -6,23 +6,23 @@ loadfromdat:
 		push	bp
 		mov	bp, sp
 		mov	cx, [bp+index]
-		push	[bp+arg_4]
-		push	[bp+arg_2]
+		push word [bp+arg_4]
+		push word [bp+arg_2]
 		mov	bx, cx
 		inc	bx
 		shl	bx, 2
-		mov	ax, [word  (_datLayout+2)+bx]
-		mov	dx, [word  _datLayout+bx]
+		mov	ax, word [(_datLayout+2)+bx]
+		mov	dx, word [_datLayout+bx]
 		mov	bx, cx
 		shl	bx, 2
-		sub	dx, [word  _datLayout+bx]
-		sbb	ax, [word  (_datLayout+2)+bx]
+		sub	dx, word [_datLayout+bx]
+		sbb	ax, word [(_datLayout+2)+bx]
 		push	ax
 		push	dx
 		mov	bx, cx
 		shl	bx, 2
-		push	[word  (_datLayout+2)+bx]
-		push	[word  _datLayout+bx]
+		push	word [(_datLayout+2)+bx]
+		push	word [_datLayout+bx]
 		nop
 		push	cs
 		call	near  loadintoBuffer

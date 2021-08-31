@@ -13,7 +13,7 @@ loc_2D8:
 		add	ax, 6
 		loop	loc_2D8
 		mov	cx, 100h
-		mov	ax, [word  _img2Ptr+2]
+		mov	ax, word [_img2Ptr+2]
 		mov	di,  word_1D556
 loc_2E7:
 		stosw

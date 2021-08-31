@@ -1,3 +1,4 @@
+%line 0
 StartExit:
 %push local
 		mov	ax, 100h
@@ -6,7 +7,7 @@ StartExit:
 loc_227:
 		cmp	bx, di
 		jz	short loc_244
-		cmp	[byte  es:bx], 0FFh
+		cmp	byte [es:bx], 0FFh
 		jz	short loc_23F
 		mov	cl, [es:bx+1]
 		xor	ch, ch
@@ -21,15 +22,15 @@ loc_244:
 		cmp	dx, di
 		jz	short locret_263
 		mov	bx, dx
-		cmp	[byte  es:bx], 0
-		mov	[byte  es:bx], 0FFh
+		cmp	byte [es:bx], 0
+		mov	byte [es:bx], 0FFh
 		push	es
 		jz	short loc_25C
-		call	[dword  es:bx+2]
+		call far [ es:bx+2]
 		pop	es
 		jmp	short StartExit
 loc_25C:
-		call	[word  es:bx+2]
+		call	word [es:bx+2]
 		pop	es
 		jmp	short StartExit
 locret_263:

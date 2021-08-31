@@ -1,3 +1,4 @@
+%line 1
 initTimer:
 %push local
 		push	es
@@ -5,14 +6,14 @@ initTimer:
 		push	di
 		mov	ax, 3300h
 		int	21h
-		mov	[byte_1D8F4], dl
+		mov	byte [byte_1D8F4], dl
 		mov	ax, 3301h
 		xor	dx, dx
 		int	21h
 		mov	ax, 3508h
 		int	21h
-		mov	[word  cs:timerInterruptBackup], bx
-		mov	[word  cs:timerInterruptBackup+2], es
+		mov	word [cs:timerInterruptBackup], bx
+		mov	word [cs:timerInterruptBackup+2], es
 		push	ds
 		mov	dx,  onTimer
 		mov	ax, cs
@@ -32,7 +33,7 @@ initTimer:
 		push	cs
 		call	near  sub_581
 		nop
-		push	seg dseg
+		push	dseg
 		push	 gpuConfig
 		push	cs
 		call	near  configureGpu

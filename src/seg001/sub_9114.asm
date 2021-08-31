@@ -27,7 +27,7 @@ loc_9135:
 		mov	[pal_1C830+si],	al
 		inc	si
 loc_9145:
-		cmp	[bp+var_2], si
+		cmp	word [bp+var_2], si
 		ja	short loc_9135
 		call	sub_581
 		mov	ax, [bp+arg_4]

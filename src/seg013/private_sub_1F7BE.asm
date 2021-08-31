@@ -4,7 +4,7 @@ private_sub_1F7BE:
 loc_1F7C1:
 		in	al, dx
 		test	al, 8
-		jnz	short loc_1F7C1
+		jnz	loc_1F7C1
 loc_1F7C6:
 		in	al, dx
 		test	al, 8

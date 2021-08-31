@@ -53,7 +53,7 @@ loc_BA7:
 		pop	cx
 		rol	ah, 1
 		adc	di, 0
-		dec	[bp+width]
+		dec word [bp+width]
 		loop	loc_B93
 		pop	di
 		pop	si

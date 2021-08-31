@@ -1,3 +1,4 @@
+%line 1
 sub_13433:
 %push local
 %define var_18 -18h
@@ -24,18 +25,18 @@ loc_13436:
 		push	di
 		mov	si, [bp+arg0]
 		mov	di, [bp+buffer1]
-		mov	ax, [word_1EFDA]
+		mov	ax, word [word_1EFDA]
 		mov	[bp+var_E], ax
-		mov	ax, [word_1EFDC]
+		mov	ax, word [word_1EFDC]
 		mov	[bp+var_C], ax
-		mov	ax, [word_1EFDE]
+		mov	ax, word [word_1EFDE]
 		mov	[bp+var_A], ax
-		mov	[bp+var_14], 10
+		mov	word [bp+var_14], 10
 		mov	[bp+var_8], di
 		mov	ax, [bp+buffer2]
 		mov	[bp+primaryBuffer], ax
 		mov	[bp+secondaryBuffer], di
-		mov	[bp+var_10], 0
+		mov	word [bp+var_10], 0
 		mov	[bp+dataPtr], si
 		xor	dx, dx
 		mov	ax, si
@@ -46,8 +47,8 @@ loc_13470:
 		adc	dx, 0
 		mov	[bp+var_10], dx
 		mov	[bp+dataPtr], ax
-		mov	[word  bp+var_18+2],	si
-		mov	[word  bp+var_18], 0
+		mov	word [bp+var_18+2],	si
+		mov	word [bp+var_18], 0
 loc_1348B:
 		les	bx, [bp+var_18]
 		mov	ax, [es:bx]
@@ -55,7 +56,7 @@ loc_1348B:
 		push	di
 		call	clearBuffer
 		add	sp, 2
-		push	[bp+buffer2]
+		push	word [bp+buffer2]
 		push	di
 		mov	ax, [bp+dataPtr]
 		and	ax, 0Fh
@@ -68,23 +69,23 @@ loc_1348B:
 		call	decompressframe
 		add	sp, 8
 		mov	si, ax
-		push	[bp+buffer2]
+		push	word [bp+buffer2]
 		push	di
 		call	copyBuffer
 		add	sp, 4
-		mov	bx, [_currentBuffer]
+		mov	bx, word [_currentBuffer]
 loc_134D0:
 		shl	bx, 1
 		lea	ax, [bp+var_E]
 		add	bx, ax
 		mov	ax, [bx]
-		mov	[word_1D136], ax
-		mov	[_waitVar], 1
+		mov	word [word_1D136], ax
+		mov	word [_waitVar], 1
 loc_134E2:
-		cmp	[_waitVar], 0
-		jnz	short loc_134E2
-		cmp	[_currentBuffer], 0
-		jnz	short loc_134F5
+		cmp	word [_waitVar], 0
+		jnz	loc_134E2
+		cmp	word [_currentBuffer], 0
+		jnz	loc_134F5
 		mov	ax, 16000
 		jmp	short loc_134F7
 loc_134F5:
@@ -102,18 +103,18 @@ loc_134F7:
 		push	ax
 		call	sub_49A3
 		add	sp, 8
-		mov	bx, [_currentBuffer]
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+var_C]
 		add	bx, ax
 		mov	ax, [bx]
-		mov	[word_1D136], ax
-		mov	[_waitVar], 1
+		mov	word [word_1D136], ax
+		mov	word [_waitVar], 1
 loc_1352C:
-		cmp	[_waitVar], 0
-		jnz	short loc_1352C
-		cmp	[_currentBuffer], 0
-		jnz	short loc_1353E
+		cmp	word [_waitVar], 0
+		jnz	loc_1352C
+		cmp	word [_currentBuffer], 0
+		jnz	loc_1353E
 		xor	ax, ax
 		jmp	short loc_13541
 loc_1353E:
@@ -132,23 +133,23 @@ loc_13541:
 		call	sub_49A3
 		add	sp, 8
 		add	[bp+dataPtr], si
-		adc	[bp+var_10], 0
+		adc	word [bp+var_10], 0
 		mov	di, 2
 		jmp	loc_1361F
 loc_1356D:
-		mov	[word_1D0EC], 0
+		mov	word [word_1D0EC], 0
 		mov	ax, [bp+arg_6]
-		mov	[_waitVar], ax
-		mov	bx, [_currentBuffer]
+		mov	word [_waitVar], ax
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+primaryBuffer]
 		add	bx, ax
-		push	[word  bx]
-		mov	bx, [_currentBuffer]
+		push	word [bx]
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+var_8]
 		add	bx, ax
-		push	[word  bx]
+		push	word [bx]
 		mov	ax, [bp+dataPtr]
 		and	ax, 0Fh
 		push	ax
@@ -162,16 +163,16 @@ loc_1356D:
 		mov	si, ax
 		cmp	si, 0FFFFh
 		jnb	short loc_135F0
-		mov	bx, [_currentBuffer]
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+var_E]
 		add	bx, ax
-		push	[word  bx]
-		mov	bx, [_currentBuffer]
+		push	word [bx]
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+var_8]
 		add	bx, ax
-		push	[word  bx]
+		push	word [bx]
 		mov	ax, [bp+dataPtr]
 		and	ax, 0Fh
 		push	ax
@@ -184,29 +185,29 @@ loc_1356D:
 		add	sp, 8
 		jmp	short loc_135F3
 loc_135F0:
-		mov	si, [bp+var_14]
+		mov	si, word [bp+var_14]
 loc_135F3:
 		add	[bp+dataPtr], si
-		adc	[bp+var_10], 0
-		mov	bx, [_currentBuffer]
+		adc	word [bp+var_10], 0
+		mov	bx, word [_currentBuffer]
 		shl	bx, 1
 		lea	ax, [bp+var_E]
 		add	bx, ax
 		mov	ax, [bx]
-		mov	[word_1D136], ax
-		xor	[_currentBuffer], 1
+		mov	word [word_1D136], ax
+		xor	word [_currentBuffer], 1
 loc_1360F:
-		cmp	[_waitVar], 0
-		jnz	short loc_1360F
-		test	[word_1D0EC], 2
-		jnz	short loc_13627
+		cmp	word [_waitVar], 0
+		jnz	loc_1360F
+		test	word [word_1D0EC], 2
+		jnz	loc_13627
 		inc	di
 loc_1361F:
 		cmp	di, [bp+var_2]
-		jg	short loc_13627
+		jg	loc_13627
 		jmp	loc_1356D
 loc_13627:
-		xor	[_currentBuffer], 1
+		xor	word [_currentBuffer], 1
 		pop	di
 		pop	si
 		leave

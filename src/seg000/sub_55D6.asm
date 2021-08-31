@@ -13,18 +13,18 @@ sub_55D6:
 		jnb	short loc_55F1
 		mov	ax, 8
 loc_55F1:
-		cmp	[word_1F252], 0
+		cmp	word [word_1F252], 0
 		jz	short loc_5617
-		mov	bx, [word_1F256]
+		mov	bx, word [word_1F256]
 		or	bx, bx
 		jz	short loc_560D
 		mov	dx, bx
 loc_5602:
-		cmp	[bx], ax
+		cmp	word [bx], ax
 		jnb	short loc_5620
 		mov	bx, [bx+6]
 		cmp	bx, dx
-		jnz	short loc_5602
+		jnz	loc_5602
 loc_560D:
 		call	sub_5676
 		jmp	short loc_5633
@@ -40,10 +40,10 @@ loc_561C:
 loc_5620:
 		mov	si, ax
 		add	si, 8
-		cmp	[bx], si
+		cmp	word [bx], si
 		jnb	short loc_5612
 		call	sub_5597
-		inc	[word  bx]
+		inc	word [bx]
 		mov	ax, bx
 		add	ax, 4
 loc_5633:

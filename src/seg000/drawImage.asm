@@ -16,11 +16,11 @@ drawImage:
 		push	si
 		push	di
 		mov	bx, [bp+arg_6]
-		add	bx, [word_1D116]
+		add	bx, word [word_1D116]
 		add	bx, bx
 		mov	[bp+var_2], bx
 		mov	di, [bp+pos]
-		add	di, [word_1D114]
+		add	di, word [word_1D114]
 		mov	cx, di
 		shr	di, 2
 		add	cx, cx
@@ -32,7 +32,7 @@ loc_BF2:
 		push	di
 		mov	bx, [bp+var_4]
 		and	bx, 6
-		mov	bx, [cs:word_C4A+bx]
+		mov	bx, word [cs:word_C4A+bx]
 		mov	[bp+var_6], bx
 		mov	dx, [bp+size]
 		dec	dx
@@ -41,7 +41,7 @@ loc_C06:
 		mov	bx, [bp+var_2]
 loc_C0C:
 		and	bx, 1FEh
-		mov	ax, [word_1D556+bx]
+		mov	ax, word [word_1D556+bx]
 		add	ax, [bp+var_6]
 		mov	es, ax
 		push	ds
@@ -59,13 +59,13 @@ loc_C26:
 		jns	short loc_C06
 		pop	di
 		pop	cx
-		add	[bp+var_4], 2
+		add	word [bp+var_4], 2
 		mov	bx, [bp+var_4]
 		and	bx, 6
-		jnz	short loc_C40
+		jnz	loc_C40
 		inc	di
 loc_C40:
-		dec	[bp+size]
+		dec	word [bp+size]
 		loop	loc_BF2
 		pop	di
 		pop	si

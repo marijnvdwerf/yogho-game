@@ -5,9 +5,9 @@ sub_4B62:
 %define arg_4  0Ah
 		push	bp
 		mov	bp, sp
-		push	[bp+arg_0]
-		push	[bp+arg_2]
-		push	[bp+arg_4]
+		push word [bp+arg_0]
+		push word [bp+arg_2]
+		push word [bp+arg_4]
 		mov	al, 3Ch
 		push	ax
 		call	sub_4B3F

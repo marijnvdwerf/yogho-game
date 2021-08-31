@@ -6,19 +6,19 @@ sub_53C1:
 		mov	bp, sp
 		mov	ax, [bp+arg_0]
 		mov	dx, [bp+arg_2]
-		add	ax, [word_1A4FC]
+		add	ax, word [word_1A4FC]
 		adc	dx, 0
 		mov	cx, ax
 		or	dx, dx
-		jnz	short loc_53E7
+		jnz	loc_53E7
 		add	cx, 200h
 		jb	short loc_53E7
 		cmp	cx, sp
 		jnb	short loc_53E7
-		xchg	ax, [word_1A4FC]
+		xchg	ax, word [word_1A4FC]
 		jmp	short loc_53F0
 loc_53E7:
-		mov	[word_1A4F4], 8
+		mov	word [word_1A4F4], 8
 		mov	ax, 0FFFFh
 loc_53F0:
 		pop	bp

@@ -1,6 +1,6 @@
 sub_55B3:
 %push local
-		mov	si, [word_1F256]
+		mov	si, word [word_1F256]
 		or	si, si
 		jz	short loc_55CB
 		mov	di, [si+6]
@@ -10,7 +10,7 @@ sub_55B3:
 		mov	[bx+4],	si
 		retn
 loc_55CB:
-		mov	[word_1F256], bx
+		mov	word [word_1F256], bx
 		mov	[bx+4],	bx
 		mov	[bx+6],	bx
 		retn

@@ -7,7 +7,7 @@ write_to_handle:
 		mov	bp, sp
 		mov	bx, [bp+hand]
 		shl	bx, 1
-		test	[word_1F130+bx], 1
+		test	word [word_1F130+bx], 1
 		jz	short loc_6062
 		mov	ax, 5
 		push	ax
@@ -22,7 +22,7 @@ loc_6062:
 		push	ax
 		mov	bx, [bp+hand]
 		shl	bx, 1
-		or	[word  bx+4CD0h], 1000h
+		or	word [bx+4CD0h], 1000h
 		pop	ax
 		jmp	short loc_6084
 loc_6080:

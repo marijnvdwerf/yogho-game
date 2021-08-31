@@ -3,18 +3,18 @@ sub_12E3:
 		mov	es, ax
 		mov	bl, 6
 		xor	ax, ax
-		mov	al, [byte  word_1D116]
+		mov	al, byte [word_1D116]
 		mov	cx, ax
 		mul	bl
-		add	ax, [cs:word_1025]
-		mov	si, [word_1D114]
+		add	ax, word [cs:word_1025]
+		mov	si, word [word_1D114]
 		shr	si, 4
 		add	si, si
 		add	si, si
 		not	cl
 		inc	cx
 		cmp	cx, 0A0h
-		jl	short loc_130C
+		jl	loc_130C
 		mov	cx, 0A0h
 loc_130C:
 		mov	ds, ax
@@ -94,13 +94,13 @@ loc_137C:
 		pop	ax
 loc_138F:
 		sub	cx, ax
-		jnz	short loc_1396
+		jnz	loc_1396
 		jmp	short locret_1410
 		align 2
 loc_1396:
 		mov	ax, 802h
 		out	dx, ax
-		mov	ds, [cs:word_1025]
+		mov	ds, word [cs:word_1025]
 		push	cx
 		push	si
 		push	di

@@ -18,7 +18,7 @@ loc_B0A:
 		mov	ax, 6
 		mul	bx
 		add	ax, 0A000h
-		mov	dx, ( stru_1A7F5.anonymous_19+1)
+		mov	dx, ( stru_1A7F5 + SmartItem.anonymous_19 + 1)
 		mov	es, ax
 		mov	di, [bp+arg_4]
 		mov	cx, di
@@ -52,7 +52,7 @@ loc_B40:
 		pop	cx
 		rol	ah, 1
 		adc	di, 0
-		dec	[bp+width]
+		dec word [bp+width]
 		loop	loc_B34
 		pop	di
 		pop	si

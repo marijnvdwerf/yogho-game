@@ -10,12 +10,12 @@ sub_42D8:
 		xor	si, si
 loc_42E4:
 		mov	cx, 150
-		mov	bx, [word_1D116]
+		mov	bx, word [word_1D116]
 		add	bx, bx
 loc_42ED:
 		xor	di, di
 		and	bx, 1FEh
-		mov	dx, [word_1D556+bx]
+		mov	dx, word [word_1D556+bx]
 		add	dx, bp
 		mov	es, dx
 		push	ds
@@ -41,7 +41,7 @@ loc_4316:
 		add	bx, 2
 		loop	loc_42ED
 		sub	bp, 600h
-		jge	short loc_42E4
+		jge	loc_42E4
 		pop	di
 		pop	si
 		pop	es

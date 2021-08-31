@@ -8,17 +8,17 @@ sub_7E40:
 		push	si
 		push	di
 		mov	si, 7Ah
-		mov	ax, [word_1A530]
-		mov	dx, [word_1A52E]
-		cmp	ax, [word_1A52C]
-		jnz	short loc_7E5E
-		cmp	dx, [word_1A52A]
+		mov	ax, word [word_1A530]
+		mov	dx, word [word_1A52E]
+		cmp	ax, word [word_1A52C]
+		jnz	loc_7E5E
+		cmp	dx, word [word_1A52A]
 		jz	short loc_7EC6
 loc_7E5E:
-		mov	ax, [word_1A52C]
-		mov	dx, [word_1A52A]
-		mov	[word_1A530], ax
-		mov	[word_1A52E], dx
+		mov	ax, word [word_1A52C]
+		mov	dx, word [word_1A52A]
+		mov	word [word_1A530], ax
+		mov	word [word_1A52E], dx
 		mov	[bp+var_2], ax
 		mov	[bp+var_4], dx
 		jmp	short loc_7EBE
@@ -28,7 +28,7 @@ loc_7E74:
 		push	11
 		push	4
 		push	si
-		push	[memPtr]
+		push word [memPtr]
 		push	8ABh
 		call	mem_B04
 		add	sp, 0Eh
@@ -37,8 +37,8 @@ loc_7E74:
 		mov	bx, [bp+var_4]
 		and	bx, 0Fh
 		shl	bx, 2
-		push	[word  (_drawNumbers+2)+bx]
-		push	[word  _drawNumbers+bx]
+		push	word [(_drawNumbers+2)+bx]
+		push	word [_drawNumbers+bx]
 		call	draw_char
 		add	sp, 8
 		mov	cl, 4
@@ -51,15 +51,15 @@ loc_7E74:
 loc_7EBE:
 		mov	ax, [bp+var_4]
 		or	ax, [bp+var_2]
-		jnz	short loc_7E74
+		jnz	loc_7E74
 loc_7EC6:
-		mov	ax, [word_1A526]
-		cmp	ax, [word_1A51E]
+		mov	ax, word [word_1A526]
+		cmp	ax, word [word_1A51E]
 		jz	short loc_7F18
-		mov	ax, [word_1A51E]
-		mov	[word_1A526], ax
-		cmp	[word_1A51E], 6
-		jge	short loc_7EDE
+		mov	ax, word [word_1A51E]
+		mov	word [word_1A526], ax
+		cmp	word [word_1A51E], 6
+		jge	loc_7EDE
 		jmp	short loc_7EE1
 loc_7EDE:
 		mov	ax, 6
@@ -71,7 +71,7 @@ loc_7EE1:
 		push	76
 		push	15h
 		push	5Bh
-		push	[memPtr]
+		push word [memPtr]
 		push	3EBh
 		call	mem_B04
 		add	sp, 0Eh
@@ -79,22 +79,22 @@ loc_7EE1:
 loc_7F01:
 		push	21
 		push	si
-		push	seg seg007
+		push	seg007
 		push	 drawsub_18E02_hout
 		call	draw_char
 		add	sp, 8
 		add	si, 0Fh
 loc_7F15:
 		dec	di
-		jnz	short loc_7F01
+		jnz	loc_7F01
 loc_7F18:
-		mov	ax, [word_1A528]
-		cmp	ax, [_keyCount]
+		mov	ax, word [word_1A528]
+		cmp	ax, word [_keyCount]
 		jz	short loc_7F71
-		mov	ax, [_keyCount]
-		mov	[word_1A528], ax
-		cmp	[_keyCount], 6
-		jge	short loc_7F30
+		mov	ax, word [_keyCount]
+		mov	word [word_1A528], ax
+		cmp	word [_keyCount], 6
+		jge	loc_7F30
 		jmp	short loc_7F33
 loc_7F30:
 		mov	ax, 6
@@ -105,7 +105,7 @@ loc_7F33:
 		push	59
 		push	4
 		push	170
-		push	[memPtr]
+		push word [memPtr]
 		push	0
 		call	mem_B04
 		add	sp, 0Eh
@@ -113,46 +113,46 @@ loc_7F33:
 		shl	si, 1
 		jmp	short loc_7F6D
 loc_7F54:
-		push	[word_1CC1A+si]
-		push	[(stru_1CBF8.anonymous_1+14h)+si]
-		push	seg seg007
+		push	word [word_1CC1A+si]
+		push word [(stru_1CBF8 + struct_7.anonymous_1+14h)+si]
+		push	seg007
 		push	 drawsleutel_18C8A
 		call	draw_char
 		add	sp, 8
 		sub	si, 2
 loc_7F6D:
 		or	si, si
-		jnz	short loc_7F54
+		jnz	loc_7F54
 loc_7F71:
-		mov	al, [byte_1A512]
-		cmp	al, [byte_1A511]
-		jnz	short loc_7F7D
+		mov	al, byte [byte_1A512]
+		cmp	al, byte [byte_1A511]
+		jnz	loc_7F7D
 		jmp	loc_8049
 loc_7F7D:
-		mov	al, [byte_1A511]
-		cmp	al, [byte_1A512]
-		jge	short loc_7FA7
-		cmp	[byte_1A512], 5
+		mov	al, byte [byte_1A511]
+		cmp	al, byte [byte_1A512]
+		jge	loc_7FA7
+		cmp	byte [byte_1A512], 5
 		jz	short loc_7FA7
 		push	0
 		push	32
 		push	23
 		push	4
 		push	107h
-		push	[memPtr]
+		push word [memPtr]
 		push	919h
 		call	mem_B04
 		add	sp, 0Eh
 loc_7FA7:
-		cmp	[byte_1A512], 0
-		jl	short loc_8029
-		mov	al, [byte_1A512]
+		cmp	byte [byte_1A512], 0
+		jl	loc_8029
+		mov	al, byte [byte_1A512]
 		cbw
 		shl	ax, 1
 		shl	ax, 1
 		mov	di, ax
 		mov	bx, ax
-		mov	si, [stru_1CBF8.anonymous_1+bx]
+		mov	si, [stru_1CBF8 + struct_7.anonymous_1+bx]
 		mov	ax, si
 		or	ax, ax
 		jz	short loc_800C
@@ -163,7 +163,7 @@ loc_7FA7:
 		push	23
 		push	4
 		push	107h
-		push	[memPtr]
+		push word [memPtr]
 		push	0DDCh
 		call	mem_B04
 		add	sp, 0Eh
@@ -174,13 +174,13 @@ loc_7FA7:
 		add	ax, 4
 		push	ax
 		push	107h
-		push	[memPtr]
-		mov	al, [byte_1A512]
+		push word [memPtr]
+		mov	al, byte [byte_1A512]
 		cbw
 		shl	ax, 1
 		shl	ax, 1
 		mov	bx, ax
-		push	[word  stru_1CBF8.anonymous_0+bx]
+		push	word [stru_1CBF8 + struct_7.anonymous_0+bx]
 		call	mem_B04
 		add	sp, 0Eh
 		jmp	short loc_8043
@@ -190,8 +190,8 @@ loc_800C:
 		push	23
 		push	4
 		push	263
-		push	[memPtr]
-		push	[word  stru_1CBF8.anonymous_0+di]
+		push word [memPtr]
+		push	word [stru_1CBF8 + struct_7.anonymous_0+di]
 		call	mem_B04
 		add	sp, 0Eh
 		jmp	short loc_8043
@@ -201,13 +201,13 @@ loc_8029:
 		push	23
 		push	4
 		push	263
-		push	[memPtr]
+		push word [memPtr]
 		push	0DDCh
 		call	mem_B04
 		add	sp, 0Eh
 loc_8043:
-		mov	al, [byte_1A512]
-		mov	[byte_1A511], al
+		mov	al, byte [byte_1A512]
+		mov	byte [byte_1A511], al
 loc_8049:
 		pop	di
 		pop	si

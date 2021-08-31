@@ -8,7 +8,7 @@ printf:
 		push	ax
 		mov	ax,  unk_1EFFE
 		push	ax
-		push	[bp+arg_0]
+		push word [bp+arg_0]
 		lea	ax, [bp+str]
 		push	ax
 		call	sub_4ECC

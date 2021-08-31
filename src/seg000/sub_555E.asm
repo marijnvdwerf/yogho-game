@@ -1,12 +1,12 @@
 sub_555E:
 %push local
-		dec	[word  bx]
-		cmp	bx, [word_1F252]
+		dec	word [bx]
+		cmp	bx, word [word_1F252]
 		jz	short loc_557E
 		mov	si, [bx+2]
 		mov	ax, [si]
 		test	al, 1
-		jnz	short loc_557E
+		jnz	loc_557E
 		add	ax, [bx]
 		mov	[si], ax
 		mov	di, [bx]

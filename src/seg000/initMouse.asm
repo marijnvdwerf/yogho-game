@@ -3,7 +3,7 @@ initMouse:
 		xor	ax, ax
 		int	33h
 		inc	ax
-		jnz	short loc_C98
+		jnz	loc_C98
 		push	cs
 		call	near  mousecallroutineswitch
 		nop

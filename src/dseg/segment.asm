@@ -428,12 +428,18 @@ stru_1B15E:
     SimpleItem(0)
     SimpleItem(0)
     SimpleItem(0)
+
+stru_1B1AC:
+    SimpleItem(0)
+
+stru_1B1B9:
     SimpleItem(0)
     SimpleItem(0)
     SimpleItem(0)
     SimpleItem(0)
     SimpleItem(0)
-    SimpleItem(0)
+
+stru_1B1FA:
     SimpleItem(0)
     SimpleItem(0)
     SimpleItem(0)
@@ -2136,7 +2142,7 @@ unk_1D1A0:
 		db    0
 
 _levelContents:
-		dw seg dseg
+		dw dseg
 
 _levelContents2:
 		dw 0

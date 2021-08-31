@@ -6,8 +6,8 @@ sub_4DB1:
 		mov	bp, sp
 		xor	ax, ax
 		push	ax
-		push	[bp+arg_2]
-		push	[bp+arg_0]
+		push word [bp+arg_2]
+		push word [bp+arg_0]
 		mov	ax, 0Ah
 		push	ax
 		mov	al, 0

@@ -1,3 +1,4 @@
+%line 1
 checkGFX:
 %push local
 %define var_10 -10h
@@ -6,15 +7,15 @@ checkGFX:
 		push	bp
 		mov	bp, sp
 		sub	sp, 10h
-		mov	[bp+var_10], 1A00h
+		mov word [bp+var_10], 1A00h
 		lea	ax, [bp+var_10]
 		push	ax
 		push	ax
 		push	10h
 		call	sub_5443
 		add	sp, 6
-		cmp	[byte  bp+var_10], 1Ah
-		jnz	short loc_91D5
+		cmp	byte [bp+var_10], 1Ah
+		jnz	loc_91D5
 		mov	al, [bp+var_E]
 		mov	ah, 0
 		sub	ax, 4
@@ -24,32 +25,32 @@ checkGFX:
 		shl	bx, 1
 		jmp	[cs:off_9203+bx]
 loc_91CC:
-		mov	[hasVGA], 1
+		mov	byte [hasVGA], 1
 		leave
 		retf
 locret_91D3:
 		leave
 		retf
 loc_91D5:
-		mov	[byte  bp+var_10+1],	12h
-		mov	[bp+var_E], 10h
+		mov	byte [bp+var_10+1],	12h
+		mov word [bp+var_E], 10h
 		lea	ax, [bp+var_10]
 		push	ax
 		push	ax
 		push	10h
 		call	sub_5443
 		add	sp, 6
-		cmp	[bp+var_E], 10h
+		cmp	byte [bp+var_E], 10h
 		jz	short locret_9201
-		cmp	[bp+var_D], 0
-		jnz	short loc_91FC
+		cmp	byte [bp+var_D], 0
+		jnz	loc_91FC
 loc_91F8:
 		mov	al, 0
 		jmp	short loc_91FE
 loc_91FC:
 		mov	al, 2
 loc_91FE:
-		mov	[hasVGA], al
+		mov	byte [hasVGA], al
 locret_9201:
 		leave
 		retf

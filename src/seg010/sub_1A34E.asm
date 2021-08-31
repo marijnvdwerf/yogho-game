@@ -8,10 +8,10 @@ sub_1A34E:
 		call	sub_4AB3
 		mov	[bp+var_2], dx
 		mov	[bp+var_4], ax
-		mov	[word_1F5D2], ax
+		mov	word [word_1F5D2], ax
 		mov	ax, [bp+var_2]
 		cwd
-		mov	[word_1F5D0], ax
+		mov	word [word_1F5D0], ax
 		leave
 		retf
 %pop

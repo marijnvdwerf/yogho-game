@@ -5,7 +5,7 @@ copyFunctionPointers:
 		push	di
 		push	si
 		mov	ax, cs
-		mov	bx, [word_2D64]
+		mov	bx, word [word_2D64]
 		mov	ds, ax
 		mov	es, bx
 		mov	di, LevelContents.functions
@@ -26,7 +26,7 @@ loc_4F5:
 		mov	ax, [es:si+LevelContents_b.segment]
 		add	ax, bx
 		mov	[es:di], ax
-		add	si, size LevelContents_b
+		add	si, LevelContents_b_size
 		jmp	short loc_4F5
 loc_50A:
 		pop	si

@@ -1,15 +1,16 @@
+%line 1
 collision_1B03:
 %push local
 		mov	bx, dx
 		sar	bx, 4
-		js	short near  sub_1AFB
+		js	 sub_1AFB
 		push	di
 		mov	di, ax
 		shr	di, 4
 		cmp	di, [_rowPos]
-		jnz	short loc_1B1C
+		jnz	loc_1B1C
 		cmp	bx, [_colPos]
-		jz	short near  sub_1AD7
+		jz	sub_1AD7
 loc_1B1C:
 		push	es
 		mov	[_rowPos], di
@@ -45,15 +46,15 @@ loc_1B1C:
 		shr	bh, 4
 		and	bx, 1FFh
 		add	bx, bx
-		mov	bx, [word  fileName+bx]
+		mov	bx, word [fileName+bx]
 		and	cl, 110b
 		add	bl, cl
 		xor	bh, bh
-		mov	bx, [word  rotationMasks.field_0+bx]
-		mov	[word_1D208], bx
-		mov	[byte_1D210], dh
-		and	dh, [byte_1B7DF]
-		jnz	short loc_1B9E
+		mov	bx, word [rotationMasks + struct_2.field_0+bx]
+		mov	word [word_1D208], bx
+		mov	byte [byte_1D210], dh
+		and	dh, byte [byte_1B7DF]
+		jnz	loc_1B9E
 		add	bl, dl
 		pop	es
 		pop	di

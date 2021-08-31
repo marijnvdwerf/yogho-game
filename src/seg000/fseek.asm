@@ -8,7 +8,7 @@ fseek:
 		mov	bp, sp
 		mov	bx, [bp+handlePtr]
 		shl	bx, 1
-		and	[word_1F130+bx], 1111110111111111b
+		and	word [word_1F130+bx], 1111110111111111b
 		mov	ah, 42h
 		mov	al, [bp+arg_6]
 		mov	bx, [bp+handlePtr]

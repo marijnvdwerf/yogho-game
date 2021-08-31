@@ -34,7 +34,7 @@ loc_1FEA9:
 		call	private_sub_1F6E0
 		inc	bh
 		loop	loc_1FEA9
-		mov	[cs:byte_2042C], 0
+		mov byte [cs:byte_2042C], 0
 		nop
 		retn
 %pop

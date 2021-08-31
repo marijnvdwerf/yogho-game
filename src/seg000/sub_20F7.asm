@@ -6,7 +6,7 @@ sub_20F7:
 		mov	di, ax
 		shr	di, 4
 		cmp	di, [ds:bp+141h]
-		jnz	short loc_2110
+		jnz	loc_2110
 		cmp	bx, [ds:bp+143h]
 		jz	short loc_2188
 loc_2110:
@@ -43,12 +43,12 @@ loc_2110:
 		shr	bh, 4
 		and	bx, 1FFh
 		add	bx, bx
-		mov	bx, [word  fileName+bx]
+		mov	bx, word [fileName+bx]
 		and	cl, 6
 		add	bl, cl
 		xor	bh, bh
-		mov	bx, [word  rotationMasks.field_0+bx]
-		mov	[ds:_smartItems.anonymous_6+bp], bx
+		mov	bx, word [rotationMasks + struct_2.field_0+bx]
+		mov	[ds:_smartItems + SmartItem.anonymous_6 + bp], bx
 		add	bl, dl
 		pop	es
 		pop	di

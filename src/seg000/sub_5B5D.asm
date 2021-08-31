@@ -6,7 +6,7 @@ sub_5B5D:
 		mov	bp, sp
 		push	si
 		mov	si, [bp+arg_2]
-		dec	[word  si]
+		dec	word [si]
 		push	si
 		mov	al, [bp+arg_0]
 		cbw

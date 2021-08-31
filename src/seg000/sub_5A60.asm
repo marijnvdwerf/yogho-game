@@ -26,19 +26,19 @@ sub_5A60:
 		mov	[bp+var_2], dx
 		mov	[bp+arg2], ax
 		cmp	dx, 0FFFFh
-		jnz	short loc_5A94
+		jnz	loc_5A94
 		cmp	ax, 0FFFFh
-		jnz	short loc_5A94
+		jnz	loc_5A94
 		jmp	loc_5B1C
 loc_5A94:
-		cmp	[word  si], 0
-		jge	short loc_5B11
+		cmp	word [si], 0
+		jge	loc_5B11
 		mov	al, [si+4]
 		cbw
 		shl	ax, 1
 loc_5A9F:
 		mov	bx, ax
-		test	[word  bx+4CD0h], 800h
+		test	word [bx+4CD0h], 800h
 		jz	short loc_5B04
 		mov	ax, 2
 		push	ax
@@ -56,14 +56,14 @@ loc_5A9F:
 		mov	[bp+var_6], dx
 		mov	[bp+var_8], ax
 		cmp	dx, 0FFFFh
-		jnz	short loc_5AD0
+		jnz	loc_5AD0
 		cmp	ax, 0FFFFh
 		jz	short loc_5B22
 loc_5AD0:
 		xor	ax, ax
 		push	ax
-		push	[bp+var_2]
-		push	[bp+arg2]
+		push word [bp+var_2]
+		push word [bp+arg2]
 		mov	al, [si+4]
 		cbw
 		push	ax
@@ -72,9 +72,9 @@ loc_5AD0:
 		call	near  fseek
 		add	sp, 8
 		cmp	dx, 0FFFFh
-		jnz	short loc_5AF8
+		jnz	loc_5AF8
 		cmp	ax, 0FFFFh
-		jnz	short loc_5AF8
+		jnz	loc_5AF8
 		mov	dx, 0FFFFh
 		mov	ax, 0FFFFh
 		jmp	short loc_5B22

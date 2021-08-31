@@ -1,3 +1,4 @@
+%line 1
 sub_861D:
 %push local
 %define arg_0  6
@@ -10,20 +11,20 @@ sub_861D:
 		mov	si, [bp+arg_0]
 		mov	di, [bp+arg_2]
 loc_8628:
-		mov	[_keyboardInput], 0
+		mov	byte [_keyboardInput], 0
 		push	0Ah
 		call	wait_577
 		add	sp, 2
-		mov	al, [_keyboardInput]
+		mov	al, byte [_keyboardInput]
 		mov	ah, 0
 		or	ax, ax
-		jnz	short loc_8628
+		jnz	loc_8628
 		push	0
 		push	80h
 		push	0C8h
 		push	38h
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	4ECAh
 		call	mem_B04
 		add	sp, 0Eh
@@ -32,7 +33,7 @@ loc_8628:
 		push	200
 		push	256
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	4ECAh
 		call	mem_B04
 		add	sp, 0Eh
@@ -43,20 +44,20 @@ loc_8628:
 		push	39
 		push	61
 		push	12
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	di
 		call	mem_B04
 		add	sp, 0Eh
 loc_8692:
-		cmp	[bp+arg_4], 0
+		cmp	word [bp+arg_4], 0
 		jz	short loc_86A3
-		push	[bp+arg_4]
+		push word [bp+arg_4]
 		nop
 		push	cs
 		call	near  sub_874B
 		add	sp, 2
 loc_86A3:
-		mov	[_keyboardInput], 0
+		mov	byte [_keyboardInput], 0
 loc_86A8:
 		call	sub_581
 		mov	ax, si
@@ -76,7 +77,7 @@ loc_86C6:
 loc_86CD:
 		call	sub_1A36B
 loc_86D2:
-		cmp	[_keyboardInput], 0
+		cmp	byte [_keyboardInput], 0
 		jz	short loc_86A8
 		call	sub_581
 		pop	di

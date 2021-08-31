@@ -15,9 +15,9 @@ sub_5443:
 		pop	cx
 		lea	ax, [bp+var_8]
 		push	ax
-		push	[bp+arg_4]
-		push	[bp+arg_2]
-		push	[bp+arg_0]
+		push word [bp+arg_4]
+		push word [bp+arg_2]
+		push word [bp+arg_0]
 		push	cs
 		call	near  sub_546B
 		add	sp, 8

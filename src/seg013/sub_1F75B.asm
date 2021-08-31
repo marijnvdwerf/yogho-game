@@ -34,15 +34,15 @@ loc_1F79E:
 		and	bl, 0E0h
 		and	bh, 0E0h
 		cmp	bl, 0
-		jnz	short loc_1F7AE
+		jnz	loc_1F7AE
 		cmp	bh, 0C0h
 		jz	short loc_1F7B6
 loc_1F7AE:
 		mov	ax, 0
-		mov	[cs:byte_2042E], al
+		mov byte [cs:byte_2042E], al
 		retf
 loc_1F7B6:
 		mov	ax, 0FFFFh
-		mov	[cs:byte_2042E], al
+		mov byte [cs:byte_2042E], al
 		retf
 %pop

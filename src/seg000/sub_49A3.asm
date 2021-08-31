@@ -28,7 +28,7 @@ sub_49A3:
 		mov	cx, [cs:_framevar_yend]
 		sub	cx, [cs:_framevar_y]
 		inc	cx
-		mov	[cs:_framevar_height], cx
+		mov	word [cs:_framevar_height], cx
 		mov	cx, [cs:_Framevar_xend]
 		sub	cx, [cs:_framevar_x]
 		inc	cx
@@ -43,7 +43,7 @@ sub_49A3:
 		add	di, ax
 		shl	ax, 2
 		mov	si, ax
-		mov	[cs:word_4A93],	4
+		mov word [cs:word_4A93],	4
 		add	si, [cs:_framevar_x]
 loc_4A1A:
 		push	di
@@ -59,13 +59,13 @@ loc_4A1A:
 		out	dx, ax
 		mov	dx, [cs:_Framevar_xend]
 		sub	dx, [cs:_framevar_xpos]
-		jl	short loc_4A6F
+		jl	loc_4A6F
 		shr	dx, 2
 		inc	dx
-		inc	[cs:_framevar_xpos]
+		inc	word [cs:_framevar_xpos]
 		mov	bx, di
 		mov	bp, si
-		mov	ah, [byte  cs:_framevar_height]
+		mov	ah, byte [cs:_framevar_height]
 loc_4A52:
 		mov	cl, ah
 loc_4A54:
@@ -74,19 +74,19 @@ loc_4A54:
 		mov	[es:di], al
 		add	di, 80
 		dec	cl
-		jnz	short loc_4A54
+		jnz	loc_4A54
 		add	bp, 4
 		mov	si, bp
 		inc	bx
 		mov	di, bx
 		dec	dx
-		jnz	short loc_4A52
+		jnz	loc_4A52
 loc_4A6F:
 		pop	si
 		pop	di
 		inc	si
-		dec	[cs:word_4A93]
-		jnz	short loc_4A1A
+		dec word [cs:word_4A93]
+		jnz	loc_4A1A
 		pop	di
 		pop	es
 		pop	si

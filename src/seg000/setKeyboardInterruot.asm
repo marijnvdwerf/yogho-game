@@ -4,8 +4,8 @@ setKeyboardInterruot:
 		push	es
 		mov	ax, 3509h
 		int	21h
-		mov	[word  cs:keyboardInterruptBackup], bx
-		mov	[word  cs:keyboardInterruptBackup+2], es
+		mov	word [cs:keyboardInterruptBackup], bx
+		mov	word [cs:keyboardInterruptBackup+2], es
 		mov	ax, cs
 		mov	ds, ax
 		mov	dx,  onKeyboardServiceRequired

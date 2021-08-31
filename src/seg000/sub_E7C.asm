@@ -16,12 +16,12 @@ sub_E7C:
 		add	ax, ax
 		add	si, ax
 loc_E9F:
-		mov	ds, [cs:word_1011]
+		mov	ds, word [cs:word_1011]
 		mov	bx, [si]
 		mov	al, bh
 		xor	bh, cl
 		and	bx, 0FFEh
-		mov	ds, [cs:word_1013]
+		mov	ds, word [cs:word_1013]
 		mov	cl, al
 		shr	cl, 1
 		and	cl, 6
@@ -34,7 +34,7 @@ loc_E9F:
 		mov	ah, bl
 		and	ax, 1000h
 		and	bx, 6
-		add	ax, [cs:word_1015]
+		add	ax, word [cs:word_1015]
 		mov	ds, ax
 		push	es
 		call	[cs:off_1027+bx]
@@ -44,11 +44,11 @@ loc_E9F:
 		add	di, 4
 		pop	cx
 		xor	cl, 4
-		dec	[cs:word_100F]
+		dec word [cs:word_100F]
 		js	short loc_EF4
 		push	cx
 		test	cl, 4
-		jnz	short loc_E9F
+		jnz	loc_E9F
 		inc	si
 		inc	si
 		jmp	short loc_E9F

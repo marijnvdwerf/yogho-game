@@ -15,9 +15,9 @@ sub_DDF:
 		mov	ax, 1102h
 		rol	ah, cl
 		mov	es, bx
-		mov	[word_1D0F2], ax
-		mov	[word_1D0F4], es
-		mov	[word_1D0F6], di
+		mov	word [word_1D0F2], ax
+		mov	word [word_1D0F4], es
+		mov	word [word_1D0F6], di
 		mov	dx, 3C4h
 		call	drawcursor_13710
 		pop	es

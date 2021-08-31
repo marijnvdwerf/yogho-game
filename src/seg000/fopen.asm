@@ -9,10 +9,10 @@ loc_4B8D:
 		mov	cl, [bp+8]
 		mov	al, 1
 		test	cl, 2
-		jnz	short loc_4BA0
+		jnz	loc_4BA0
 		mov	al, 2
 		test	cl, 4
-		jnz	short loc_4BA0
+		jnz	loc_4BA0
 		mov	al, 0
 loc_4BA0:
 		and	cl, 0F0h

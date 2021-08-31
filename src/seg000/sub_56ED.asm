@@ -5,10 +5,10 @@ sub_56ED:
 		cmp	dx, cx
 		ja	short loc_572B
 		mov	dx, cx
-		cmp	bx, [word_1F254]
-		jnz	short loc_570D
+		cmp	bx, word [word_1F254]
+		jnz	loc_570D
 		mov	[bx], ax
-		inc	[word  bx]
+		inc	word [bx]
 		add	ax, bx
 		push	bx
 		push	ax

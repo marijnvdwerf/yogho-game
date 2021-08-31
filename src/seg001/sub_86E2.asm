@@ -1,3 +1,4 @@
+%line 1
 sub_86E2:
 %push local
 %define var_1 -1
@@ -9,7 +10,7 @@ sub_86E2:
 		push	0C8h
 		push	38h
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	4ECAh
 		call	mem_B04
 		add	sp, 0Eh
@@ -18,7 +19,7 @@ sub_86E2:
 		push	200
 		push	256
 		push	6
-		push	[_hiscoreGfx]
+		push	word [_hiscoreGfx]
 		push	( InitEnd+0AAh)
 		call	mem_B04
 		add	sp, 0Eh
@@ -27,7 +28,7 @@ sub_86E2:
 		push	cs
 		call	near  sub_874B
 		add	sp, 2
-		mov	[_keyboardInput], 0
+		mov	byte [_keyboardInput], 0
 loc_872F:
 		nop
 		push	cs
@@ -35,8 +36,8 @@ loc_872F:
 		mov	[bp+var_1], al
 		or	al, al
 		jz	short loc_872F
-		cmp	[bp+var_1], 4Ah
-		jnz	short loc_8746
+		cmp	word [bp+var_1], 4Ah
+		jnz	loc_8746
 		mov	ax, 0FFFFh
 		leave
 		retf

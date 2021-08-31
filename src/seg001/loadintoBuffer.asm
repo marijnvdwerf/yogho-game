@@ -1,3 +1,4 @@
+%line 1
 loadintoBuffer:
 %push local
 %define var_4 -4
@@ -22,21 +23,21 @@ loadintoBuffer:
 		sbb	ax, [_datOffset_dx]
 		push	ax
 		push	dx
-		push	[_datHandle]
+		push word [_datHandle]
 		call	fseek
 		add	sp, 8
 		mov	[_datOffset_dx], dx
 		mov	[_datoffset_ax], ax
 		cmp	dx, 0FFFFh
-		jnz	short loc_73C1
+		jnz	loc_73C1
 		cmp	ax, 0FFFFh
 		jz	short loc_7420
 loc_73C1:
 		push	 word_1B7D5
-		cmp	[bp+arg_6], 0
-		jg	short loc_73D7
-		jl	short loc_73D2
-		cmp	[bp+size], 0FFF0h
+		cmp	word [bp+arg_6], 0
+		jg	loc_73D7
+		jl	loc_73D2
+		cmp	word [bp+size], 0FFF0h
 		jnb	short loc_73D7
 loc_73D2:
 		mov	ax, [bp+size]
@@ -45,9 +46,9 @@ loc_73D7:
 		mov	ax, 0FFF0h
 loc_73DA:
 		push	ax
-		push	[bp+arg_A]
-		push	[bp+buffer]
-		push	[_datHandle]
+		push word [bp+arg_A]
+		push word [bp+buffer]
+		push word [_datHandle]
 		call	sub_4BBD
 		add	sp, 0Ah
 		or	ax, ax
@@ -57,18 +58,18 @@ loc_73DA:
 		leave
 		retf
 loc_73F7:
-		mov	ax, [word_1B7D5]
-		add	[_datoffset_ax], ax
-		adc	[_datOffset_dx], 0
-		add	[bp+arg_A], 0FFFh
-		sub	[bp+size], 0FFF0h
+		mov	ax, word [word_1B7D5]
+		add	word [_datoffset_ax], ax
+		adc	word [_datOffset_dx], 0
+		add	word [bp+arg_A], 0FFFh
+		sub	word [bp+size], 0FFF0h
 		mov	ax, [bp+size]
 loc_740F:
-		sbb	[bp+arg_6], 0
+		sbb	word [bp+arg_6], 0
 		mov	dx, [bp+arg_6]
 		or	dx, dx
-		jg	short loc_73C1
-		jnz	short loc_7420
+		jg	loc_73C1
+		jnz	loc_7420
 		or	ax, ax
 		ja	short loc_73C1
 loc_7420:

@@ -4,7 +4,7 @@ musicsub_47BB:
 %define arg_4  0Ah
 		push	bp
 		mov	bp, sp
-		mov	[word_1D1DC], 0
+		mov	word [word_1D1DC], 0
 		push	ds
 		push	es
 		push	si
@@ -17,6 +17,6 @@ musicsub_47BB:
 		pop	es
 		pop	ds
 		pop	bp
-		mov	[word_1D1DC], 0FFFFh
+		mov	word [word_1D1DC], 0FFFFh
 		retf
 %pop

@@ -1,3 +1,4 @@
+%line 1
 setBasePath:
 %push local
 %define var_2 -2
@@ -22,10 +23,10 @@ loc_65C7:
 		mov	bx, [bp+arg_0]
 		add	bx, [bp+var_2]
 		mov	si, bx
-		cmp	[byte  bx], 3Ah
+		cmp	byte [bx], 3Ah
 		jz	short loc_65D9
-		cmp	[byte  si], 5Ch
-		jnz	short loc_661F
+		cmp	byte [si], 5Ch
+		jnz	loc_661F
 loc_65D9:
 		mov	dx, [bp+var_2]
 		inc	dx
@@ -60,16 +61,16 @@ loc_6605:
 		xor	ax, ax
 		rep stosb
 		mov	bx, [bp+var_2]
-		mov	[(fileName+1)+bx], 0
+		mov	byte [(fileName+1)+bx], 0
 		pop	di
 		pop	si
 		leave
 		retf
 loc_661F:
-		dec	[bp+var_2]
+		dec	word [bp+var_2]
 loc_6622:
-		cmp	[bp+var_2], 0
-		jge	short loc_65C7
+		cmp	word [bp+var_2], 0
+		jge	loc_65C7
 		pop	di
 		pop	si
 		leave

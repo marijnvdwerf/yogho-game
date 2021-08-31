@@ -3,7 +3,7 @@ private_sub_1F721:
 		push	bx
 		xor	bh, bh
 		mov	bl, dl
-		mov	[cs:byte_2095F+bx], dh
+		mov byte [cs:byte_2095F+bx], dh
 		mov	bx, dx
 		mov	dx, 388h
 		mov	al, bl

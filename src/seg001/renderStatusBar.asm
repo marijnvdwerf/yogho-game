@@ -1,7 +1,8 @@
+%line 1
 renderStatusBar:
 %push local
-		push	[word  _fruitImagePtr+2]
-		push	[word  _fruitImagePtr]
+		push	word [_fruitImagePtr+2]
+		push	word [_fruitImagePtr]
 		push	0
 		push	cs
 		call	near  loadfromdat
@@ -10,12 +11,12 @@ renderStatusBar:
 		push	320
 		push	0
 		push	0
-		push	[word  _fruitImagePtr+2]
-		push	[word  _fruitImagePtr]
+		push	word [_fruitImagePtr+2]
+		push	word [_fruitImagePtr]
 		call	loadimage
 		add	sp, 0Ch
-		push	[word  _fruitImagePtr+2]
-		push	[word  _fruitImagePtr]
+		push	word [_fruitImagePtr+2]
+		push	word [_fruitImagePtr]
 		push	1
 		push	cs
 		call	near  loadfromdat
@@ -28,24 +29,24 @@ renderStatusBar:
 		mov	bx, ax
 		sar	bx, 1
 		shl	bx, 1
-		push	[fruitHeights+bx]
+		push word [fruitHeights+bx]
 		mov	ax, cx
 		cwd
 		sub	ax, dx
 		mov	bx, ax
 		sar	bx, 1
 		shl	bx, 1
-		push	[fruitWidths+bx]
+		push word [fruitWidths+bx]
 		push	20
 		push	233
-		push	[word  _fruitImagePtr+2]
+		push	word [_fruitImagePtr+2]
 		mov	ax, cx
 		cwd
 		sub	ax, dx
 		mov	bx, ax
 		sar	bx, 1
 		shl	bx, 1
-		push	[fruitOffsets+bx]
+		push word [fruitOffsets+bx]
 		call	draw_image
 		add	sp, 0Ch
 		push	27
@@ -57,8 +58,8 @@ renderStatusBar:
 		mov	bx, ax
 		sar	bx, 1
 		shl	bx, 2
-		push	[word  (_drawNumbers+6)+bx]
-		push	[word  (_drawNumbers+4)+bx]
+		push	word [(_drawNumbers+6)+bx]
+		push	word [(_drawNumbers+4)+bx]
 		call	draw_char
 		add	sp, 8
 		nop

@@ -3,7 +3,7 @@ onMouse:
 		pusha
 		push	ds
 		push	es
-		mov	bx, seg	dseg
+		mov	bx, dseg
 		mov	ds, bx
 		cmp	cx, 0
 		jnb	short loc_CCD
@@ -21,9 +21,9 @@ loc_CDE:
 		jb	short loc_CE7
 		mov	dx, 173
 loc_CE7:
-		mov	[word_1D0EA], ax
-		or	[word_1D0EC], ax
-		mov	ax, [word_1D0EE]
+		mov	word [word_1D0EA], ax
+		or	word [word_1D0EC], ax
+		mov	ax, word [word_1D0EE]
 		or	ax, ax
 		jz	short loc_D03
 		push	dx

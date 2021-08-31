@@ -1,32 +1,33 @@
+%line 1
 sub_5788:
 %push local
-		pop	[word_1F25C]
-		pop	[word_1F25E]
-		pop	[word_1F260]
-		mov	[cs:word_5786],	ds
-		mov	[word_1F262], si
-		mov	[word_1F264], di
+		pop	word [word_1F25C]
+		pop	word [word_1F25E]
+		pop	word [word_1F260]
+		mov word [cs:word_5786],	ds
+		mov	word [word_1F262], si
+		mov	word [word_1F264], di
 		cld
 		mov	es, [_psp]
 		mov	si, 80h
 		xor	ah, ah
-		lods	[byte  es:si]
+		es lodsb
 		inc	ax
 		mov	bp, es
 		xchg	dx, si
 		xchg	ax, bx
-		mov	si, [word  _heaptop]
+		mov	si, word [_heaptop]
 		inc	si
 		inc	si
 		mov	cx, 1
-		cmp	[byte  _version], 3
+		cmp	byte [_version], 3
 		jb	short loc_57D4
-		mov	es, [word  _heaptop+2]
+		mov	es, word [_heaptop+2]
 		mov	di, si
 		mov	cl, 7Fh
 		xor	al, al
 		repne scasb
-		jcxz	short sub_5843
+		jcxz	 sub_5843
 		xor	cl, 7Fh
 loc_57D4:
 		push	ax
@@ -68,7 +69,7 @@ loc_580B:
 		cmp	al, 0Dh
 		jz	short loc_5817
 		cmp	al, 9
-		jnz	short loc_57FB
+		jnz	loc_57FB
 loc_5817:
 		xor	al, al
 		jmp	short loc_57FB

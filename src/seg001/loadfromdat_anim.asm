@@ -1,3 +1,4 @@
+%line 1
 loadfromdat_anim:
 %push local
 %define index  6
@@ -12,11 +13,11 @@ loadfromdat_anim:
 		push	di
 		mov	si, [bp+arg_6]
 		mov	di, [bp+argE]
-		mov	ax, [word  _fruitImagePtr]
+		mov	ax, word [_fruitImagePtr]
 		add	ax, 0FA00h
-		push	[word  _fruitImagePtr+2]
+		push	word [_fruitImagePtr+2]
 		push	ax
-		push	[bp+index]
+		push	word [bp+index]
 		push	cs
 		call	near  loadfromdat
 		add	sp, 6
@@ -25,9 +26,9 @@ loadfromdat_anim:
 		call	clearGPU
 		push	100h
 		push	0
-		mov	ax, [word  _fruitImagePtr]
+		mov	ax, word [_fruitImagePtr]
 		add	ax, 0FA02h
-		push	[word  _fruitImagePtr+2]
+		push	word [_fruitImagePtr+2]
 		push	ax
 		push	cs
 		call	near  loadPalette
@@ -37,7 +38,7 @@ loadfromdat_anim:
 		push	 InitEnd
 		call	selectPalette
 		add	sp, 6
-		push	[bp+arg_2]
+		push	word [bp+arg_2]
 		call	wait_577
 		add	sp, 2
 		push	si
@@ -46,19 +47,19 @@ loadfromdat_anim:
 		call	near  sub_90E2
 		add	sp, 2
 loc_9053:
-		push	[bp+arg_A]
-		mov	ax, [word  _img2Ptr+2]
+		push	word [bp+arg_A]
+		mov	ax, word [_img2Ptr+2]
 		add	ax, 800h
 		push	ax
-		push	[word  _fruitImagePtr+2]
-		mov	ax, [word  _fruitImagePtr+2]
+		push	word [_fruitImagePtr+2]
+		mov	ax, word [_fruitImagePtr+2]
 		add	ax, 0FA0h
 		push	ax
 		call	sub_13433
 		add	sp, 8
 		or	di, di
 		jz	short loc_9088
-		push	[bp+argA]
+		push	word [bp+argA]
 		call	wait_577
 		add	sp, 2
 		push	di
@@ -67,7 +68,7 @@ loc_9053:
 		call	near  waitfade_90B8
 		add	sp, 2
 loc_9088:
-		mov	ax, [word_1D0EC]
+		mov	ax, word [word_1D0EC]
 		and	ax, 2
 		pop	di
 		pop	si

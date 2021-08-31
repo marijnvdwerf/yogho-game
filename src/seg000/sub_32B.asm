@@ -16,7 +16,7 @@ loc_32E:
 		add	bx, 0A432h
 		inc	cl
 		inc	bp
-		jnz	short loc_32E
+		jnz	loc_32E
 		pop	bp
 		retf
 %pop

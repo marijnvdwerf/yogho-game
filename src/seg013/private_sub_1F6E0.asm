@@ -5,9 +5,9 @@ private_sub_1F6E0:
 loc_1F6E3:
 		mov	bl, dl
 loc_1F6E5:
-		cmp	[cs:byte_2095F+bx], dh
+		cmp byte [cs:byte_2095F+bx], dh
 		jz	short loc_1F71F
-		mov	[cs:byte_2095F+bx], dh
+		mov byte [cs:byte_2095F+bx], dh
 		mov	bx, dx
 		mov	dx, 388h
 		mov	al, bl

@@ -1,27 +1,27 @@
 sub_1FF6C:
 %push local
-		inc	[byte_2043E]
-		cmp	[byte_2043E], 3
-		jnz	short loc_1FF7D
-		mov	[byte_2043E], 0
+		inc	byte [byte_2043E]
+		cmp	byte [byte_2043E], 3
+		jnz	loc_1FF7D
+		mov	byte [byte_2043E], 0
 		nop
 loc_1FF7D:
-		dec	[byte_20434]
+		dec	byte [byte_20434]
 		jz	short loc_1FF86
 		jmp	loc_20019
 loc_1FF86:
-		mov	ax, [word_20431]
+		mov	ax, word [word_20431]
 		mov	es, ax
-		mov	si, [word_2042F]
+		mov	si, word [word_2042F]
 		add	si, 60h
-		mov	bx, [word_2043B]
+		mov	bx, word [word_2043B]
 		dec	bx
-		mov	si, [word_20437]
+		mov	si, word [word_20437]
 		add	bx, bx
 		mov	si, [es:bx+si]
 		add	si, 2
-		add	si, [word  byte_20439]
-		mov	[word_20483], si
+		add	si, word [byte_20439]
+		mov	word [word_20483], si
 		xor	ch, ch
 		mov	cl, [es:si]
 		inc	si
@@ -55,21 +55,21 @@ loc_1FFE4:
 loc_1FFF7:
 		inc	si
 loc_1FFF8:
-		mov	al, [byte_20433]
-		mov	[byte_20434], al
-		mov	ax, [word_20483]
+		mov	al, byte [byte_20433]
+		mov	byte [byte_20434], al
+		mov	ax, word [word_20483]
 		sub	si, ax
-		add	[word  byte_20439], si
-		inc	[byte_2043D]
-		cmp	[byte_2043D], 40h
-		jnz	short locret_20018
-		mov	[word_2047F], 0
+		add	word [byte_20439], si
+		inc	byte [byte_2043D]
+		cmp	byte [byte_2043D], 40h
+		jnz	locret_20018
+		mov	word [word_2047F], 0
 locret_20018:
 		retn
 loc_20019:
-		mov	ax, [word_20431]
+		mov	ax, word [word_20431]
 		mov	es, ax
-		mov	si, [word_20483]
+		mov	si, word [word_20483]
 loc_20022:
 		mov	cl, [es:si]
 		test	cl, 0FFh
@@ -88,7 +88,7 @@ loc_2003C:
 		jz	short loc_20059
 		and	cx, 1Fh
 		mov	bp, cx
-		mov	cl, [ds:byte_20314+bp]
+		mov	cl, byte [ds:byte_20314+bp]
 		xor	bh, bh
 		mov	bl, [es:si]
 		add	bl, bl

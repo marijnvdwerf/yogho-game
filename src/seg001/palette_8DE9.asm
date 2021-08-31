@@ -1,3 +1,4 @@
+%line 1
 palette_8DE9:
 %push local
 %define var_6 -6
@@ -15,14 +16,14 @@ palette_8DE9:
 		push	di
 		mov	dx, [bp+arg_2]
 		mov	cx, [bp+arg_4]
-		dec	[bp+arg_0]
-		jl	short loc_8DFF
+		dec	word [bp+arg_0]
+		jl	loc_8DFF
 		jmp	loc_8F06
 loc_8DFF:
 		mov	ax, [bp+arg_6]
 		mov	[bp+arg_0], ax
 		or	dx, dx
-		jge	short loc_8E81
+		jge	loc_8E81
 		neg	dx
 		mov	bx, dx
 		shl	bx, 1
@@ -112,7 +113,7 @@ loc_8ECE:
 		mov	bx, [bp+var_6]
 		mov	al, [InitEnd+di]
 		mov	[bx], al
-		dec	[bp+var_6]
+		dec	word [bp+var_6]
 		dec	di
 loc_8EDB:
 		cmp	cx, di

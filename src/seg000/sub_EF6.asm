@@ -2,7 +2,7 @@ sub_EF6:
 %push local
 		push	ds
 		sub	bx, 30h
-		mov	[cs:word_101B],	bx
+		mov word [cs:word_101B],	bx
 		mov	ch, al
 		mov	cl, bl
 		and	cx, 1010h
@@ -12,29 +12,29 @@ sub_EF6:
 		xor	ch, ch
 		shr	ax, 5
 		add	ax, ax
-		mov	[cs:word_101D],	ax
+		mov word [cs:word_101D],	ax
 		xor	bx, bx
 loc_F1B:
 		push	cx
 		push	bx
-		mov	ax, seg	dseg
+		mov	ax, dseg
 		mov	ds, ax
-		add	bx, [cs:word_101B]
+		add	bx, word [cs:word_101B]
 		mov	ax, bx
 		and	bx, 0F0h
 		add	bx, bx
-		mov	es, [word_1D556+bx]
+		mov	es, word [word_1D556+bx]
 		mov	bx, ax
 		shr	bx, 5
 		add	bx, bx
 		mov	si, [rowOffsets+bx]
-		add	si, [cs:word_101D]
-		mov	ds, [cs:word_1011]
+		add	si, word [cs:word_101D]
+		mov	ds, word [cs:word_1011]
 		mov	bx, [si]
 		mov	al, bh
 		xor	bh, cl
 		and	bx, 0FFEh
-		mov	ds, [cs:word_1013]
+		mov	ds, word [cs:word_1013]
 		mov	cl, al
 		shr	cl, 1
 		and	cl, 6
@@ -47,7 +47,7 @@ loc_F1B:
 		mov	ah, bl
 		and	ax, 1000h
 		and	bx, 6
-		add	ax, [cs:word_1015]
+		add	ax, word [cs:word_1015]
 		mov	ds, ax
 		push	es
 		call	[cs:off_1027+bx]
@@ -61,8 +61,8 @@ loc_F1B:
 		jz	short loc_F9A
 		xor	cl, 8
 		test	cl, 8
-		jnz	short loc_F1B
-		add	si, [cs:word_1017]
+		jnz	loc_F1B
+		add	si, word [cs:word_1017]
 		jmp	short loc_F1B
 loc_F9A:
 		pop	ds

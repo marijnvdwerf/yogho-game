@@ -8,11 +8,11 @@ sub_539F:
 		sub	dx, 200h
 		cmp	ax, dx
 		jnb	short loc_53B6
-		mov	[word_1A4FC], ax
+		mov	word [word_1A4FC], ax
 		xor	ax, ax
 		jmp	short loc_53BF
 loc_53B6:
-		mov	[word_1A4F4], 8
+		mov	word [word_1A4F4], 8
 		mov	ax, 0FFFFh
 loc_53BF:
 		pop	bp

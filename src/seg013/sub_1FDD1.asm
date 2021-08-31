@@ -46,7 +46,7 @@ sub_1FDD1:
 		mov	dl, ah
 		mov	dh, bl
 		call	private_sub_1F6E0
-		mov	ah, [ds:byte_20314+bp]
+		mov	ah, byte [ds:byte_20314+bp]
 		add	ah, 0C0h
 		mov	bl, [es:di+0Ah]
 		mov	dl, ah

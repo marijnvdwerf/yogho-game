@@ -7,7 +7,7 @@ sub_1D26:
 		mov	di, ax
 		shr	di, 4
 		cmp	di, [_rowPos]
-		jnz	short loc_1D3F
+		jnz	loc_1D3F
 		cmp	bx, [_colPos]
 		jz	short loc_1CEE
 loc_1D3F:
@@ -43,22 +43,22 @@ loc_1D3F:
 		shr	bh, 4
 		and	bx, 1FFh
 		add	bx, bx
-		mov	bx, [word  fileName+bx]
+		mov	bx, word [fileName+bx]
 		and	cl, 6
 		add	bl, cl
 		xor	bh, bh
-		mov	bx, [word  rotationMasks.field_0+bx]
-		mov	[word_1D208], bx
+		mov	bx, word [rotationMasks + struct_2.field_0+bx]
+		mov	word [word_1D208], bx
 		pop	es
-		mov	[byte_1D210], cl
-		and	cl, [byte_1B7DF]
-		jnz	short loc_1DC7
+		mov	byte [byte_1D210], cl
+		and	cl, byte [byte_1B7DF]
+		jnz	loc_1DC7
 		xor	dh, dh
 		mov	di, bx
 		add	bx, ax
 		add	di, dx
-		mov	cx, [stru_1AE1E.x+bx]
-		mov	bx, [stru_1B15E.x+di]
+		mov	cx, [stru_1AE1E + SimpleItem.x+bx]
+		mov	bx, [stru_1B15E + SimpleItem.x+di]
 		pop	di
 		retf
 loc_1DC7:
