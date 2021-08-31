@@ -27,7 +27,7 @@ loc_7C9B:
 		add	di, [si+6]
 		push	si
 		push	ds
-		call	drawchar_17B5
+		call	far drawchar_17B5
 		pop	ds
 		pop	si
 		add	si, 8
@@ -52,7 +52,7 @@ loc_7CBC:
 		add	di, [si+6]
 		push	si
 		push	ds
-		call	drawchar_17B5
+		call	far drawchar_17B5
 		pop	ds
 		pop	si
 loc_7CF7:

@@ -56,7 +56,7 @@ loc_6763:
 		ja	short loc_6752
 		push	ds
 		push	 byte_1D8F5
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		nop
 		push	cs
@@ -95,7 +95,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelLayout],	ax
 		push	ax
@@ -115,7 +115,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelData17],	ax
 		push	ax
@@ -135,7 +135,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelGraphics], ax
 		push	ax
@@ -155,7 +155,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [_bgMusic_0+2], ax
 		push	word [_bgMusic_0+2]
@@ -176,7 +176,7 @@ loc_68BA:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelContents], ax
 		push	ax
@@ -199,7 +199,7 @@ loc_68F4:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [word_1F5C9], ax
 		push	ds
@@ -230,7 +230,7 @@ loc_68F4:
 		mov	ax, [_somethingLevelHeight]
 		add	ax, 160
 		mov	[_fullLevelHeight], ax
-		call	copyFunctionPointers
+		call	far copyFunctionPointers
 		mov	es, [_levelContents]
 		mov	si, [es:LevelContents.field_4]
 		mov	word [bp+var_C], si

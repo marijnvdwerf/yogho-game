@@ -8,7 +8,7 @@ sub_3D41:
 		or	ch, bh
 		mov	word [ds:_smartItems + SmartItem.field_1A + bp], cx
 		test	bl, 21h
-		jnz	near  sub_3D8E
+		jnz	  sub_3D8E
 		test	bl, 10h
 		jnz	loc_3DE2
 		and	bx, 0Eh

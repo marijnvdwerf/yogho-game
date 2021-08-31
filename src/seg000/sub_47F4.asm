@@ -5,7 +5,7 @@ sub_47F4:
 		push	es
 		push	si
 		push	di
-		call	sub_1F75B
+		call	far sub_1F75B
 		pop	di
 		pop	si
 		pop	es

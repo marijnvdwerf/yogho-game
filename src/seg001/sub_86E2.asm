@@ -12,7 +12,7 @@ sub_86E2:
 		push	6
 		push	word [_hiscoreGfx]
 		push	4ECAh
-		call	mem_B04
+		call	far mem_B04
 		add	sp, 0Eh
 		push	0
 		push	128
@@ -21,7 +21,7 @@ sub_86E2:
 		push	6
 		push	word [_hiscoreGfx]
 		push	( InitEnd+0AAh)
-		call	mem_B04
+		call	far mem_B04
 		add	sp, 0Eh
 		push	( loc_8204+1)
 		nop

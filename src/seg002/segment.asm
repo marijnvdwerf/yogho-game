@@ -1,7 +1,5 @@
 segment seg002
 
-%include "seg002/nullsub_6.asm"
-
 byte_92B4:
 		db 44h
 		db  44h

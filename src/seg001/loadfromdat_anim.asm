@@ -23,7 +23,7 @@ loadfromdat_anim:
 		add	sp, 6
 		or	si, si
 		jz	short loc_9053
-		call	clearGPU
+		call	far clearGPU
 		push	100h
 		push	0
 		mov	ax, word [_fruitImagePtr]
@@ -36,10 +36,10 @@ loadfromdat_anim:
 		push	100h
 		push	0
 		push	 InitEnd
-		call	selectPalette
+		call	far selectPalette
 		add	sp, 6
 		push	word [bp+arg_2]
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		push	si
 		nop
@@ -55,12 +55,12 @@ loc_9053:
 		mov	ax, word [_fruitImagePtr+2]
 		add	ax, 0FA0h
 		push	ax
-		call	sub_13433
+		call	far sub_13433
 		add	sp, 8
 		or	di, di
 		jz	short loc_9088
 		push	word [bp+argA]
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		push	di
 		nop

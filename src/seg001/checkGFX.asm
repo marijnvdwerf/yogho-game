@@ -12,7 +12,7 @@ checkGFX:
 		push	ax
 		push	ax
 		push	10h
-		call	sub_5443
+		call	far sub_5443
 		add	sp, 6
 		cmp	byte [bp+var_10], 1Ah
 		jnz	loc_91D5
@@ -33,12 +33,12 @@ locret_91D3:
 		retf
 loc_91D5:
 		mov	byte [bp+var_10+1],	12h
-		mov word [bp+var_E], 10h
+		mov byte [bp+var_E], 10h
 		lea	ax, [bp+var_10]
 		push	ax
 		push	ax
 		push	10h
-		call	sub_5443
+		call	far sub_5443
 		add	sp, 6
 		cmp	byte [bp+var_E], 10h
 		jz	short locret_9201

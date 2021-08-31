@@ -8,7 +8,7 @@ sub_8548:
 		push	6
 		push	word [_hiscoreGfx]
 		push	4ECAh
-		call	mem_B04
+		call	far mem_B04
 		add	sp, 0Eh
 		push	0
 		push	128
@@ -17,9 +17,9 @@ sub_8548:
 		push	6
 		push	word [_hiscoreGfx]
 		push	4ECAh
-		call	mem_B04
+		call	far mem_B04
 		add	sp, 0Eh
-		call	sub_4A96
+		call	far sub_4A96
 		or	al, al
 		jnz	loc_8602
 		push	( word_1C4F7+2)
@@ -27,7 +27,7 @@ sub_8548:
 		push	cs
 		call	near  sub_874B
 		add	sp, 2
-		call	sub_581
+		call	far sub_581
 		nop
 		push	cs
 		call	near  sub_9189
@@ -52,7 +52,7 @@ sub_8548:
 		push	cs
 		call	near  sub_861D
 		add	sp, 6
-		call	sub_1A388
+		call	far sub_1A388
 		or	ax, ax
 		jz	short loc_85EC
 		mov	byte [_controllerState], 0FFh

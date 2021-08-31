@@ -1,5 +1,10 @@
 %line 1
 
+%macro far_ptr 1
+    dw %1
+    dw seg %1
+%endmacro
+
 struc LevelData
 .field_0		resb 1
 .width		resw 1
@@ -18,6 +23,36 @@ struc LevelData
 endstruc
 
 %macro LevelData 14
+istruc LevelData
+at LevelData.field_0
+    db %1
+at LevelData.width
+    dw %2
+at LevelData.height
+    dw %3
+at LevelData.index_palette
+    dw %4
+at LevelData.index_17
+    dw %5
+at LevelData.index_18
+    dw %6
+at LevelData.index_19
+    dw %7
+at LevelData.index_20
+    dw %8
+at LevelData.startX
+    dw %9
+at LevelData.startY
+    dw %10
+at LevelData.newsX
+    dw %11
+at LevelData.newsY
+    dw %12
+at LevelData.introText
+    dw %13
+at LevelData.index_unk
+    dw %14
+iend
 %endmacro
 
 
@@ -36,6 +71,8 @@ struc struct_1
 endstruc
 
 %macro struct_1 1
+dw 0
+dw 0
 %endmacro
 
 
@@ -48,6 +85,18 @@ struc Highscore
 endstruc
 
 %macro Highscore 5
+istruc Highscore
+at Highscore.field_0
+    dw %1
+at Highscore.field_2
+    dw %2
+at Highscore.field_4
+    db %3
+at Highscore.field_E
+    db %4
+at Highscore.field_F
+    db %5
+iend
 %endmacro
 
 
@@ -58,9 +107,15 @@ struc struct_0
 endstruc
 
 %macro struct_0 1
+istruc struct_0
+iend
 %endmacro
 
 %macro struct_0 3
+dw %1
+dw seg %1
+dw %2
+dw %3
 %endmacro
 
 
@@ -72,6 +127,10 @@ struc struct_2
 endstruc
 
 %macro struct_2 4
+dw %1
+dw %2
+dw %3
+dw %4
 %endmacro
 
 
@@ -118,6 +177,8 @@ struc SmartItem
 endstruc
 
 %macro SmartItem 1
+istruc SmartItem
+iend
 %endmacro
 
 
@@ -131,6 +192,8 @@ struc LevelContents
 endstruc
 
 %macro LevelContents 1
+istruc LevelContents
+iend
 %endmacro
 
 
@@ -155,6 +218,8 @@ struc LevelItem_Smart
 endstruc
 
 %macro LevelItem_Smart 1
+istruc LevelItem_Smart
+iend
 %endmacro
 
 
@@ -179,6 +244,8 @@ struc LevelItem_Basic
 endstruc
 
 %macro LevelItem_Basic 1
+istruc LevelItem_Basic
+iend
 %endmacro
 
 
@@ -216,6 +283,9 @@ struc struct_4
 endstruc
 
 %macro struct_4 3
+dw %1
+dw %2
+dw %3
 %endmacro
 
 
@@ -229,6 +299,8 @@ struc ScoreTrail
 endstruc
 
 %macro ScoreTrail 1
+istruc ScoreTrail
+iend
 %endmacro
 
 
@@ -238,6 +310,8 @@ struc struct_6
 endstruc
 
 %macro struct_6 2
+dw %1
+dw %2
 %endmacro
 
 
@@ -252,6 +326,8 @@ struc SimpleItem
 endstruc
 
 %macro SimpleItem 1
+istruc SimpleItem
+iend
 %endmacro
 
 
@@ -263,9 +339,14 @@ struc struct_5
 endstruc
 
 %macro struct_5 4
+db %1
+db %2
+db %3
+db %4
 %endmacro
 
 %macro struct_5 1
+struct_5 0, 0, 0, 0
 %endmacro
 
 
@@ -274,8 +355,6 @@ struc struct_3
 .anonymous_1	resw 1			; seg
 endstruc
 
-%macro struct_3 2
-%endmacro
 
 
 struc struct_7
@@ -284,4 +363,6 @@ struc struct_7
 endstruc
 
 %macro struct_7 2
+dw %1
+dw %2
 %endmacro

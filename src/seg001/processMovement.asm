@@ -9,7 +9,7 @@ processMovement:
 		mov	[bp+var_1], al
 		cmp	byte [_controllerState], 0FFh
 		jnz	loc_7D6F
-		call	sub_1A3AD
+		call	far sub_1A3AD
 		or	[bp+var_1], al
 loc_7D6F:
 		mov	al, [bp+var_1]

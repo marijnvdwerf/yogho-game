@@ -159,6 +159,12 @@ loc_1940A:
 		add	di, 5Dh
 		movsb
 		movsw
-loc_194BD:
 		add	di, 5Eh
+		movsw
+        movsb
+        add di, 0x5d
+        movsb
+        inc di
+        movsb
+        retf
 %pop

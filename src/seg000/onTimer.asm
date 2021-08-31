@@ -190,7 +190,7 @@ loc_78B:
 loc_795:
 		test	word [word_1D0FC], 400h
 		jnz	loc_7A2
-		call	sub_7CFB
+		call far	sub_7CFB
 loc_7A2:
 		mov	bx, word [word_1D116]
 		and	bx, 0FFF0h
@@ -270,7 +270,7 @@ loc_827:
 		call	near  render
 		nop
 		mov	es, [_levelContents]
-		call	dword [_levelContents2]
+		call	far [_levelContents2]
 		mov	bx, word [word_1D212]
 		cmp	bx, word [word_1D214]
 		jz	short loc_8BC
@@ -304,7 +304,7 @@ loc_8BC:
 		jmp	loc_795
 loc_8C5:
 		xor	byte [byte_1A51D], 80h
-		call	sub_7E40
+		call	far sub_7E40
 		xor	ax, ax
 		mov	word [word_1D102], ax
 loc_8D4:

@@ -5,7 +5,7 @@ sub_1A34E:
 		push	bp
 		mov	bp, sp
 		sub	sp, 4
-		call	sub_4AB3
+		call	far sub_4AB3
 		mov	[bp+var_2], dx
 		mov	[bp+var_4], ax
 		mov	word [word_1F5D2], ax

@@ -128,8 +128,8 @@ loc_11D:
 loc_120:
 		mov	ah, 0
 		int	1Ah
-		mov	word [word_1A4F6], dx
-		mov	word [word_1A4F8], cx
+		mov	word [_StartTime@], dx
+		mov	word [_StartTime@+2], cx
 		or	al, al
 		jz	short loc_13C
 		mov	ax, 40h
@@ -145,7 +145,7 @@ loc_13C:
 		push	word [__C0environ]
 		push	word [__C0argv]
 		push	word [__C0argc]
-		call	main
+		call	far main
 		push	ax
 		nop
 		push	cs

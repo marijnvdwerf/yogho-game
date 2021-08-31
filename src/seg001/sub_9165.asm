@@ -10,9 +10,9 @@ sub_9165:
 		push	100h
 		push	0
 		push	 pal_1C830
-		call	selectPalette
+		call	far selectPalette
 		add	sp, 6
-		call	sub_581
+		call	far sub_581
 		pop	di
 		retf
 %pop

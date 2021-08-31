@@ -19,7 +19,7 @@ renderIntro:
 		mov word [bp+posX], 0
 		mov word [bp+var_C], 0
 		mov	word [word_1D136], 0
-		call	vga_5A9
+		call	far vga_5A9
 		cmp	word [bp+var_2], 0
 		jnz	loc_7075
 		jmp	loc_7210
@@ -35,9 +35,9 @@ loc_7075:
 		add	sp, 8
 		push	ds
 		push	 byte_1D8F5
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
-		call	sub_E1A
+		call	far sub_E1A
 		nop
 		push	cs
 loc_709E:
@@ -58,7 +58,7 @@ loc_709E:
 		push	0
 		push word [_levelGraphics]
 		push	0
-		call	drawImage
+		call	far drawImage
 		add	sp, 0Ch
 		push word [_levelGraphics]
 		push	0
@@ -67,7 +67,7 @@ loc_709E:
 		push	cs
 		call	near  loadfromdat
 		add	sp, 6
-		call	sub_581
+		call	far sub_581
 		mov	byte [byte_1D0F1], 7Fh
 		mov	word [word_1D0FE], 0
 		mov	word [word_1D102], 0
@@ -123,7 +123,7 @@ loc_7149:
 loc_7172:
 		xor	di, di
 loc_7174:
-		call	sub_581
+		call	far sub_581
 		cmp	byte [_keyboardInput], 0
 		jnz	loc_71BC
 		inc	di
@@ -144,11 +144,11 @@ loc_7188:
 		mov	dx, 63
 		imul	dx
 		push	ax
-		call	drawImage
+		call	far drawImage
 		add	sp, 0Ch
 		add	word [bp+posY], 7
 		push	2
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 loc_71BC:
 		cmp	byte [si], 0

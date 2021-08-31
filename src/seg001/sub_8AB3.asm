@@ -1,10 +1,11 @@
 %line 1
+
 sub_8AB3:
 %push local
 		push	si
 		push	ds
 		push	 gpuConfig
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		push	100h
 		push	0
@@ -20,7 +21,7 @@ sub_8AB3:
 		push	0
 		push	word [_image1]
 		push	0
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		push	200
 		push	320
@@ -28,7 +29,7 @@ sub_8AB3:
 		push	0
 		push	word [_image1]
 		push	0
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		mov	ax, [_levelLayout]
 		mov	[_levelGraphics], ax

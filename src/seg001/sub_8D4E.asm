@@ -3,7 +3,7 @@ sub_8D4E:
 		push	100h
 		push	0
 		push	 InitEnd
-		call	selectPalette
+		call	far selectPalette
 		add	sp, 6
 		push	2
 		push	0A2h

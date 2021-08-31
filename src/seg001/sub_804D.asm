@@ -21,7 +21,7 @@ sub_804D:
 		push	0
 		push	word [_bgMusic_0+2]
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 		and	word [word_1D106], 0FFFEh
 		jmp	short loc_80F1
@@ -38,7 +38,7 @@ loc_80B1:
 		xor	si, si
 		jmp	short loc_80F1
 loc_80B5:
-		call	sub_4804
+		call	far sub_4804
 		nop
 		push	cs
 		call	near  playIntroAnim
@@ -48,7 +48,7 @@ loc_80B5:
 		push	0
 		push	word [_bgMusic_0+2]
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 		jmp	short loc_80F1
 loc_80D8:

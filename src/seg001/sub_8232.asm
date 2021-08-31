@@ -23,7 +23,7 @@ sub_8232:
 loc_8259:
 		push	ds
 		push	 gpuConfig
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		push	100h
 		push	0
@@ -39,7 +39,7 @@ loc_8259:
 		push	0
 		push word [_titleScreenGFX]
 		push	0
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		push	200
 		push	320
@@ -47,7 +47,7 @@ loc_8259:
 		push	0
 		push word [_titleScreenGFX]
 		push	0
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		push	41
 		push	29
@@ -62,7 +62,7 @@ loc_82C2:
 		mov	ax, 4580h
 loc_82C5:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		push	29h
 		push	1Dh
@@ -77,7 +77,7 @@ loc_82E8:
 		mov	ax, 4580h
 loc_82EB:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		push	8
 		nop
@@ -90,7 +90,7 @@ loc_82F8:
 		call	near  sub_9092
 		jmp	loc_8533
 loc_8306:
-		call	sub_581
+		call	far sub_581
 		nop
 		push	cs
 		call	near  sub_8D4E
@@ -164,13 +164,13 @@ loc_83D0:
 		or	ax, ax
 		jz	short loc_83E7
 loc_83E0:
-		call	sub_4804
+		call	far sub_4804
 		jmp	short loc_83F9
 loc_83E7:
 		push	0
 		push	word [_bgMusic_0+2]
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 loc_83F9:
 		nop
@@ -189,7 +189,7 @@ loc_8417:
 		mov	ax, 4580h
 loc_841A:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		push	29h
 		push	1Dh
@@ -204,7 +204,7 @@ loc_843D:
 		mov	ax, 4580h
 loc_8440:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		nop
 		push	cs
@@ -246,13 +246,13 @@ loc_8495:
 		mov	ax, word [word_1D106]
 		or	ax, ax
 		jz	short loc_84AE
-		call	sub_4804
+		call	far sub_4804
 		jmp	short loc_84C0
 loc_84AE:
 		push	0
 		push	word [_bgMusic_0+2]
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 loc_84C0:
 		nop
@@ -271,7 +271,7 @@ loc_84DE:
 		mov	ax, 4580h
 loc_84E1:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		push	29h
 		push	1Dh
@@ -286,7 +286,7 @@ loc_8504:
 		mov	ax, 4580h
 loc_8507:
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		nop
 		push	cs

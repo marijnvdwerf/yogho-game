@@ -1,17 +1,8 @@
 segment seg009
 
-		db 0A5h
-		db 0A4h
-		db  83h
-		db 0C7h
-
-unk_194C4:
-		db  5Dh
-		db 0A4h
-		db  47h
-		db 0A4h
-		db 0CBh
 		db    0
+
+unk_194CA:
 		db  44h
 		db  44h
 		db  44h

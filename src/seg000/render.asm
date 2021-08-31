@@ -3,7 +3,7 @@ render:
 %push local
 		pusha
 		push	es
-		cmp	word [ds:2CA0h], 0
+		cmp	word [2CA0h], 0
 		jnz	loc_1420
 		push	ds
 		push	cs
@@ -254,7 +254,7 @@ loc_16D8:
 		cmp	word [word_1D100], 0
 		jnz	loc_16E7
 		mov	ax, word [word_1A50E]
-		call	drawPlayer
+		call	far drawPlayer
 loc_16E7:
 		push	cs
 		call	near  renderScoreTrails

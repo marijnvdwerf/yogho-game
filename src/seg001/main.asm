@@ -15,7 +15,7 @@ main:
 		mov	ax, dseg
 		xor	dx, dx
 		mov	cl, 4
-		call	sub_4C99
+		call	far sub_4C99
 		add	ax, 0
 		adc	dx, 0
 		push	ax
@@ -23,7 +23,7 @@ main:
 		push	dx
 		xor	dx, dx
 		mov	cl, 4
-		call	sub_4C99
+		call	far sub_4C99
 		add	ax, 0
 		adc	dx, 0
 		pop	bx
@@ -93,7 +93,7 @@ loc_613F:
 		push	0BEh
 		push	ax
 		push	4778h
-		call	sub_4B62
+		call	far sub_4B62
 		add	sp, 6
 		or	ax, ax
 		jnz	loc_61ED
@@ -114,7 +114,7 @@ loc_61A0:
 		push	word [_levelContents3]
 		push word [_levelContents2]
 		push	word [word_1A51E]
-		call	fwrite
+		call	far fwrite
 		add	sp, 0Ah
 		or	ax, ax
 		jz	short loc_61C0
@@ -136,14 +136,14 @@ loc_61C0:
 		ja	short loc_6185
 loc_61E1:
 		push	word [word_1A51E]
-		call	fclose
+		call	far fclose
 		add	sp, 2
 loc_61ED:
-		call	isWindows
+		call	far isWindows
 		cmp	al, 0FFh
 		jnz	loc_6208
 		push	 aHetProgrammaKan
-		call	printf
+		call	far printf
 		add	sp, 2
 		mov	ax, 100
 		pop	di
@@ -151,12 +151,12 @@ loc_61ED:
 		leave
 		retf
 loc_6208:
-		call	isCPU286
+		call	far isCPU286
 		mov	[cpuFeatures], ax
 		or	ax, ax
 		jnz	loc_6225
 		push	 aHelaasKuntUHetY
-		call	printf
+		call	far printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
@@ -169,12 +169,12 @@ loc_6225:
 		mov	[_paragraphsMalloced], ax
 		push	 memPtr
 		push	ax
-		call	malloc
+		call	far malloc
 		add	sp, 4
 		cmp	ax, 0FFFFh
 		jz	short loc_6251
 		push	 aUHeeftNietGenoe
-		call	printf
+		call	far printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
@@ -212,14 +212,14 @@ loc_6251:
 		push	 _hiscoreHandle
 		push	1
 		push	 fileName
-		call	fopen
+		call	far fopen
 		add	sp, 6
 		or	ax, ax
 		jz	short loc_629E
 		jmp	loc_634C
 loc_629E:
 		push word [_hiscoreHandle]
-		call	sub_5920
+		call	far sub_5920
 		add	sp, 2
 		or	dx, dx
 		jz	short loc_62B1
@@ -234,7 +234,7 @@ loc_62B9:
 		push	ds
 		push	 _highscores
 		push word [_hiscoreHandle]
-		call	sub_4BBD
+		call	far sub_4BBD
 		add	sp, 0Ah
 		mov	word [_writeStatus],	0
 loc_62D5:
@@ -311,12 +311,12 @@ loc_634C:
 		push	 _datHandle
 		push	1
 		push	 fileName
-		call	fopen
+		call	far fopen
 		add	sp, 6
 		or	ax, ax
 		jz	short loc_63BD
 		push	 aHetProgrammaKo
-		call	printf
+		call	far printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
@@ -324,15 +324,15 @@ loc_634C:
 		leave
 		retf
 loc_63BD:
-		call	sub_47F4
+		call	far sub_47F4
 		nop
 		push	cs
-		call	near  initgpu
+		call	initgpu
 		or	al, al
 		jnz	loc_63CE
 		jmp	loc_651A
 loc_63CE:
-		call	setKeyboardInterruot
+		call	far setKeyboardInterruot
 		push	ds
 		push	 _datLayout
 		push	0
@@ -389,7 +389,7 @@ loc_63CE:
 		mov	word [_fruitImagePtr], 0
 		push	word [word_1D1D2]
 		push	word [word_1D1D0]
-		call	sub_47DF
+		call	far sub_47DF
 		add	sp, 4
 		mov	word [word_1A52C], 0
 		mov	word [word_1A52A], 0
@@ -432,7 +432,7 @@ loc_64BD:
 		jz	short loc_64D1
 		cmp	word [_memorySubtracted], 0
 		jnz	loc_64DF
-		inc	word [_levelIndex]
+		inc	byte [_levelIndex]
 		jmp	short loc_64DF
 loc_64D1:
 		mov	word [word_1A51E], 0
@@ -440,14 +440,14 @@ loc_64D1:
 loc_64D9:
 		mov	word [word_1A51E], 0
 loc_64DF:
-		mov word [bp+var_1], 0
+		mov byte [bp+var_1], 0
 loc_64E3:
 		mov	al, [bp+var_1]
 		mov	ah, 0
 		mov	bx, ax
 		mov	byte [bx+2CE8h], 0
-		inc	word [bp+var_1]
-		cmp	word [bp+var_1], 3Eh
+		inc	byte [bp+var_1]
+		cmp	byte [bp+var_1], 3Eh
 		jb	short loc_64E3
 loc_64F8:
 		cmp	word [word_1A51E], 0
@@ -459,8 +459,8 @@ loc_6506:
 		jg	loc_6491
 		jmp	loc_6477
 loc_6510:
-		call	sub_4804
-		call	restoreKeyboardInterrupt
+		call	far sub_4804
+		call	far restoreKeyboardInterrupt
 loc_651A:
 		nop
 		push	cs
@@ -495,7 +495,7 @@ loc_651A:
 		push	 _hiscoreHandle
 		push	ax
 		push	 fileName
-		call	sub_4B62
+		call	far sub_4B62
 		add	sp, 6
 		or	ax, ax
 		jnz	loc_657E
@@ -504,20 +504,20 @@ loc_651A:
 		push	ds
 		push	 _highscores
 		push word [_hiscoreHandle]
-		call	fwrite
+		call	far fwrite
 		add	sp, 0Ah
 loc_657E:
 		cmp	word [_datHandle], 0
 		jz	short loc_6591
 		push word [_datHandle]
 loc_6589:
-		call	fclose
+		call	far fclose
 		add	sp, 2
 loc_6591:
 		cmp	word [memPtr], 0
 		jz	short loc_65A4
 		push word [memPtr]
-		call	dealloc
+		call	far dealloc
 		add	sp, 2
 loc_65A4:
 		xor	ax, ax

@@ -6,7 +6,7 @@ sub_4804:
 		push	es
 		push	si
 		push	di
-		call	sub_1FE64
+		call	far sub_1FE64
 		pop	di
 		pop	si
 		pop	es

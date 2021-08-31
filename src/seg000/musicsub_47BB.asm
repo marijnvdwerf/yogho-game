@@ -11,7 +11,7 @@ musicsub_47BB:
 		push	di
 		lds	si, [bp+arg_0]
 		mov	ax, [bp+arg_4]
-		call	sub_1F7CC
+		call far sub_1F7CC
 		pop	di
 		pop	si
 		pop	es

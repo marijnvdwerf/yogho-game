@@ -1,3 +1,4 @@
+global configureGpu
 configureGpu:
 %push local
 %define arg_0  6

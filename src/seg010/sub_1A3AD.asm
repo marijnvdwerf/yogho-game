@@ -1,3 +1,4 @@
+global sub_1A3AD
 sub_1A3AD:
 %push local
 %define var_4 -4
@@ -7,7 +8,7 @@ sub_1A3AD:
 		sub	sp, 4
 		push	si
 		push	di
-		call	sub_4AB3
+		call	far sub_4AB3
 		mov	[bp+var_2], dx
 		mov	[bp+var_4], ax
 		mov	cx, [bp+var_4]
@@ -69,7 +70,7 @@ loc_1A426:
 		jge	loc_1A445
 		add	si, 4
 loc_1A445:
-		call	sub_4AE5
+		call	far sub_4AE5
 		or	ax, ax
 		jz	short loc_1A452
 		add	si, 80h

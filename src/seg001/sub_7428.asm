@@ -15,7 +15,7 @@ loc_743C:
 		push	2
 		push	word [_sfxMusic_0+2]
 		push	word [_sfxMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 		or	byte [byte_1A51D], 11h
 		mov	word [word_1A517], 0C8h
@@ -149,7 +149,7 @@ loc_75DD:
 loc_7609:
 		mov	ax, [_playerX_0]
 		mov	dx, [_playerY_0]
-		call	collision_1B03
+		call	far collision_1B03
 		jmp	short loc_7622
 loc_7617:
 		mov	byte [byte_1D210], 0
@@ -279,7 +279,7 @@ loc_77D8:
 		mov	ax, [_playerY_0]
 		cmp	ax, [_fullLevelHeight]
 		jge	loc_77F3
-		call	sub_1DD1
+		call	far sub_1DD1
 		mov	word [word_1A582], bx
 		mov	[_playerX_0], ax
 		mov	[_playerY_0], dx

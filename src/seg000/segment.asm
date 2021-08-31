@@ -1,4 +1,220 @@
+%line 1
 segment seg000
+
+global clearBuffer
+global clearGPU
+global collision
+global collision_1B03
+global configureGpu
+global copyBuffer
+global copyFunctionPointers
+global dealloc
+global decompressframe
+global drawchar_177D
+global drawchar_17B5
+global drawHand_4328
+global drawImage
+global drawNumber
+global draw_char
+global draw_image
+global exit
+global exit_0
+global fclose
+global fopen
+global fseek
+global fwrite
+global getDeviceInformation
+global initMouse
+global initTimer
+global isCPU286
+global isWindows
+global loadimage
+global makeItemObjects
+global MakeSmartItem
+global malloc
+global mem_B04
+global mousecallroutineswitch
+global mousedealloc
+global musicsub_47BB
+global onCtrlC
+global onKeyboardServiceRequired
+global onMouse
+global onTimer
+global photoManFrame
+global printf
+global render
+global renderFlag
+global renderScoreTrails
+global renderSleepSaw
+global renderYoghoDrink
+global restoreGfx
+global restoreInterrupts
+global restoreKeyboardInterrupt
+global restoreTimerInterrupt
+global saveSimpleItem
+global SaveVectors
+global scoretrailmake_40D0
+global selectPalette
+global setKeyboardInterruot
+global start
+global StartExit
+global stderr_540E
+global sub_102F
+global sub_1082
+global sub_117F
+global sub_11D6
+global sub_12D7
+global sub_12E3
+global sub_163
+global sub_176
+global sub_19F7
+global sub_1A7
+global sub_1AA8
+global sub_1AD7
+global sub_1AFB
+global sub_1BA4
+global sub_1BD4
+global sub_1C03
+global sub_1C16
+global sub_1CBE
+global sub_1D26
+global sub_1DD1
+global sub_2064
+global sub_206C
+global sub_207C
+global sub_20CA
+global sub_20CD
+global sub_20D6
+global sub_20E5
+global sub_20F7
+global sub_21A3
+global sub_2259
+global sub_2274
+global sub_232A
+global sub_2347
+global sub_264
+global sub_2648
+global sub_2AD
+global sub_2B3
+global sub_2C8
+global sub_32B
+global sub_3B8B
+global sub_3BA4
+global sub_3BC7
+global sub_3BE9
+global sub_3BFA
+global sub_3D25
+global sub_3D31
+global sub_3D41
+global sub_3D6E
+global sub_3D7D
+global sub_3D8E
+global sub_3DFB
+global sub_3E0A
+global sub_3E37
+global sub_3E8E
+global sub_3E9A
+global sub_3EB0
+global sub_3EE4
+global sub_3F3C
+global sub_3FBE
+global sub_3FD6
+global sub_4023
+global sub_4092
+global sub_42D8
+global sub_4361
+global sub_4515
+global sub_45AD
+global sub_4633
+global sub_4636
+global sub_4710
+global sub_478C
+global sub_47DF
+global sub_47F4
+global sub_4804
+global sub_49A3
+global sub_4A96
+global sub_4AA
+global sub_4AB3
+global sub_4AE5
+global sub_4AFC
+global sub_4B3F
+global sub_4B62
+global sub_4B76
+global sub_4BBD
+global sub_4C04
+global sub_4C6A
+global sub_4C7C
+global sub_4C8A
+global sub_4C99
+global sub_4CBA
+global sub_4CD8
+global sub_4D11
+global sub_4D34
+global sub_4DB1
+global sub_4DF7
+global sub_4E0F
+global sub_4EB4
+global sub_4EBB
+global sub_4EC4
+global sub_4ECC
+global sub_4EE6
+global sub_4EF3
+global sub_4EFC
+global sub_4F2C
+global sub_539F
+global sub_53C1
+global sub_53F2
+global sub_53FE
+global sub_5443
+global sub_546B
+global sub_5507
+global sub_5524
+global sub_555E
+global sub_5597
+global sub_55B3
+global sub_55D6
+global sub_5636
+global sub_5676
+global sub_569F
+global sub_56B8
+global sub_56ED
+global sub_572F
+global sub_5782
+global sub_5788
+global sub_581
+global sub_581B
+global sub_5843
+global sub_5848
+global sub_589F
+global sub_5920
+global sub_5961
+global sub_599B
+global sub_59F8
+global sub_5A60
+global sub_5B27
+global sub_5B5D
+global sub_5B76
+global sub_5CAC
+global sub_5CBE
+global sub_5DA
+global sub_5E66
+global sub_5F3E
+global sub_6086
+global sub_90C
+global sub_D0F
+global sub_D84
+global sub_DDF
+global sub_E1A
+global sub_E7C
+global sub_EF6
+global sub_F9C
+global updatePalette
+global vga_598
+global vga_5A9
+global wait_577
+global write_stderr
+global write_to_handle
 
 %include "seg000/start.asm"
 %include "seg000/sub_163.asm"
@@ -29,9 +245,33 @@ dataSeg:
 %include "seg000/copyFunctionPointers.asm"
 
 off_50F:
-		dd sub_4636, sub_2648, sub_3BE9, sub_3D31, sub_2347, sub_4092, collision, sub_3FD6, loc_3FE5, sub_4023,	sub_3B8B
-		dd loc_3BD6, unk_3B7C, sub_3BC7, renderFlag, renderYoghoDrink, renderSleepSaw, photoManFrame, sub_4515,	drawHand_4328
-		dd scoretrailmake_40D0,	sub_1AA8, sub_4710, sub_5DA, drawchar_177D, drawNumber
+    far_ptr sub_4636
+    far_ptr sub_2648
+    far_ptr sub_3BE9
+    far_ptr sub_3D31
+    far_ptr sub_2347
+    far_ptr sub_4092
+    far_ptr collision
+    far_ptr sub_3FD6
+    far_ptr loc_3FE5
+    far_ptr sub_4023
+    far_ptr sub_3B8B
+    far_ptr loc_3BD6
+    far_ptr unk_3B7C
+    far_ptr sub_3BC7
+    far_ptr renderFlag
+    far_ptr renderYoghoDrink
+    far_ptr renderSleepSaw
+    far_ptr photoManFrame
+    far_ptr sub_4515
+    far_ptr drawHand_4328
+    far_ptr scoretrailmake_40D0
+    far_ptr sub_1AA8
+    far_ptr sub_4710
+    far_ptr sub_5DA
+    far_ptr drawchar_177D
+    far_ptr drawNumber
+
 %include "seg000/wait_577.asm"
 		db 90h
 %include "seg000/sub_581.asm"
@@ -221,7 +461,7 @@ off_1027:
 %include "seg000/render.asm"
 
 stru_1746:
-    struct_3(draws_13A44, seg draws_13A44)
+    far_ptr draws_13A44
 %include "seg000/draw_char.asm"
 %include "seg000/drawchar_177D.asm"
 %include "seg000/drawchar_17B5.asm"

@@ -29,13 +29,13 @@ loc_9135:
 loc_9145:
 		cmp	word [bp+var_2], si
 		ja	short loc_9135
-		call	sub_581
+		call	far sub_581
 		mov	ax, [bp+arg_4]
 		sub	ax, di
 		push	ax
 		push	di
 		push	 pal_1C830
-		call	selectPalette
+		call	far selectPalette
 		add	sp, 6
 		pop	di
 		pop	si

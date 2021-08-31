@@ -1,5 +1,47 @@
 segment seg001
 
+global main
+global setBasePath
+global sub_662C
+global loadlevel
+global sub_69AD
+global renderIntro
+global setcamera
+global loadfromdat
+global loadintoBuffer
+global sub_7428
+global drawPlayer
+global sub_7CFB
+global processMovement
+global renderStatusBar
+global sub_7E40
+global sub_804D
+global sub_8108
+global sub_8232
+global sub_8548
+global sub_861D
+global sub_86E2
+global sub_874B
+global sub_87DC
+global sub_8AB3
+global drawHighscore
+global sub_8D4E
+global palette_8DE9
+global loadPalette
+global playIntroAnim
+global loadfromdat_anim
+global sub_9092
+global sub_90A5
+global waitfade_90B8
+global sub_90E2
+global sub_9114
+global sub_9165
+global sub_9189
+global checkGFX
+global initgpu
+global sub_9250
+global sub_927D
+
 %include "seg001/main.asm"
 %include "seg001/setBasePath.asm"
 %include "seg001/sub_662C.asm"
@@ -77,3 +119,6 @@ off_9203:
 %include "seg001/initgpu.asm"
 %include "seg001/sub_9250.asm"
 %include "seg001/sub_927D.asm"
+
+global nullsub_6
+%include "seg002/nullsub_6.asm"

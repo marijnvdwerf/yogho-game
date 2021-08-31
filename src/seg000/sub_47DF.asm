@@ -8,7 +8,7 @@ sub_47DF:
 		push	si
 		push	di
 		lds	si, [bp+arg_0]
-		call	sub_1FEBC
+		call	far sub_1FEBC
 		pop	di
 		pop	si
 		pop	es

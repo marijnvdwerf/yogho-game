@@ -42,7 +42,7 @@ loc_13436:
 		mov	ax, si
 loc_13470:
 		mov	cl, 4
-		call	sub_4C99
+		call	far sub_4C99
 		add	ax, 302h
 		adc	dx, 0
 		mov	[bp+var_10], dx
@@ -54,7 +54,7 @@ loc_1348B:
 		mov	ax, [es:bx]
 		mov	[bp+var_2], ax
 		push	di
-		call	clearBuffer
+		call	far clearBuffer
 		add	sp, 2
 		push	word [bp+buffer2]
 		push	di
@@ -64,14 +64,14 @@ loc_1348B:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		push	ax
-		call	decompressframe
+		call	far decompressframe
 		add	sp, 8
 		mov	si, ax
 		push	word [bp+buffer2]
 		push	di
-		call	copyBuffer
+		call	far copyBuffer
 		add	sp, 4
 		mov	bx, word [_currentBuffer]
 loc_134D0:
@@ -99,9 +99,9 @@ loc_134F7:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		push	ax
-		call	sub_49A3
+		call	far sub_49A3
 		add	sp, 8
 		mov	bx, word [_currentBuffer]
 		shl	bx, 1
@@ -128,9 +128,9 @@ loc_13541:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		push	ax
-		call	sub_49A3
+		call	far sub_49A3
 		add	sp, 8
 		add	[bp+dataPtr], si
 		adc	word [bp+var_10], 0
@@ -156,9 +156,9 @@ loc_1356D:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		push	ax
-		call	decompressframe
+		call	far decompressframe
 		add	sp, 8
 		mov	si, ax
 		cmp	si, 0FFFFh
@@ -179,9 +179,9 @@ loc_1356D:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	sub_4CBA
+		call	far sub_4CBA
 		push	ax
-		call	sub_49A3
+		call	far sub_49A3
 		add	sp, 8
 		jmp	short loc_135F3
 loc_135F0:

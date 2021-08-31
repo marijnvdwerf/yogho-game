@@ -1,6 +1,7 @@
 sub_3EB0:
 %push local
-		mov	cx, word [es:word_1A462+si]
+;		mov	cx, word [es:word_1A462+si]
+        db 0x26, 0x8B, 0x4C, 0x02
 		mov	word [ds:(_smartItems+16h)+bp], cx
 		xor	cx, cx
 		mov	[ds:_smartItems + SmartItem.anonymous_16 + bp], cx

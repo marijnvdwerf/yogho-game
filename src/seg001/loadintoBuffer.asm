@@ -24,7 +24,7 @@ loadintoBuffer:
 		push	ax
 		push	dx
 		push word [_datHandle]
-		call	fseek
+		call	far fseek
 		add	sp, 8
 		mov	[_datOffset_dx], dx
 		mov	[_datoffset_ax], ax
@@ -49,7 +49,7 @@ loc_73DA:
 		push word [bp+arg_A]
 		push word [bp+buffer]
 		push word [_datHandle]
-		call	sub_4BBD
+		call	far sub_4BBD
 		add	sp, 0Ah
 		or	ax, ax
 		jz	short loc_73F7

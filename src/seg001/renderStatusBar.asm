@@ -13,7 +13,7 @@ renderStatusBar:
 		push	0
 		push	word [_fruitImagePtr+2]
 		push	word [_fruitImagePtr]
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		push	word [_fruitImagePtr+2]
 		push	word [_fruitImagePtr]
@@ -47,7 +47,7 @@ renderStatusBar:
 		sar	bx, 1
 		shl	bx, 1
 		push word [fruitOffsets+bx]
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		push	27
 		push	220
@@ -60,7 +60,7 @@ renderStatusBar:
 		shl	bx, 2
 		push	word [(_drawNumbers+6)+bx]
 		push	word [(_drawNumbers+4)+bx]
-		call	draw_char
+		call	far draw_char
 		add	sp, 8
 		nop
 		push	cs

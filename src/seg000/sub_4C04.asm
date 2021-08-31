@@ -15,7 +15,7 @@ loc_4C11:
 		mov	bx, word [word_1EFE0]
 		mov	cl, 2
 		shl	bx, cl
-		call	dword [dword_1F5D8+bx]
+		call	far [dword_1F5D8+bx]
 loc_4C21:
 		cmp	word [word_1EFE0], 0
 		jnz	loc_4C11

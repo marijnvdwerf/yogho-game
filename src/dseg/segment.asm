@@ -1,3 +1,4 @@
+%line 1
 segment dseg
 
 
@@ -57,11 +58,9 @@ _version:
 word_1A4F4:
 		dw 0
 
-word_1A4F6:
-		dw 0
+_StartTime@:
+		dw 0, 0
 
-word_1A4F8:
-		dw 0
 		db 250
 		db 81
 
@@ -990,280 +989,280 @@ aHetIsTeValsEnT:
 		db 'L!=>>TIP: MAAK GEBRUIK VAN>DE BLAZENDE WOLKJES>EN DE VLIEGENDE ALBATROS.',0
 
 levelDorp:
-    LevelData(77, 160, 15,	16, 17,	18, 19,	20, 4848, 191, 1632, 132, aDePrijskoeIsAl, 67)
+    LevelData 77, 160, 15,	16, 17,	18, 19,	20, 4848, 191, 1632, 132, aDePrijskoeIsAl, 67
 
 stru_1BE3E:
-    LevelData(83, 20, 35, 46, 47, 48, 49, 50, 336,	63, 0, 0, 0, 73)
+    LevelData 83, 20, 35, 46, 47, 48, 49, 50, 336,	63, 0, 0, 0, 73
 
 stru_1BE59:
-    LevelData(78, 80, 40, 21, 22, 23, 24, 25, 1504, 159, 2400, 1076, aDeZeeLooptLang, 66)
+    LevelData 78, 80, 40, 21, 22, 23, 24, 25, 1504, 159, 2400, 1076, aDeZeeLooptLang, 66
 
 stru_1BE74:
-    LevelData(84, 30, 22, 51, 52, 53, 54, 55, 32, 671, 0, 0, 0, 73)
+    LevelData 84, 30, 22, 51, 52, 53, 54, 55, 32, 671, 0, 0, 0, 73
 
 stru_1BE8F:
-    LevelData(79, 160, 40,	26, 27,	28, 29,	30, 144, 1215, 4128, 964, aZelfsVoorEenEs, 68)
+    LevelData 79, 160, 40,	26, 27,	28, 29,	30, 144, 1215, 4128, 964, aZelfsVoorEenEs, 68
 
 stru_1BEAA:
-    LevelData(85, 20, 35, 46, 47, 48, 49, 50, 32, 1087, 0,	0, 0, 73)
+    LevelData 85, 20, 35, 46, 47, 48, 49, 50, 32, 1087, 0,	0, 0, 73
 
 stru_1BEC5:
-    LevelData(80, 160, 45,	31, 32,	33, 34,	35, 96,	1407, 288, 132,	aDeMolenStaatSt,	67)
+    LevelData 80, 160, 45,	31, 32,	33, 34,	35, 96,	1407, 288, 132,	aDeMolenStaatSt,	67
 
 stru_1BEE0:
-    LevelData(86, 30, 22, 56, 57, 58, 59, 60, 32, 671, 0, 0, 0, 73)
+    LevelData 86, 30, 22, 56, 57, 58, 59, 60, 32, 671, 0, 0, 0, 73
 
 stru_1BEFB:
-    LevelData(81, 80, 60, 36, 37, 38, 39, 40, 1760, 159, 2240, 244, offset	aOmaIsVandaagOn, 66)
+    LevelData 81, 80, 60, 36, 37, 38, 39, 40, 1760, 159, 2240, 244, 	aOmaIsVandaagOn, 66
 
 stru_1BF16:
-    LevelData(87, 20, 35, 46, 47, 48, 49, 50, 32, 1087, 0,	0, 0, 73)
+    LevelData 87, 20, 35, 46, 47, 48, 49, 50, 32, 1087, 0,	0, 0, 73
 
 stru_1BF31:
-    LevelData(82, 90, 80, 41, 42, 43, 44, 45, 2176, 431, 2640, 372, offset	aHetIsTeValsEnT, 68)
+    LevelData 82, 90, 80, 41, 42, 43, 44, 45, 2176, 431, 2640, 372, 	aHetIsTeValsEnT, 68
 
 stru_1BF4C:
-    LevelData(88, 30, 22, 61, 62, 63, 64, 65, 32, 671, 0, 0, 0, 73)
+    LevelData 88, 30, 22, 61, 62, 63, 64, 65, 32, 671, 0, 0, 0, 73
 
 levels:
 		dw levelDorp, stru_1BE3E,	stru_1BE59, stru_1BE74, stru_1BE8F, offset	stru_1BEAA
 		dw stru_1BEC5, stru_1BEE0, offset	stru_1BEFB, stru_1BF16, stru_1BF31, stru_1BF4C
 
 stru_1BF7F:
-    struct_0(drawsub_D9D8,	-11, -35)
-    struct_0(drawsub_D3B4,	-9, -17)
-    struct_0 (0)
+    struct_0 drawsub_D9D8,	-11, -35
+    struct_0 drawsub_D3B4,	-9, -17
+    struct_0 0
 
 stru_1BF97:
-    struct_0(drawsub_D9D8,	-11, -35)
-    struct_0(drawsub_D3B4,	-9, -17)
-    struct_0 (0)
+    struct_0 drawsub_D9D8,	-11, -35
+    struct_0 drawsub_D3B4,	-9, -17
+    struct_0 0
 
 stru_1BFAF:
-    struct_0(drawheadright_B0CC, -8, -33)
-    struct_0(draws_9394, -9, -17)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -8, -33
+    struct_0 draws_9394, -9, -17
+    struct_0 0
 
 stru_1BFC7:
-    struct_0(drawheadright_B0CC, -10, -35)
-    struct_0(drawsub_95F6,	-10, -20)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -10, -35
+    struct_0 drawsub_95F6,	-10, -20
+    struct_0 0
 
 stru_1BFDF:
-    struct_0(drawheadright_B0CC, -9, -36)
-    struct_0(drawsub_989E,	-12, -22)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -9, -36
+    struct_0 drawsub_989E,	-12, -22
+    struct_0 0
 
 stru_1BFF7:
-    struct_0(drawheadright_B0CC, -8, -33)
-    struct_0(drawsub_9B10,	-9, -17)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -8, -33
+    struct_0 drawsub_9B10,	-9, -17
+    struct_0 0
 
 stru_1C00F:
-    struct_0(drawheadright_B0CC, -10, -35)
-    struct_0(drawsub_9D78,	-10, -20)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -10, -35
+    struct_0 drawsub_9D78,	-10, -20
+    struct_0 0
 
 stru_1C027:
-    struct_0(drawheadright_B0CC, -9, -36)
-    struct_0(drawsub_A04E,	-12, -23)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -9, -36
+    struct_0 drawsub_A04E,	-12, -23
+    struct_0 0
 
 stru_1C03F:
-    struct_0(drawheadleft_D0BC, -15, -33)
-    struct_0(drawsub_B386,	-6, -17)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -15, -33
+    struct_0 drawsub_B386,	-6, -17
+    struct_0 0
 
 stru_1C057:
-    struct_0(drawheadleft_D0BC, -13, -35)
-    struct_0(drawsub_B5E6,	-4, -20)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -13, -35
+    struct_0 drawsub_B5E6,	-4, -20
+    struct_0 0
 
 stru_1C06F:
-    struct_0(drawheadleft_D0BC, -14, -36)
-    struct_0(drawsub_B88E,	-7, -22)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -14, -36
+    struct_0 drawsub_B88E,	-7, -22
+    struct_0 0
 
 stru_1C087:
-    struct_0(drawheadleft_D0BC, -15, -33)
-    struct_0(drawsub_BB06,	-6, -17)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -15, -33
+    struct_0 drawsub_BB06,	-6, -17
+    struct_0 0
 
 stru_1C09F:
-    struct_0(drawheadleft_D0BC, -13, -35)
-    struct_0(drawsub_BD78,	-6, -20)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -13, -35
+    struct_0 drawsub_BD78,	-6, -20
+    struct_0 0
 
 stru_1C0B7:
-    struct_0(drawheadleft_D0BC, -14, -36)
-    struct_0(drawsub_C050,	-7, -23)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -14, -36
+    struct_0 drawsub_C050,	-7, -23
+    struct_0 0
 
 stru_1C0CF:
-    struct_0(drawheadright_B0CC, -10, -31)
-    struct_0(drawsub_A344,	-14, -16)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -10, -31
+    struct_0 drawsub_A344,	-14, -16
+    struct_0 0
 
 stru_1C0E7:
-    struct_0(drawheadleft_D0BC, -13, -31)
-    struct_0(drawsub_C33A,	-13, -16)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -13, -31
+    struct_0 drawsub_C33A,	-13, -16
+    struct_0 0
 
 stru_1C0FF:
-    struct_0(drawheadright_B0CC, -7, -23)
-    struct_0(drawsub_A5CA,	-14, -10)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -7, -23
+    struct_0 drawsub_A5CA,	-14, -10
+    struct_0 0
 
 stru_1C117:
-    struct_0(drawheadright_B0CC, -7, -23)
-    struct_0(drawsub_A7E4,	-14, -10)
-    struct_0 (0)
+    struct_0 drawheadright_B0CC, -7, -23
+    struct_0 drawsub_A7E4,	-14, -10
+    struct_0 0
 
 stru_1C12F:
-    struct_0(drawheadleft_D0BC, -16, -23)
-    struct_0(drawsub_C5D8,	-10, -10)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -16, -23
+    struct_0 drawsub_C5D8,	-10, -10
+    struct_0 0
 
 stru_1C147:
-    struct_0(drawheadleft_D0BC, -16, -23)
-    struct_0(drawsub_C7D8,	-12, -10)
-    struct_0 (0)
+    struct_0 drawheadleft_D0BC, -16, -23
+    struct_0 drawsub_C7D8,	-12, -10
+    struct_0 0
 
 stru_1C15F:
-    struct_0(drawsub_CA42,	-17, -31)
-    struct_0(drawsub_AD92,	-16, -19)
-    struct_0(drawsub_A97E,	-24, -7)
-    struct_0 (0)
+    struct_0 drawsub_CA42,	-17, -31
+    struct_0 drawsub_AD92,	-16, -19
+    struct_0 drawsub_A97E,	-24, -7
+    struct_0 0
 
 stru_1C17F:
-    struct_0(drawsub_CA42,	-17, -31)
-    struct_0(drawsub_AD92,	-16, -19)
-    struct_0(drawsub_AA90,	-25, -7)
-    struct_0 (0)
+    struct_0 drawsub_CA42,	-17, -31
+    struct_0 drawsub_AD92,	-16, -19
+    struct_0 drawsub_AA90,	-25, -7
+    struct_0 0
 
 stru_1C19F:
-    struct_0(drawsub_CA42,	-17, -31)
-    struct_0(drawsub_AD92,	-16, -19)
-    struct_0(drawsub_ABAC,	-21, -7)
-    struct_0 (0)
+    struct_0 drawsub_CA42,	-17, -31
+    struct_0 drawsub_AD92,	-16, -19
+    struct_0 drawsub_ABAC,	-21, -7
+    struct_0 0
 
 stru_1C1BF:
-    struct_0(drawsub_DD06,	-6, -31)
-    struct_0(drawsub_D672,	-13, -19)
-    struct_0(drawsub_CC70,	-3, -7)
-    struct_0 (0)
+    struct_0 drawsub_DD06,	-6, -31
+    struct_0 drawsub_D672,	-13, -19
+    struct_0 drawsub_CC70,	-3, -7
+    struct_0 0
 
 stru_1C1DF:
-    struct_0(drawsub_DD06,	-6, -31)
-    struct_0(drawsub_D672,	-13, -19)
-    struct_0(drawsub_CD98,	-6, -7)
-    struct_0 (0)
+    struct_0 drawsub_DD06,	-6, -31
+    struct_0 drawsub_D672,	-13, -19
+    struct_0 drawsub_CD98,	-6, -7
+    struct_0 0
 
 stru_1C1FF:
-    struct_0(drawsub_DD06,	-6, -31)
-    struct_0(drawsub_D672,	-13, -19)
-    struct_0(drawsub_CEAA,	0, -7)
-    struct_0 (0)
+    struct_0 drawsub_DD06,	-6, -31
+    struct_0 drawsub_D672,	-13, -19
+    struct_0 drawsub_CEAA,	0, -7
+    struct_0 0
 
 stru_1C21F:
-    struct_0(0)
+    struct_0 0
 
 stru_1C227:
-    struct_0(0)
+    struct_0 0
 
 stru_1C22F:
-    struct_0(0)
+    struct_0 0
 
 stru_1C237:
-    struct_0(0)
+    struct_0 0
 
 stru_1C23F:
-    struct_0(0)
+    struct_0 0
 
 stru_1C247:
-    struct_0(0)
+    struct_0 0
 
 stru_1C24F:
-    struct_0(drawsub_12C6C, -15, -40)
-    struct_0(drawsub_123C8, -17, -29)
-    struct_0 (0)
+    struct_0 drawsub_12C6C, -15, -40
+    struct_0 drawsub_123C8, -17, -29
+    struct_0 0
 
 stru_1C267:
-    struct_0(drawsub_12C6C, -15, -40)
-    struct_0(drawsub_12740, -15, -28)
-    struct_0 (0)
+    struct_0 drawsub_12C6C, -15, -40
+    struct_0 drawsub_12740, -15, -28
+    struct_0 0
 
 stru_1C27F:
-    struct_0(drawsub_11E0A, -15, -40)
-    struct_0(drawsub_115AA, -15, -29)
-    struct_0 (0)
+    struct_0 drawsub_11E0A, -15, -40
+    struct_0 drawsub_115AA, -15, -29
+    struct_0 0
 
 stru_1C297:
-    struct_0(drawsub_11E0A, -15, -40)
-    struct_0(drawsub_118F8, -16, -29)
-    struct_0 (0)
+    struct_0 drawsub_11E0A, -15, -40
+    struct_0 drawsub_118F8, -16, -29
+    struct_0 0
 
 stru_1C2AF:
-    struct_0(drawsub_10FD2, -15, -40)
-    struct_0(drawsub_10896, -16, -30)
-    struct_0 (0)
+    struct_0 drawsub_10FD2, -15, -40
+    struct_0 drawsub_10896, -16, -30
+    struct_0 0
 
 stru_1C2C7:
-    struct_0(drawsub_10FD2, -15, -40)
-    struct_0(drawsub_10B24, -18, -30)
-    struct_0 (0)
+    struct_0 drawsub_10FD2, -15, -40
+    struct_0 drawsub_10B24, -18, -30
+    struct_0 0
 
 stru_1C2DF:
-    struct_0(drawsub_E406,	-15, -33)
-    struct_0(drawsub_E724,	-10, -18)
-    struct_0 (0)
+    struct_0 drawsub_E406,	-15, -33
+    struct_0 drawsub_E724,	-10, -18
+    struct_0 0
 
 stru_1C2F7:
-    struct_0(drawsub_E406,	-17, -26)
-    struct_0(drawsub_E9C6,	-13, -14)
-    struct_0 (0)
+    struct_0 drawsub_E406,	-17, -26
+    struct_0 drawsub_E9C6,	-13, -14
+    struct_0 0
 
 stru_1C30F:
-    struct_0(drawsub_E406,	-17, -31)
-    struct_0(drawsub_ECAE,	-15, -14)
-    struct_0 (0)
+    struct_0 drawsub_E406,	-17, -31
+    struct_0 drawsub_ECAE,	-15, -14
+    struct_0 0
 
 stru_1C327:
-    struct_0(drawsub_E068,	-15, -33)
-    struct_0(drawsub_EF5C,	-14, -18)
-    struct_0 (0)
+    struct_0 drawsub_E068,	-15, -33
+    struct_0 drawsub_EF5C,	-14, -18
+    struct_0 0
 
 stru_1C33F:
-    struct_0(drawsub_E068,	-13, -26)
-    struct_0(drawsub_F206,	-11, -14)
-    struct_0 (0)
+    struct_0 drawsub_E068,	-13, -26
+    struct_0 drawsub_F206,	-11, -14
+    struct_0 0
 
 stru_1C357:
-    struct_0(drawsub_E068,	-13, -31)
-    struct_0(drawsub_F4F0,	-11, -14)
-    struct_0 (0)
+    struct_0 drawsub_E068,	-13, -31
+    struct_0 drawsub_F4F0,	-11, -14
+    struct_0 0
 
 stru_1C36F:
-    struct_0(drawsub_FC9A,	-10, -40)
-    struct_0(drawsub_1003A, -14, -25)
-    struct_0 (0)
+    struct_0 drawsub_FC9A,	-10, -40
+    struct_0 drawsub_1003A, -14, -25
+    struct_0 0
 
 stru_1C387:
-    struct_0(drawsub_104DC, -11, -26)
-    struct_0 (0)
+    struct_0 drawsub_104DC, -11, -26
+    struct_0 0
 
 stru_1C397:
-    struct_0(drawsub_F868,	-10, -40)
-    struct_0(drawsub_1003A, -14, -25)
-    struct_0 (0)
+    struct_0 drawsub_F868,	-10, -40
+    struct_0 drawsub_1003A, -14, -25
+    struct_0 0
 
 stru_1C3AF:
-    struct_0(drawsub_1311C, -6, -5)
-    struct_0(drawstars_13188, -6, -5)
-    struct_0(drawstars_13228, -5, -5)
-    struct_0(drawstars_132AE, -3, -5)
-    struct_0(drawstars_1333C, -5, -5)
-    struct_0(drawstars_133C4, -6, -5)
+    struct_0 drawsub_1311C, -6, -5
+    struct_0 drawstars_13188, -6, -5
+    struct_0 drawstars_13228, -5, -5
+    struct_0 drawstars_132AE, -3, -5
+    struct_0 drawstars_1333C, -5, -5
+    struct_0 drawstars_133C4, -6, -5
 
 off_1C3DF:
 		dw stru_1BF7F
@@ -1758,42 +1757,42 @@ fruitHeights:
 		dw 17
 
 off_1CB60:
-		dd drawyoghodrink_14824
+    far_ptr drawyoghodrink_14824
 
 _drawDreams:
-		dd draws_14C3E
-		dd draws_14DA4
-		dd draws_14F20
+		far_ptr draws_14C3E
+		far_ptr draws_14DA4
+		far_ptr draws_14F20
 
 off_1CB70:
-		dd draws_17312
-		dd drawclock_17662
-		dd drawclock_17BC8
-		dd drawclock_17DBC
+		far_ptr draws_17312
+		far_ptr drawclock_17662
+		far_ptr drawclock_17BC8
+		far_ptr drawclock_17DBC
 
 _drawNumbers:
-		dd draw_zero
-		dd draw_one
-		dd draw_two
-		dd draw_three
-		dd draw_four
-		dd draw_five
-		dd draw_six
-		dd draw_seven
-		dd draw_eight
-		dd draw_nine
+		far_ptr draw_zero
+		far_ptr draw_one
+		far_ptr draw_two
+		far_ptr draw_three
+		far_ptr draw_four
+		far_ptr draw_five
+		far_ptr draw_six
+		far_ptr draw_seven
+		far_ptr draw_eight
+		far_ptr draw_nine
 
 off_1CBA8:
-		dd drawscore10_177FA
-		dd drawscore25_1792E
-		dd drawscore50_17A5C
-		dd drawscore100_152FC
-		dd drawscore250_15476
-		dd draws_16F8C
-		dd draws_13A44
-		dd draws_13E1A
-		dd draws_142B0
-		dd draw15sec_17FF3
+		far_ptr drawscore10_177FA
+		far_ptr drawscore25_1792E
+		far_ptr drawscore50_17A5C
+		far_ptr drawscore100_152FC
+		far_ptr drawscore250_15476
+		far_ptr draws_16F8C
+		far_ptr draws_13A44
+		far_ptr draws_13E1A
+		far_ptr draws_142B0
+		far_ptr draw15sec_17FF3
 		dw -4
 		dw -8
 		dw -4
@@ -1816,12 +1815,12 @@ off_1CBA8:
 		dw -6
 
 stru_1CBF8:
-    struct_7(0DDCh, 0)
-    struct_7(0D3Bh, 21)
-    struct_7(0D3Bh, 16)
-    struct_7(0C9Ah, 11)
-    struct_7(0BF9h, 7)
-    struct_7(919h,	0)
+    struct_7 0DDCh, 0
+    struct_7 0D3Bh, 21
+    struct_7 0D3Bh, 16
+    struct_7 0C9Ah, 11
+    struct_7 0BF9h, 7
+    struct_7 919h,	0
 		dw 170
 		dw 177
 		dw 189
@@ -2285,27 +2284,27 @@ _objectOffset:
 		dw 1Ch
 
 stru_1D234:
-    struct_5(32, 0, 36, 0)
-    struct_5(16, 0, 0, 0)
-    struct_5(37, 0, 0, 0)
-    struct_5(80, 0, 0, 0)
-    struct_5(0, 1,	0, 0)
-    struct_5(80, 2, 0, 0)
-    struct_5(0, 5,	0, 0)
-    struct_5(0, 16, 0, 0)
-    struct_5(0, 80, 0, 0)
-    struct_5(0, 80, 2, 0)
-    struct_5 (0)
+    struct_5 32, 0, 36, 0
+    struct_5 16, 0, 0, 0
+    struct_5 37, 0, 0, 0
+    struct_5 80, 0, 0, 0
+    struct_5 0, 1,	0, 0
+    struct_5 80, 2, 0, 0
+    struct_5 0, 5,	0, 0
+    struct_5 0, 16, 0, 0
+    struct_5 0, 80, 0, 0
+    struct_5 0, 80, 2, 0
+    struct_5 0
 
 _flagAnimation:
-		dd draws_19544
-		dd draws_1970E
-		dd draws_198C0
-		dd draws_19AB0
-		dd draws_19C7A
-		dd draws_19E46
-		dd draws_19FFE
-		dd draws_1A1E2
+    far_ptr draws_19544
+    far_ptr draws_1970E
+    far_ptr draws_198C0
+    far_ptr draws_19AB0
+    far_ptr draws_19C7A
+    far_ptr draws_19E46
+    far_ptr draws_19FFE
+    far_ptr draws_1A1E2
 
 word_1D280:
 		dw -13
@@ -2328,14 +2327,14 @@ word_1D290:
 		dw -21
 
 _drawHands:
-		dd drawhand_18FE2
-		dd drawhand_18FE2
-		dd drawhand_18FE2
-		dd drawhand_191FA
-		dd drawhand_193AE
-		dd drawhand_193AE
-		dd drawhand_193AE
-		dd drawhand_191FA
+    far_ptr drawhand_18FE2
+    far_ptr drawhand_18FE2
+    far_ptr drawhand_18FE2
+    far_ptr drawhand_191FA
+    far_ptr drawhand_193AE
+    far_ptr drawhand_193AE
+    far_ptr drawhand_193AE
+    far_ptr drawhand_191FA
 
 word_1D2C0:
 		dw -9
@@ -2362,15 +2361,15 @@ word_1D2D0:
 		db    0
 
 stru_1D2E6:
-    struct_6(-6, -12)
-    struct_6(-4, -13)
-    struct_6(-2, -14)
+    struct_6 -6, -12
+    struct_6 -4, -13
+    struct_6 -2, -14
 
 stru_1D2F2:
-    struct_6(-10, -22)
-    struct_6(-7, -14)
-    struct_6(-7, -15)
-    struct_6(-8, -14)
+    struct_6 -10, -22
+    struct_6 -7, -14
+    struct_6 -7, -15
+    struct_6 -8, -14
 
 word_1D302:
 		dw 0
@@ -3469,28 +3468,28 @@ rowOffsets:
 		dw 0
 
 stru_1D7F6:
-    struct_4(11h, 0, -17)
+    struct_4 11h, 0, -17
 		db    0
 		db    0
 
 stru_1D7FE:
-    struct_4(15h, -22, -40)
+    struct_4 15h, -22, -40
 		db    0
 		db    0
 
 stru_1D806:
-    struct_4(1, -7, -47)
-    struct_4(5, -65524, -79)
-    struct_4(19h, -5, -75)
-    struct_4(1Dh, -65493, -58)
+    struct_4 1, -7, -47
+    struct_4 5, -65524, -79
+    struct_4 19h, -5, -75
+    struct_4 1Dh, -65493, -58
 		db    0
 		db    0
 
 stru_1D820:
-    struct_4(1, -7, -47)
-    struct_4(5, -65524, -79)
-    struct_4(9, -1, -69)
-    struct_4(0Dh, -65489, -50)
+    struct_4 1, -7, -47
+    struct_4 5, -65524, -79
+    struct_4 9, -1, -69
+    struct_4 0Dh, -65489, -50
 		dw 0
 
 off_1D83A:
@@ -3509,16 +3508,16 @@ off_1D83A:
 		dw stru_1D7F6
 
 _highscores:
-    Highscore(0, 48, 'MARIO', 0, 5)
-    Highscore(0, 37, 'LAURENS', 0, 4)
-    Highscore(0, 21, 'ARTHUR', 0, 3)
-    Highscore(0, 16, 'HEIN', 0, 3)
-    Highscore(5000h, 7, 'ARJEN', 0, 2)
-    Highscore(0, 5, 'RUUD', 0, 2)
-    Highscore(5000h, 2, 'JON', 0, 1)
-    Highscore(0, 2, 'RICK', 0, 1)
-    Highscore(5000h, 1, 'JOHN', 0, 0)
-    Highscore(0, 1, 'JACCO', 0, 0)
+    Highscore 0, 48, 'MARIO', 0, 5
+    Highscore 0, 37, 'LAURENS', 0, 4
+    Highscore 0, 21, 'ARTHUR', 0, 3
+    Highscore 0, 16, 'HEIN', 0, 3
+    Highscore 5000h, 7, 'ARJEN', 0, 2
+    Highscore 0, 5, 'RUUD', 0, 2
+    Highscore 5000h, 2, 'JON', 0, 1
+    Highscore 0, 2, 'RICK', 0, 1
+    Highscore 5000h, 1, 'JOHN', 0, 0
+    Highscore 0, 1, 'JACCO', 0, 0
 
 byte_1D8F4:
 		db 1
@@ -3679,38 +3678,38 @@ collisionPosition:
 		dw		   1
 
 rotationMasks:
-    struct_2(word_1DB98, word_1DB98,	word_1DB98, word_1DB98)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBD8, word_1DBF8,	word_1DC38, word_1DC18)
-    struct_2(word_1DBF8, word_1DBD8,	word_1DC18, word_1DC38)
-    struct_2(word_1DC18, word_1DC38,	word_1DBF8, word_1DBD8)
-    struct_2(word_1DC38, word_1DC18,	word_1DBD8, word_1DBF8)
-    struct_2(leftBlocked, rightBlocked, leftBlocked, rightBlocked)
-    struct_2(word_1DC78, word_1DC78,	word_1DCB8, word_1DCB8)
-    struct_2(rightBlocked, leftBlocked, rightBlocked,	leftBlocked)
-    struct_2(word_1DCB8, word_1DCB8,	word_1DC78, word_1DC78)
-    struct_2(word_1DCD8, word_1DD38,	word_1DD58, word_1DDB8)
-    struct_2(word_1DCF8, word_1DD18,	word_1DD78, word_1DD98)
-    struct_2(word_1DD18, word_1DCF8,	word_1DD98, word_1DD78)
-    struct_2(word_1DD38, word_1DCD8,	word_1DDB8, word_1DD58)
-    struct_2(word_1DD58, word_1DDB8,	word_1DCD8, word_1DD38)
-    struct_2(word_1DD78, word_1DD98,	word_1DCF8, word_1DD18)
-    struct_2(word_1DD98, word_1DD78,	word_1DD18, word_1DCF8)
-    struct_2(word_1DDB8, word_1DD58,	word_1DD38, word_1DCD8)
-    struct_2(word_1DDD8, word_1DDF8,	word_1DE98, word_1DEB8)
-    struct_2(word_1DDF8, word_1DDD8,	word_1DEB8, word_1DE98)
-    struct_2(word_1DE18, word_1DE38,	word_1DE58, word_1DE78)
-    struct_2(word_1DE38, word_1DE18,	word_1DE78, word_1DE58)
-    struct_2(word_1DE58, word_1DE78,	word_1DE18, word_1DE38)
-    struct_2(word_1DE78, word_1DE58,	word_1DE38, word_1DE18)
-    struct_2(word_1DE98, word_1DEB8,	word_1DDD8, word_1DDF8)
-    struct_2(word_1DEB8, word_1DE98,	word_1DDF8, word_1DDD8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
-    struct_2(word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8)
+    struct_2 word_1DB98, word_1DB98,	word_1DB98, word_1DB98
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBD8, word_1DBF8,	word_1DC38, word_1DC18
+    struct_2 word_1DBF8, word_1DBD8,	word_1DC18, word_1DC38
+    struct_2 word_1DC18, word_1DC38,	word_1DBF8, word_1DBD8
+    struct_2 word_1DC38, word_1DC18,	word_1DBD8, word_1DBF8
+    struct_2 leftBlocked, rightBlocked, leftBlocked, rightBlocked
+    struct_2 word_1DC78, word_1DC78,	word_1DCB8, word_1DCB8
+    struct_2 rightBlocked, leftBlocked, rightBlocked,	leftBlocked
+    struct_2 word_1DCB8, word_1DCB8,	word_1DC78, word_1DC78
+    struct_2 word_1DCD8, word_1DD38,	word_1DD58, word_1DDB8
+    struct_2 word_1DCF8, word_1DD18,	word_1DD78, word_1DD98
+    struct_2 word_1DD18, word_1DCF8,	word_1DD98, word_1DD78
+    struct_2 word_1DD38, word_1DCD8,	word_1DDB8, word_1DD58
+    struct_2 word_1DD58, word_1DDB8,	word_1DCD8, word_1DD38
+    struct_2 word_1DD78, word_1DD98,	word_1DCF8, word_1DD18
+    struct_2 word_1DD98, word_1DD78,	word_1DD18, word_1DCF8
+    struct_2 word_1DDB8, word_1DD58,	word_1DD38, word_1DCD8
+    struct_2 word_1DDD8, word_1DDF8,	word_1DE98, word_1DEB8
+    struct_2 word_1DDF8, word_1DDD8,	word_1DEB8, word_1DE98
+    struct_2 word_1DE18, word_1DE38,	word_1DE58, word_1DE78
+    struct_2 word_1DE38, word_1DE18,	word_1DE78, word_1DE58
+    struct_2 word_1DE58, word_1DE78,	word_1DE18, word_1DE38
+    struct_2 word_1DE78, word_1DE58,	word_1DE38, word_1DE18
+    struct_2 word_1DE98, word_1DEB8,	word_1DDD8, word_1DDF8
+    struct_2 word_1DEB8, word_1DE98,	word_1DDF8, word_1DDD8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
+    struct_2 word_1DBB8, word_1DBB8,	word_1DBB8, word_1DBB8
 		db    0
 		db    0
 		db    0
@@ -7565,13 +7564,13 @@ word_1EFE0:
 		dw 0
 
 off_1EFE2:
-		dd nullsub_1
+    far_ptr nullsub_1
 
 off_1EFE6:
-		dd nullsub_1
+    far_ptr nullsub_1
 
 off_1EFEA:
-		dd nullsub_1
+    far_ptr nullsub_1
 
 unk_1EFEE:
 		db    0

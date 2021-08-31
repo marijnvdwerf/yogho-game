@@ -11,8 +11,8 @@ waitfade_90B8:
 loc_90CF:
 		cmp	word [word_1F5B7], 0
 		jnz	loc_90CF
-		call	sub_581
-		call	vga_5A9
+		call	far sub_581
+		call	far vga_5A9
 		pop	bp
 		retf
 %pop

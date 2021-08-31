@@ -22,7 +22,7 @@ sub_69AD:
 		mov word [bp+var_8], 64
 		mov word [bp+var_A], 0
 		mov	word [bp+var_C],  aNaVeelGeRenGes
-		call	sub_4AA
+		call	far sub_4AA
 		xor	di, di
 		mov word [bp+var_10], 0
 loc_69D5:
@@ -124,7 +124,7 @@ loc_6A71:
 loc_6B4F:
 		push	ds
 		push	 byte_1D8F5
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		nop
 		push	cs
@@ -137,8 +137,8 @@ loc_6B4F:
 		push	cs
 		call	near  setcamera
 		add	sp, 8
-		call	sub_19F7
-		call	sub_E1A
+		call	far sub_19F7
+		call	far sub_E1A
 		mov	word [word_1D0FE], 0
 		mov	cx, 20h
 		mov	di,  word_1B895
@@ -154,7 +154,7 @@ loc_6B4F:
 loc_6BAA:
 		push	word [_sfxMusic_0+2]
 		push	word [_sfxMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 		mov	word [word_1D1DC], 320
 		and	word [word_1D106], 0FFFEh
@@ -165,7 +165,7 @@ loc_6BAA:
 		xor	ax, ax
 		rep stosw
 		mov	byte [byte_1D0F1], 7Fh
-		call	sub_581
+		call	far sub_581
 		cmp	byte [_levelIndex], 1
 		jnz	loc_6BF0
 		mov	word [word_1D0FC], 9C0h
@@ -185,18 +185,18 @@ loc_6BF6:
 		add	sp, 2
 		mov	byte [byte_1D0F1], 0
 		push	32h
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		and	word [word_1D0FC], 0FF7Fh
 		jmp	loc_6FF6
 loc_6C30:
-		call	sub_581
+		call	far sub_581
 		cmp	word [word_1D1DC], 0
 		jnz	loc_6C4E
 		push	0
 		push	word [_bgMusic_0+2]
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 loc_6C4E:
 		cmp	byte [_levelIndex], 1
@@ -240,7 +240,7 @@ loc_6CBC:
 		jnz	loc_6C8F
 		mov	byte [byte_1D0F1], 7Fh
 		or	word [word_1D0FC], 1000h
-		call	sub_19F7
+		call	far sub_19F7
 		and	word [word_1D0FC], 0E63Fh
 		mov	word [word_1F580], 45h
 		mov	word [word_1D214], 0
@@ -258,9 +258,9 @@ loc_6D02:
 		jz	short loc_6D0C
 		jmp	loc_6F10
 loc_6D0C:
-		call	sub_4804
+		call	far sub_4804
 		push	2
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		mov	ax, [_levelLayout]
 		add	ax, 200h
@@ -313,7 +313,7 @@ loc_6D22:
 		push	0
 		push	ax
 		push	word [_bgMusic_0]
-		call	musicsub_47BB
+		call	far musicsub_47BB
 		add	sp, 6
 		mov	word [word_1F5A3], 2
 loc_6D9D:
@@ -327,7 +327,7 @@ loc_6D9D:
 		add	sp, 2
 		push	ds
 		push	 gpuConfig
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		mov	word [word_1D136], 0
 		mov	word [word_1D114], 0
@@ -335,7 +335,7 @@ loc_6D9D:
 		sub	ax, 0D00h
 		push	ax
 		push	0
-		call	sub_478C
+		call	far sub_478C
 		add	sp, 4
 		push	100h
 		push	0
@@ -353,13 +353,13 @@ loc_6D9D:
 		push	0
 		push	word [_img2Ptr+2]
 		push	word [_img2Ptr]
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		mov	ax, word [_img2Ptr+2]
 		sub	ax, 0D00h
 		push	ax
 		push	95B8h
-		call	sub_478C
+		call	far sub_478C
 		add	sp, 4
 		push	4
 		nop
@@ -367,7 +367,7 @@ loc_6D9D:
 		call	near  sub_90E2
 		add	sp, 2
 		push	69h
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		push	141
 		push	216
@@ -375,10 +375,10 @@ loc_6D9D:
 		push	102
 		push	word [_img2Ptr+2]
 		push	word [_img2Ptr]
-		call	loadimage
+		call	far loadimage
 		add	sp, 0Ch
 		push	23h
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		mov	ax, [bp+var_C]
 		add	ax, [bp+var_A]
@@ -401,7 +401,7 @@ loc_6E63:
 		add	word [bp+var_8], 9
 		mov word [bp+var_6], 70h
 		push	14h
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 		jmp	short loc_6EBB
 loc_6E9B:
@@ -414,12 +414,12 @@ loc_6E9B:
 		mov	dx, 3Fh
 		imul	dx
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		add	word [bp+var_6], 8
 loc_6EBB:
 		push	3
-		call	wait_577
+		call	far wait_577
 		add	sp, 2
 loc_6EC5:
 		mov	bx, [bp+var_18]
@@ -445,13 +445,13 @@ loc_6EC5:
 		push	0
 		push	ds
 		push	 _waitVar
-		call	dword [dword_1F5B3]
+		call	far [dword_1F5B3]
 		add	sp, 8
 		pop	ds
 		pop	es
 		popa
 		or	word [word_1D106], 1
-		call	sub_4804
+		call	far sub_4804
 		pop	di
 		pop	si
 		leave
@@ -482,7 +482,7 @@ loc_6F3B:
 loc_6F60:
 		cmp	word [word_1F5B7], 0
 		jnz	loc_6F60
-		call	sub_581
+		call	far sub_581
 		mov	word [word_1D112], 0
 		jmp	short loc_6F98
 loc_6F74:
@@ -490,7 +490,7 @@ loc_6F74:
 		mov	word [word_1F5BB], 100h
 		mov	word [word_1F5B9], 80h
 		mov	word [word_1F5B7], -10h
-		call	sub_581
+		call	far sub_581
 loc_6F91:
 		cmp	word [word_1F5B7], 0
 		jnz	loc_6F91
@@ -517,7 +517,7 @@ loc_6FD0:
 		mov	ax, word [word_1D106]
 		or	ax, ax
 		jz	short loc_6FEB
-		call	sub_4804
+		call	far sub_4804
 		jmp	short loc_6FF1
 loc_6FEB:
 		mov	word [word_1D1DC], 0
@@ -546,7 +546,7 @@ loc_7028:
 		add	sp, 2
 loc_7032:
 		or	word [word_1D106], 1
-		call	sub_4804
+		call	far sub_4804
 		pop	di
 		pop	si
 		leave

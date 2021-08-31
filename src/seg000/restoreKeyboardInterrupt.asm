@@ -7,8 +7,8 @@ restoreKeyboardInterrupt:
 		cli
 		mov	ax, 40h
 		mov	ds, ax
-		mov	ax, [ds:1Ch]
-		mov	[ds:1Ah], ax
+		mov	ax, [1Ch]
+		mov	[1Ah], ax
 		sti
 		pop	ds
 		retf

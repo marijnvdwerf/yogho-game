@@ -19,7 +19,7 @@ sub_DDF:
 		mov	word [word_1D0F4], es
 		mov	word [word_1D0F6], di
 		mov	dx, 3C4h
-		call	drawcursor_13710
+		call	far drawcursor_13710
 		pop	es
 		pop	ds
 		popa

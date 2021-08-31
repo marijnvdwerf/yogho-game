@@ -2,7 +2,7 @@ playIntroAnim:
 %push local
 		push	ds
 		push	 unk_1D91A
-		call	configureGpu
+		call	far configureGpu
 		add	sp, 4
 		push	12
 		push	16

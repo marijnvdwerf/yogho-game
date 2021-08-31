@@ -45,7 +45,7 @@ loc_8B4B:
 		imul	dx
 		add	ax, 2600h
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		add	di, 0Ch
 		inc	si
@@ -73,12 +73,12 @@ loc_8B93:
 		imul	dx
 		add	ax, 3D40h
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		mov	cl, 4
 		mov	dx, [bp+var_4]
 		mov	ax, [bp+var_6]
-		call	sub_4CBA
+		call	far sub_4CBA
 		mov	[bp+var_4], dx
 		mov	[bp+var_6], ax
 		sub	di, 0Ch
@@ -98,7 +98,7 @@ loc_8BDC:
 		shl	ax, 1
 		mov	bx, ax
 		push	word [word_1CB30+bx]
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 loc_8C05:
 		cmp	word [bp+var_14], 5
@@ -113,7 +113,7 @@ loc_8C13:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	0
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -132,7 +132,7 @@ loc_8C3D:
 		push	204
 		push	word [_hiscoreGfx]
 		push	400h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -151,7 +151,7 @@ loc_8C68:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	800h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -170,7 +170,7 @@ loc_8C93:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	0C00h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -189,7 +189,7 @@ loc_8CBE:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	1000h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -208,7 +208,7 @@ loc_8CE9:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	1400h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -227,7 +227,7 @@ loc_8D14:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	1800h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si
@@ -240,7 +240,7 @@ loc_8D31:
 		push	0CCh
 		push	word [_hiscoreGfx]
 		push	1C00h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		pop	di
 		pop	si

@@ -14,7 +14,7 @@ loc_922:
 		mov	word [word_1D104], 0
 		push	ds
 		push	es
-		call	sub_1F972
+		call	far sub_1F972
 		pop	es
 		pop	ds
 locret_934:

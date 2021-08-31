@@ -47,7 +47,7 @@ loc_8797:
 		mov	dx, 63
 		imul	dx
 		push	ax
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 		add	si, 8
 loc_87B4:

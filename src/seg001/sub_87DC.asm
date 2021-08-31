@@ -117,7 +117,7 @@ loc_88DC:
 		jz	short loc_88E7
 		jmp	loc_8A0E
 loc_88E7:
-		call	sub_581
+		call	far sub_581
 		nop
 		push	cs
 		call	near  sub_8D4E
@@ -148,7 +148,7 @@ loc_8909:
 		shl	ax, 4
 		add	ax, 10h
 		push	ax
-		call	sub_D84
+		call	far sub_D84
 		add	sp, 2
 		push word [bp+var_6]
 		nop
@@ -183,7 +183,7 @@ loc_896B:
 		shl	ax, 4
 		add	ax, 10h
 		push	ax
-		call	sub_D84
+		call	far sub_D84
 		add	sp, 2
 		push word [bp+var_6]
 		nop
@@ -203,7 +203,7 @@ loc_899F:
 		shl	ax, 4
 		add	ax, 10h
 		push	ax
-		call	sub_D84
+		call	far sub_D84
 		add	sp, 2
 		push word [bp+var_6]
 		nop
@@ -226,7 +226,7 @@ loc_899F:
 		push	ax
 		push	word [_hiscoreGfx]
 		push	3B00h
-		call	draw_image
+		call	far draw_image
 		add	sp, 0Ch
 loc_8A05:
 		cmp	word [bp+var_6], 0FFFFh
@@ -237,7 +237,7 @@ loc_8A0E:
 		shl	ax, 4
 		add	ax, 10h
 		push	ax
-		call	sub_D84
+		call	far sub_D84
 		add	sp, 2
 		push	si
 		nop
@@ -246,7 +246,7 @@ loc_8A0E:
 		add	sp, 2
 		jmp	short loc_8A89
 loc_8A2A:
-		call	sub_581
+		call	far sub_581
 		nop
 		push	cs
 		call	near  sub_8D4E
@@ -277,10 +277,10 @@ loc_8A5B:
 		jnz	loc_8A89
 		mov	word [word_1D104], 3
 		xor	byte [byte_1A510], 1
-		mov word [bp+var_B], 0
+		mov byte [bp+var_B], 0
 		jmp	short loc_8A89
 loc_8A85:
-		mov word [bp+var_B], 0
+		mov byte [bp+var_B], 0
 loc_8A89:
 		dec	word [bp+var_2]
 		jle	short loc_8A96

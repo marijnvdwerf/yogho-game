@@ -1,8 +1,8 @@
 sub_662C:
 %push local
-		call	vga_5A9
-		call	clearGPU
-		call	sub_4804
+		call	far vga_5A9
+		call	far clearGPU
+		call	far sub_4804
 		or	word [word_1D106], 1
 		cmp	word [_memorySubtracted], 0
 		jz	short loc_6661
