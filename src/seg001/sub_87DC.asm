@@ -128,7 +128,7 @@ loc_88E7:
 		jnz	loc_8900
 		jmp	loc_899F
 loc_8900:
-		cmp	word [bp+var_7], 0Dh
+		cmp	byte [bp+var_7], 0Dh
 		jnz	loc_8909
 		jmp	loc_8A0E
 loc_8909:
@@ -155,19 +155,19 @@ loc_8909:
 		call	near  drawHighscore
 		add	sp, 2
 loc_8947:
-		cmp	word [bp+var_8], 8
+		cmp	byte [bp+var_8], 8
 		jnb	short loc_899F
-		cmp	word [bp+var_7], 41h
+		cmp	byte [bp+var_7], 41h
 		jb	short loc_8959
-		cmp	word [bp+var_7], 5Ah
+		cmp	byte [bp+var_7], 5Ah
 		jbe	short loc_896B
 loc_8959:
-		cmp	word [bp+var_7], 30h
+		cmp	byte [bp+var_7], 30h
 		jb	short loc_8965
-		cmp	word [bp+var_7], 39h
+		cmp	byte [bp+var_7], 39h
 		jbe	short loc_896B
 loc_8965:
-		cmp	word [bp+var_7], 20h
+		cmp	byte [bp+var_7], 20h
 		jnz	loc_899F
 loc_896B:
 		mov	al, [bp+var_8]
@@ -177,7 +177,7 @@ loc_896B:
 		add	bx, ax
 		mov	al, [bp+var_7]
 		mov	byte [_highscores + Highscore.field_4+bx], al
-		inc	word [bp+var_8]
+		inc	byte [bp+var_8]
 		mov	ax, [bp+var_6]
 		shl	ax, 4
 		add	ax, 10h
@@ -260,7 +260,7 @@ loc_8A42:
 		mov	[bp+var_7], al
 		or	al, al
 		jz	short loc_8A89
-		cmp	word [bp+var_7], 53h
+		cmp	byte [bp+var_7], 53h
 		jnz	loc_8A5B
 		mov word [bp+var_E], 0
 		jmp	short loc_8A96

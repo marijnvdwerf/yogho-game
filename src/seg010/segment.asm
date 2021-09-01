@@ -6,4 +6,5 @@ segment seg010
 %include "seg010/sub_1A36B.asm"
 %include "seg010/sub_1A388.asm"
 %include "seg010/sub_1A3AD.asm"
-		align 10h
+
+		db 0, 0, 0, 0, 0, 0, 0, 0

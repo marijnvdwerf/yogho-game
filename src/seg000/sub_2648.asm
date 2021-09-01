@@ -36,7 +36,7 @@ loc_2673:
 		mov	ax, word [cs:word_3898+bx]
 		mov	dx, 3C4h
 		mov	es, cx
-		call	[cs:renderFn]
+		call	far [cs:renderFn]
 locret_26C5:
 		retf
 locret_26C6:
@@ -76,7 +76,7 @@ loc_26EF:
 loc_2722:
 		mov	ax, [cs:bx+3898h]
 		mov	es, cx
-		call	[cs:renderFn]
+		call	far [cs:renderFn]
 		pop	es
 		pop	si
 loc_2730:
@@ -112,7 +112,7 @@ loc_2738:
 		mov	ax, word [cs:word_1DCF8+bx]
 		mov	dx, 3C4h
 		mov	es, cx
-		call	[cs:renderFn]
+		call	far [cs:renderFn]
 locret_2792:
 		retf
 loc_2793:
@@ -156,7 +156,7 @@ loc_27C2:
 		add	cx, word [cs:word_2814]
 		mov	ax, word [cs:word_3898+bx]
 		mov	es, cx
-		call	[cs:renderFn]
+		call	far [cs:renderFn]
 		pop	es
 		pop	si
 loc_280B:

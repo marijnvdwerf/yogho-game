@@ -3113,7 +3113,10 @@ off_3D19:
 %include "seg000/sub_4804.asm"
 %include "seg000/isCPU286.asm"
 %include "seg000/isWindows.asm"
-		align 2
+
+; Alignment
+    db 0 
+
 %include "seg000/copyBuffer.asm"
 %include "seg000/clearBuffer.asm"
 %include "seg000/decompressframe.asm"
@@ -3152,7 +3155,10 @@ _framevar_xpos:
 
 word_4A93:
 		dw 0
-		align 2
+
+; Alignment
+    db 0
+
 %include "seg000/sub_4A96.asm"
 %include "seg000/sub_4AB3.asm"
 %include "seg000/sub_4AE5.asm"

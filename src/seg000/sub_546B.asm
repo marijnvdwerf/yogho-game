@@ -46,7 +46,7 @@ loc_54A9:
 		mov	si, [si+8]
 		pop	ds
 		pop	es
-		call	[bp+var_4]
+		call	far [bp+var_4]
 		pushf
 		pushf
 		push	si

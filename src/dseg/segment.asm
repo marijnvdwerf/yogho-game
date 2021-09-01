@@ -1917,7 +1917,9 @@ aVideoInitializ:
 
 aMemoryAllocati:
 		db 'Memory allocation failure 1',0Ah,0
-		align 8
+
+; alignmment (module end?)
+    db 0, 0, 0, 0, 0, 0
 
 mousecallroutine:
 		dd onMouse
@@ -8234,7 +8236,9 @@ word_1F5C7:
 
 word_1F5C9:
 		dw 0
-		align 2
+
+; alignment?
+    db 0
 
 word_1F5CC:
 		dw 0

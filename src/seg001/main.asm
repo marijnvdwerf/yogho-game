@@ -252,7 +252,7 @@ loc_62EE:
 loc_6301:
 		mov	bx, [_writeStatus]
 		shl	bx, 4
-		cmp	word [_highscores + Highscore.field_F+bx], 5
+		cmp	byte [_highscores + Highscore.field_F+bx], 5
 		jbe	short loc_631B
 		mov	bx, [_writeStatus]
 		shl	bx, 4

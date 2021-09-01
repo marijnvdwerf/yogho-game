@@ -25,7 +25,7 @@ sub_4D34:
 		mov	cx, [bp+arg_A]
 		or	cx, cx
 		jge	loc_4D6A
-		cmp	word [bp+arg_2], 0
+		cmp	byte [bp+arg_2], 0
 		jz	short loc_4D6A
 		mov	byte [di], 2Dh
 		inc	di

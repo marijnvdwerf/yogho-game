@@ -22,7 +22,7 @@ loc_4C21:
 		nop
 		push	cs
 		call	near  sub_163
-		call	[off_1EFE2]
+		call	far [off_1EFE2]
 loc_4C31:
 		nop
 		push	cs
@@ -34,8 +34,8 @@ loc_4C31:
 		jnz	loc_4C56
 		or	si, si
 		jnz	loc_4C4D
-		call	[off_1EFE6]
-		call	[off_1EFEA]
+		call	far [off_1EFE6]
+		call	far [off_1EFEA]
 loc_4C4D:
 		push word [bp+arg_0]
 		nop
