@@ -1,4 +1,3 @@
-%line 1
 loadintoBuffer:
 %push local
 %define var_4 -4

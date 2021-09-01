@@ -1,4 +1,3 @@
-%line 1
 sub_45AD:
 %push local
 		mov	bx, ax

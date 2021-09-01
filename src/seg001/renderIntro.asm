@@ -1,4 +1,3 @@
-%line 1
 renderIntro:
 %push local
 %define var_C -0Ch

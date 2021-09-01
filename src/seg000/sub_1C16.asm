@@ -1,4 +1,3 @@
-%line 1
 sub_1C16:
 %push local
 		mov	bx, dx

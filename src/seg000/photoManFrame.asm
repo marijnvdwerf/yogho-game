@@ -1,4 +1,3 @@
-%line 1
 photoManFrame:
 %push local
 		test	word [ds:_smartItems + SmartItem.anonymous_22 + bp], 1

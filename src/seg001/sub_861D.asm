@@ -1,4 +1,3 @@
-%line 1
 sub_861D:
 %push local
 %define arg_0  6

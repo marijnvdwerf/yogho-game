@@ -1,4 +1,3 @@
-%line 1
 checkGFX:
 %push local
 %define var_10 -10h

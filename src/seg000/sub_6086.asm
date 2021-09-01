@@ -1,4 +1,3 @@
-%line 1
 sub_6086:
 %push local
 		push	si

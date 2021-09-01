@@ -1,4 +1,3 @@
-%line 1
 sub_5788:
 %push local
 		pop	word [word_1F25C]
@@ -16,13 +15,13 @@ sub_5788:
 		mov	bp, es
 		xchg	dx, si
 		xchg	ax, bx
-		mov	si, word [_heaptop]
+		mov	si, word [_envLng]
 		inc	si
 		inc	si
 		mov	cx, 1
 		cmp	byte [_version], 3
 		jb	short loc_57D4
-		mov	es, word [_heaptop+2]
+		mov	es, word [_envseg]
 		mov	di, si
 		mov	cl, 7Fh
 		xor	al, al

@@ -1,4 +1,3 @@
-%line 1
 renderScoreTrails:
 %push local
 		mov	bp, 0B4h

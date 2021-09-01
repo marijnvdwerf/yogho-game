@@ -1,4 +1,3 @@
-%line 1
 scoretrailmake_40D0:
 %push local
 		push	ax

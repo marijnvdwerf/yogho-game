@@ -1,4 +1,3 @@
-%line 1
 drawHighscore:
 %push local
 %define var_16 -16h

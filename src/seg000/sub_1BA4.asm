@@ -1,4 +1,3 @@
-%line 1
 sub_1BA4:
 %push local
 		push	di

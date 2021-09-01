@@ -1,4 +1,3 @@
-%line 1
 sub_207C:
 %push local
 		mov	si, cx

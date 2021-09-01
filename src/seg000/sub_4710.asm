@@ -1,4 +1,3 @@
-%line 1
 sub_4710:
 %push local
 		mov	di, [ds:bp+137h]

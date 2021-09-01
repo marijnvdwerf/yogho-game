@@ -1,4 +1,3 @@
-%line 1
 sub_1F972:
 %push local
 		cmp byte [cs:byte_2042E], 0

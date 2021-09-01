@@ -1,4 +1,3 @@
-%line 1
 sub_87DC:
 %push local
 %define var_E -0Eh

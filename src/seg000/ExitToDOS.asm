@@ -1,4 +1,4 @@
-exit_0:
+ExitToDOS:
 %push local
 %define arg_2  4
 		mov	bp, sp

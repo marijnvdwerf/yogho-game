@@ -1,4 +1,3 @@
-%line 1
 render:
 %push local
 		pusha

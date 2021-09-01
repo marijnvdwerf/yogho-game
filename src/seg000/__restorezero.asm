@@ -1,4 +1,4 @@
-restoreInterrupts:
+__restorezero:
 %push local
 		push	ds
 		mov	ax, 2500h
@@ -7,17 +7,17 @@ restoreInterrupts:
 		pop	ds
 		push	ds
 		mov	ax, 2504h
-		lds	dx, [intOverflow]
+		lds	dx, [_Int4Vector]
 		int	21h
 		pop	ds
 		push	ds
 		mov	ax, 2505h
-		lds	dx, [intBound]
+		lds	dx, [_Int5Vector]
 		int	21h
 		pop	ds
 		push	ds
 		mov	ax, 2506h
-		lds	dx, [intInvalidOpcode]
+		lds	dx, [_Int6Vector]
 		int	21h
 		pop	ds
 		retf

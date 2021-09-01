@@ -1,4 +1,3 @@
-%line 1
 sub_2648:
 %push local
 		cmp	word [word_1D100], 0

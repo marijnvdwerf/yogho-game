@@ -1,4 +1,3 @@
-%line 1
 sub_69AD:
 %push local
 %define var_1A -1Ah

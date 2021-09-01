@@ -1,4 +1,3 @@
-%line 1
 sub_546B:
 %push local
 %define var_14 -14h

@@ -1,38 +1,40 @@
-%line 0
 StartExit:
+Start:
 %push local
+; Differs from C0.ASM (mov     ah,0ffh)
 		mov	ax, 100h
 		mov	dx, di
 		mov	bx, si
-loc_227:
+TopOfTable:
 		cmp	bx, di
-		jz	short loc_244
+		jz	short EndOfTable
 		cmp	byte [es:bx], 0FFh
-		jz	short loc_23F
+		jz	short Next
 		mov	cl, [es:bx+1]
 		xor	ch, ch
 		cmp	cx, ax
-		jnb	short loc_23F
+		jnb	short Next
 		mov	ax, cx
 		mov	dx, bx
-loc_23F:
+Next:
 		add	bx, 6
-		jmp	short loc_227
-loc_244:
+		jmp	short TopOfTable
+EndOfTable:
 		cmp	dx, di
-		jz	short locret_263
+		jz	short Done
 		mov	bx, dx
 		cmp	byte [es:bx], 0
 		mov	byte [es:bx], 0FFh
 		push	es
-		jz	short loc_25C
+		jz	short NearCall
+FarCall:
 		call far [ es:bx+2]
 		pop	es
-		jmp	short StartExit
-loc_25C:
+		jmp	short Start
+NearCall:
 		call	word [es:bx+2]
 		pop	es
-		jmp	short StartExit
-locret_263:
+		jmp	short Start
+Done:
 		retn
 %pop

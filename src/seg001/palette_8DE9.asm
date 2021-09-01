@@ -1,4 +1,3 @@
-%line 1
 palette_8DE9:
 %push local
 %define var_6 -6

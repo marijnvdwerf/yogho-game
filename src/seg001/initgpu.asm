@@ -1,4 +1,3 @@
-%line 1
 initgpu:
 %push local
 		push	cs

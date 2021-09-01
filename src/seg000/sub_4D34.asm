@@ -1,4 +1,3 @@
-%line 1
 sub_4D34:
 %push local
 %define var_22 -22h

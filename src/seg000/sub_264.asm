@@ -1,4 +1,3 @@
-%line 1
 sub_264:
 %push local
 		mov	ah, 0

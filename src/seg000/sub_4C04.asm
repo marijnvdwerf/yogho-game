@@ -26,7 +26,7 @@ loc_4C21:
 loc_4C31:
 		nop
 		push	cs
-		call	near  restoreInterrupts
+		call	near  __restorezero
 		nop
 		push	cs
 		call	near  sub_176
@@ -40,7 +40,7 @@ loc_4C4D:
 		push word [bp+arg_0]
 		nop
 		push	cs
-		call	exit_0
+		call	ExitToDOS
 		pop	cx
 loc_4C56:
 		pop	si

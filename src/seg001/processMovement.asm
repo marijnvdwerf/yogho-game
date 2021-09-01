@@ -1,4 +1,3 @@
-%line 1
 processMovement:
 %push local
 %define var_1 -1

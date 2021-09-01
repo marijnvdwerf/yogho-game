@@ -1,4 +1,3 @@
-%line 1
 loadlevel:
 %push local
 %define var_C -0Ch

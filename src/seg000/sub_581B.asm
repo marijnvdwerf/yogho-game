@@ -1,4 +1,3 @@
-%line 1
 sub_581B:
 %push local
 		or	ax, ax

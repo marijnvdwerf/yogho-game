@@ -1,4 +1,3 @@
-%line 1
 setBasePath:
 %push local
 %define var_2 -2

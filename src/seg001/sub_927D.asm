@@ -1,4 +1,3 @@
-%line 1
 sub_927D:
 %push local
 		cmp	byte [_keyboardInput], 0

@@ -1,4 +1,3 @@
-%line 1
 initTimer:
 %push local
 		push	es

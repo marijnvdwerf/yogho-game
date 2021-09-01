@@ -1,4 +1,3 @@
-%line 1
 
 %macro far_ptr 1
     dw %1
@@ -62,17 +61,6 @@ struc DatHeader
 endstruc
 
 %macro DatHeader 1
-%endmacro
-
-
-struc struct_1
-.field_0		resw 1			; offset (00000000)
-.field_2		resw 1			; offset (0001A460)
-endstruc
-
-%macro struct_1 1
-dw 0
-dw 0
 %endmacro
 
 

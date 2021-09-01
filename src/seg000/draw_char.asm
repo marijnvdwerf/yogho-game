@@ -1,4 +1,3 @@
-global draw_char
 draw_char:
 %push local
 %define drawFn  6

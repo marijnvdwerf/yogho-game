@@ -1,4 +1,4 @@
-sub_2B3:
+MsgExit3:
 %push local
 		mov	ds, [cs:dataSeg]
 		call	write_stderr

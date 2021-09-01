@@ -1,4 +1,3 @@
-%line 1
 decompressframe:
 %push local
 %define src  6

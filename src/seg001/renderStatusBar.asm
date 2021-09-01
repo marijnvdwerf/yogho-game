@@ -1,4 +1,3 @@
-%line 1
 renderStatusBar:
 %push local
 		push	word [_fruitImagePtr+2]

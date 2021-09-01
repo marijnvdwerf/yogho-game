@@ -1,4 +1,3 @@
-%line 1
 sub_5848:
 %push local
 		pop	cx

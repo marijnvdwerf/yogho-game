@@ -1,4 +1,3 @@
-%line 1
 sub_4F2C:
 %push local
 		push	es

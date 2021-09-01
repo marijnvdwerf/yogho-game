@@ -1,4 +1,3 @@
-%line 1
 loadfromdat_anim:
 %push local
 %define index  6

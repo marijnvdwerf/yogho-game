@@ -1,4 +1,3 @@
-%line 1
 sub_7428:
 %push local
 		cmp	byte [byte_1A513], 0

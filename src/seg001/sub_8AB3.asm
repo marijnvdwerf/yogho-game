@@ -1,4 +1,3 @@
-%line 1
 
 sub_8AB3:
 %push local

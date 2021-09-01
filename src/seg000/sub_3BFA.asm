@@ -1,4 +1,3 @@
-%line 1
 sub_3BFA:
 %push local
 		mov	ah, [ds:_smartItems + SmartItem.field_C + bp]

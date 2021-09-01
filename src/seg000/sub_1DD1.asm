@@ -1,4 +1,3 @@
-%line 1
 sub_1DD1:
 %push local
 		mov	bx, [_playerX_0]

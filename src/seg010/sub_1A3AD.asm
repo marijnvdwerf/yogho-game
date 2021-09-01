@@ -1,4 +1,3 @@
-global sub_1A3AD
 sub_1A3AD:
 %push local
 %define var_4 -4

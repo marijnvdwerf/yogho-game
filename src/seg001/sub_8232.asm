@@ -1,4 +1,3 @@
-%line 1
 sub_8232:
 %push local
 %define var_4 -4

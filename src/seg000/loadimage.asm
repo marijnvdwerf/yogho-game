@@ -1,4 +1,3 @@
-%line 1
 loadimage:
 %push local
 %define var_4 -4

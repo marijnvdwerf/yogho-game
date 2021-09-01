@@ -1,4 +1,3 @@
-%line 1
 collision_1B03:
 %push local
 		mov	bx, dx

@@ -1,4 +1,9 @@
-%line 1
+
+; NOT __TINY__
+; HAS _DSSTACK_
+; NOT __HUGE__
+
+
 start:
 %push local
 		mov	dx, dseg
@@ -12,67 +17,76 @@ loc_8:
 		mov	ds, dx
 		mov	[_version], ax
 		mov	[_psp],	es
-		mov	word [_heaptop+2], bx
-		mov	[_envseg], bp
+		mov	word [_envseg], bx
+		mov	[_heaptop+2], bp
+;
+;       Save several vectors and install default divide by zero handler.
+;
 		call	SaveVectors
-		mov	ax, word [_heaptop+2]
+
+;       Count the number of environment variables and compute the size.
+;       Each variable is ended by a 0 and a zero-length variable stops
+;       the environment. The environment can NOT be greater than 32k.
+
+		mov	ax, word [_envseg]
 		mov	es, ax
 		xor	ax, ax
 		mov	bx, ax
 		mov	di, ax
 		mov	cx, 7FFFh
 		cld
-loc_37:
+EnvLoop:
 		repne scasb
 		jcxz	 InitFailed
 		inc	bx
 		cmp [es:di], al
-loc_3F:
-		jnz	loc_37
-		or	ch, 80h
+		jnz	EnvLoop
+		or	ch, 10000000b
 		neg	cx
-loc_46:
-		mov	word [_heaptop], cx
+		mov	word [_envLng], cx
 		mov	cx, 1
 		shl	bx, cl
 		add	bx, 8
 		and	bx, 0FFF8h
-		mov	word [word_1A4EE], bx
+		mov	word [_envSize], bx
+
+;       Determine the amount of memory that we need to keep
+
 		mov	dx, ds
 		sub	bp, dx
 loc_5D:
-		mov	di, word [word_1F1B6]
+		mov	di, word [__stklen]
 		cmp	di, 200h
-		jnb	short loc_6E
+		jnb	short AskedStackOK
 		mov	di, 200h
-		mov	word [word_1F1B6], di
-loc_6E:
-		add	di, 51FAh
+		mov	word [__stklen], di
+AskedStackOK:
+		add	di, edata
 		jb	short InitFailed
-		add	di, word [word_1F158]
+		add	di, word [__heaplen]
 		jb	short InitFailed
 		mov	cl, 4
 		shr	di, cl
 		inc	di
 		cmp	bp, di
 		jb	short InitFailed
-		cmp	word [word_1F1B6], 0
-		jz	short loc_91
-		cmp	word [word_1F158], 0
-		jnz	loc_9F
-loc_91:
+		cmp	word [__stklen], 0
+		jz	short ExpandDS
+		cmp	word [__heaplen], 0
+		jnz	ExcessOfMemory
+ExpandDS:
 		mov	di, 1000h
 		cmp	bp, di
-		ja	short loc_9F
+		ja	short ExcessOfMemory
 		mov	di, bp
-		jmp	short loc_9F
+		jmp	short ExcessOfMemory
 InitFailed:
 		jmp	sub_2AD
-loc_9F:
+ExcessOfMemory:
 		mov	bx, di
 		add	bx, dx
-		mov	word [word_1A500], bx
-		mov	word [word_1A504], bx
+		mov	word [_heapbase+2], bx
+		mov	word [_brklvl+2], bx
 		mov	ax, [_psp]
 		sub	bx, ax
 		mov	es, ax
@@ -88,10 +102,13 @@ loc_9F:
 		xor	ax, ax
 		mov	es, [cs:dataSeg]
 		mov	di,  InitEnd
-		mov	cx,  unk_1F65A
+		mov	cx,  edata
 		sub	cx, di
 		cld
 		rep stosb
+
+; Start not in C0.ASM
+
 		cmp	word [handleCount], 14h
 		jbe	short loc_120
 		cmp	byte [_version], 3
@@ -113,7 +130,7 @@ loc_E9:
 		int	21h
 		jb	short loc_11D
 		inc	ax
-		mov	[_envseg], ax
+		mov	[_heaptop+2], ax
 		dec	ax
 		mov	es, ax
 		mov	ah, 49h
@@ -126,10 +143,13 @@ loc_E9:
 loc_11D:
 		jmp	sub_2AD
 loc_120:
+
+; End not in C0.ASM
+
 		mov	ah, 0
 		int	1Ah
-		mov	word [_StartTime@], dx
-		mov	word [_StartTime@+2], cx
+		mov	word [_StartTime], dx
+		mov	word [_StartTime+2], cx
 		or	al, al
 		jz	short loc_13C
 		mov	ax, 40h
@@ -142,10 +162,15 @@ loc_13C:
 		mov	si,  InitStart
 		mov	di,  InitEnd
 		call	StartExit
+
+;       ExitCode = main(argc,argv,envp);
 		push	word [__C0environ]
 		push	word [__C0argv]
 		push	word [__C0argc]
 		call	far main
+
+;       Flush and close streams and files
+
 		push	ax
 		nop
 		push	cs

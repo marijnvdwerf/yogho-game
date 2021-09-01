@@ -1,4 +1,3 @@
-%line 1
 sub_1FF4D:
 %push local
 		mov	[stru_1B1B9 + SimpleItem.x],	ax

@@ -1,4 +1,3 @@
-%line 1
 sub_8548:
 %push local
 		push	0

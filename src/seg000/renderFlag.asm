@@ -1,4 +1,3 @@
-%line 1
 renderFlag:
 %push local
 		mov	bx, ax

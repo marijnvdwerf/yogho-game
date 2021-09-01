@@ -1,4 +1,3 @@
-%line 1
 segment dseg
 
 
@@ -18,21 +17,19 @@ aDivideErrorAbnormalProgr:
 		db 'Divide error',0Dh,0Ah
 
 aAbnormalProgramTerminati:
-		db 'Abnormal program termination',0Dh,0Ah,0
-		db    0
+		db 'Abnormal program termination',0Dh,0Ah
 
-unk_1A4D6:
-		db    0
-		db    0
+_Int0Vector:
+    dw 0, 0
 
-intOverflow:
-    struct_1(0)
+_Int4Vector:
+    dw 0, 0
 
-intBound:
-    struct_1(0)
+_Int5Vector:
+    dw 0, 0
 
-intInvalidOpcode:
-    struct_1(0)
+_Int6Vector:
+    dw 0, 0
 
 __C0argc:
 		dw 0
@@ -43,10 +40,13 @@ __C0argv:
 __C0environ:
 		dw 0
 
-_heaptop:
-		dd 0
+_envLng:
+		dw 0
 
-word_1A4EE:
+_envseg:
+		dw 0
+
+_envSize:
 		dw 0
 
 _psp:
@@ -58,29 +58,23 @@ _version:
 word_1A4F4:
 		dw 0
 
-_StartTime@:
+_StartTime:
 		dw 0, 0
 
-		db 250
-		db 81
+__heapbase:
+    dw edata
 
-word_1A4FC:
-		dw 51FAh
-		db    0
-		db    0
+__brklvl:
+    dw edata
 
-word_1A500:
-		dw 0
-		db    0
-		db    0
+_heapbase:
+    dw 0, 0
 
-word_1A504:
-		dw 0
-		db    0
-		db    0
+_brklvl:
+    dw 0, 0
 
-_envseg:
-		dw 0
+_heaptop:
+    dw 0, 0
 
 hasVGA:
 		db 0FFh
@@ -7930,7 +7924,7 @@ word_1F130:
 		dw 0
 		dw 0
 
-word_1F158:
+__heaplen:
 		dw 0
 
 word_1F15A:
@@ -8028,7 +8022,7 @@ byte_1F15C:
 		db  28h
 		db    0
 
-word_1F1B6:
+__stklen:
 		dw 1000h
 
 aNull:
@@ -8298,7 +8292,7 @@ byte_1F658:
 		db 0
 		db    0
 
-unk_1F65A:
+edata:
 		db    0
 		db    0
 		db    0

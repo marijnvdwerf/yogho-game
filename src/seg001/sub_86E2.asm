@@ -1,4 +1,3 @@
-%line 1
 sub_86E2:
 %push local
 %define var_1 -1
