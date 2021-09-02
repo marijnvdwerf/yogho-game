@@ -1922,7 +1922,7 @@ aMemoryAllocati:
     db 0, 0, 0, 0, 0, 0
 
 mousecallroutine:
-		dd onMouse
+    far_ptr onMouse
 
 mousecallmask:
 		dw 0FFFFh

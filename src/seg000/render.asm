@@ -286,7 +286,7 @@ loc_16E7:
 loc_1736:
 		cmp	word [word_1D100], 0
 		jnz	loc_1742
-		call	60Ah:3213h
+		call	far nullsub_6
 loc_1742:
 		pop	ds
 		pop	es
