@@ -6,5 +6,5 @@ MsgExit3:
 		push	ax
 		nop
 		push	cs
-		call	near  _abort
+		call	near  __exit
 %pop

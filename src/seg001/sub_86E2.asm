@@ -35,7 +35,7 @@ loc_872F:
 		mov	[bp+var_1], al
 		or	al, al
 		jz	short loc_872F
-		cmp	word [bp+var_1], 4Ah
+		cmp	byte [bp+var_1], 4Ah
 		jnz	loc_8746
 		mov	ax, 0FFFFh
 		leave

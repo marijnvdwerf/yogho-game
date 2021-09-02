@@ -65,7 +65,7 @@ off_50F:
     far_ptr sub_4710
     far_ptr sub_5DA
     far_ptr drawchar_177D
-    far_ptr drawNumber
+    far_ptr drawNumber ; wrong ptr
 
 %include "seg000/wait_577.asm"
 		db 90h

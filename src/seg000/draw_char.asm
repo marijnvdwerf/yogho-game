@@ -22,7 +22,7 @@ draw_char:
 		rol	ah, cl
 		mov	es, bx
 		mov	dx, 3C4h
-		call	[bp+drawFn]
+		call	far [bp+drawFn]
 		pop	es
 		pop	ds
 		pop	si
