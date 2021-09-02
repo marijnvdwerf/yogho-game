@@ -214,7 +214,7 @@ loc_50D6:
 		mov	al, [bp-6]
 		push	ax
 		push	bx
-		call	sub_4D34
+		call	__longtoa
 loc_50E5:
 		push	ss
 		pop	es
@@ -241,14 +241,14 @@ loc_50F4:
 		mov	[bp+4],	bx
 		push	ss
 		pop	es
-		call	sub_4EB4
+		call	Hex4
 		mov	al, 3Ah
 		stosb
 loc_511F:
 		push	ss
 		pop	es
 		pop	dx
-		call	sub_4EB4
+		call	Hex4
 		mov	byte [ss:di], 0
 		mov	byte [bp-6], 0
 		and	word [bp-2], 0FFFBh
@@ -332,7 +332,7 @@ loc_51D3:
 		mov	ax, 6
 loc_51DA:
 		push	ax
-		call	sub_5782
+		call	__REALCVT
 		push	ss
 		pop	es
 		lea	di, [bp-45h]

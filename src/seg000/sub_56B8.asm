@@ -7,7 +7,7 @@ sub_56B8:
 		push	cx
 		push	ax
 		push	cs
-		call	near  sub_55D6
+		call	near  _malloc
 		pop	bx
 		mov	bx, ax
 		or	ax, ax
@@ -25,7 +25,7 @@ sub_56B8:
 		rep movsw
 		mov	[bp+var_2], ax
 		push	cs
-		call	near  sub_5507
+		call	near  _free
 		pop	bx
 		mov	bx, [bp+var_2]
 loc_56E9:

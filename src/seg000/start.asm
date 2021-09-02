@@ -81,7 +81,7 @@ ExpandDS:
 		mov	di, bp
 		jmp	short ExcessOfMemory
 InitFailed:
-		jmp	sub_2AD
+		jmp	_abort
 ExcessOfMemory:
 		mov	bx, di
 		add	bx, dx
@@ -109,7 +109,7 @@ ExcessOfMemory:
 
 ; Start not in C0.ASM
 
-		cmp	word [handleCount], 14h
+		cmp	word [__nfile], 14h
 		jbe	short loc_120
 		cmp	byte [_version], 3
 		jb	short loc_120
@@ -122,7 +122,7 @@ loc_E9:
 		int	21h
 		jb	short loc_11D
 		mov	ah, 67h
-		mov	bx, word [handleCount]
+		mov	bx, word [__nfile]
 		int	21h
 		jb	short loc_11D
 		mov	ah, 48h
@@ -141,7 +141,7 @@ loc_E9:
 		int	21h
 		jnb	short loc_120
 loc_11D:
-		jmp	sub_2AD
+		jmp	_abort
 loc_120:
 
 ; End not in C0.ASM
@@ -174,5 +174,5 @@ loc_13C:
 		push	ax
 		nop
 		push	cs
-		call	near  exit
+		call	near  _exit
 %pop

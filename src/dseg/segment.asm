@@ -16,7 +16,7 @@ aNullPointerAss:
 aDivideErrorAbnormalProgr:
 		db 'Divide error',0Dh,0Ah
 
-aAbnormalProgramTerminati:
+abortMSG:
 		db 'Abnormal program termination',0Dh,0Ah
 
 _Int0Vector:
@@ -55,7 +55,7 @@ _psp:
 _version:
 		dw 0
 
-word_1A4F4:
+errno:
 		dw 0
 
 _StartTime:
@@ -7559,7 +7559,8 @@ word_1EFDE:
 word_1EFE0:
 		dw 0
 
-off_1EFE2:
+; CC:exit _DATA
+__exitbuf:
     far_ptr nullsub_1
 
 off_1EFE6:
@@ -7567,15 +7568,14 @@ off_1EFE6:
 
 off_1EFEA:
     far_ptr nullsub_1
+; end
 
-unk_1EFEE:
+__streams:
 		db    0
 		db    0
 
-word_1EFF0:
 		dw 209h
 
-byte_1EFF2:
 		db 0
 		db    0
 		db    0
@@ -7587,16 +7587,13 @@ byte_1EFF2:
 		db    0
 		db    0
 
-word_1EFFC:
 		dw 4B8Eh
 
-unk_1EFFE:
+stdout:
 		db    0
 		db    0
 
-word_1F000:
 		dw 20Ah
-
 byte_1F002:
 		db 1
 		db    0
@@ -7608,7 +7605,7 @@ byte_1F002:
 		db    0
 		db    0
 		db    0
-		dw unk_1EFFE
+		dw stdout
 
 unk_1F00E:
 		db    0
@@ -7901,10 +7898,10 @@ unk_1F02E:
 		db    0
 		db    0
 
-handleCount:
+__nfile:
 		dw 14h
 
-word_1F130:
+__openfd:
 		dw 6001h
 		dw 6002h
 		dw 6002h
@@ -8037,14 +8034,16 @@ byte_1F1BF:
 		db 0Fh,	0Fh, 8,	0Ah, 14h, 14h, 6, 14h, 12h, 0Bh, 0Eh, 14h, 14h,	11h, 14h, 0Ch, 14h, 14h, 0Dh, 14h, 14h,	14h
 		db 14h,	14h, 14h, 14h, 0
 
-aPrintScanfFloat:
+; CVTFAK _DATA start
+RealMSG:
 		db 'print'
 
-aScanfFloatingPointFormat:
+ScanMSG:
 		db ' scan'
 
-aFFloatingPointFormatsNot:
+CommonMSG:
 		db 'f : floating point formats not linked',0Dh,0Ah
+;end
 		db    0
 
 word_1F252:
@@ -8079,31 +8078,35 @@ word_1F264:
 		db  0Dh
 		db    0
 
-word_1F268:
+_stdinStarted:
 		dw 0
 
-word_1F26A:
+_stdoutStarted:
 		dw 0
 
-off_1F26C:
-		dw stderr_540E
-		dw loc_5413
-		dw loc_5413
-		dw loc_5413
+; CVTFAK start
+_realcvt:
+		dw _FakRealCvt
+		dw _FakScanTod
+		dw _FakScanTod
+		dw _FakScanTod
+; end
 
 InitStart:
 		db    0
 		db    2
-		dw sub_4E0F
+		dw __setupio
 		db    0
 		db    0
 		db    0
 		db  10h
-		dw sub_5788
+		dw __setargv
 		db    0
 		db    0
 
 InitEnd:
+ExitStart:
+ExitEnd:
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0

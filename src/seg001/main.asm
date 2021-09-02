@@ -92,7 +92,7 @@ loc_613F:
 		push	0BEh
 		push	ax
 		push	4778h
-		call	far sub_4B62
+		call	far __dos_creat
 		add	sp, 6
 		or	ax, ax
 		jnz	loc_61ED
@@ -113,7 +113,7 @@ loc_61A0:
 		push	word [_levelContents3]
 		push word [_levelContents2]
 		push	word [word_1A51E]
-		call	far fwrite
+		call	far __dos_write
 		add	sp, 0Ah
 		or	ax, ax
 		jz	short loc_61C0
@@ -135,7 +135,7 @@ loc_61C0:
 		ja	short loc_6185
 loc_61E1:
 		push	word [word_1A51E]
-		call	far fclose
+		call	far __dos_close
 		add	sp, 2
 loc_61ED:
 		call	far isWindows
@@ -168,7 +168,7 @@ loc_6225:
 		mov	[_paragraphsMalloced], ax
 		push	 memPtr
 		push	ax
-		call	far malloc
+		call	far _allocmem
 		add	sp, 4
 		cmp	ax, 0FFFFh
 		jz	short loc_6251
@@ -211,14 +211,14 @@ loc_6251:
 		push	 _hiscoreHandle
 		push	1
 		push	 fileName
-		call	far fopen
+		call	far __dos_open
 		add	sp, 6
 		or	ax, ax
 		jz	short loc_629E
 		jmp	loc_634C
 loc_629E:
 		push word [_hiscoreHandle]
-		call	far sub_5920
+		call	far _filelength
 		add	sp, 2
 		or	dx, dx
 		jz	short loc_62B1
@@ -233,7 +233,7 @@ loc_62B9:
 		push	ds
 		push	 _highscores
 		push word [_hiscoreHandle]
-		call	far sub_4BBD
+		call	far __dos_read
 		add	sp, 0Ah
 		mov	word [_writeStatus],	0
 loc_62D5:
@@ -310,7 +310,7 @@ loc_634C:
 		push	 _datHandle
 		push	1
 		push	 fileName
-		call	far fopen
+		call	far __dos_open
 		add	sp, 6
 		or	ax, ax
 		jz	short loc_63BD
@@ -494,7 +494,7 @@ loc_651A:
 		push	 _hiscoreHandle
 		push	ax
 		push	 fileName
-		call	far sub_4B62
+		call	far __dos_creat
 		add	sp, 6
 		or	ax, ax
 		jnz	loc_657E
@@ -503,20 +503,20 @@ loc_651A:
 		push	ds
 		push	 _highscores
 		push word [_hiscoreHandle]
-		call	far fwrite
+		call	far __dos_write
 		add	sp, 0Ah
 loc_657E:
 		cmp	word [_datHandle], 0
 		jz	short loc_6591
 		push word [_datHandle]
 loc_6589:
-		call	far fclose
+		call	far __dos_close
 		add	sp, 2
 loc_6591:
 		cmp	word [memPtr], 0
 		jz	short loc_65A4
 		push word [memPtr]
-		call	far dealloc
+		call	far _freemem
 		add	sp, 2
 loc_65A4:
 		xor	ax, ax

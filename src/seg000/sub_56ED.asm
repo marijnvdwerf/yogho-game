@@ -12,7 +12,7 @@ sub_56ED:
 		add	ax, bx
 		push	bx
 		push	ax
-		call	sub_539F
+		call	___brk
 		pop	bx
 		pop	bx
 		jmp	short loc_572B

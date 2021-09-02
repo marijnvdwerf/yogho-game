@@ -11,7 +11,7 @@ checkGFX:
 		push	ax
 		push	ax
 		push	10h
-		call	far sub_5443
+		call	far _int86
 		add	sp, 6
 		cmp	byte [bp+var_10], 1Ah
 		jnz	loc_91D5
@@ -37,7 +37,7 @@ loc_91D5:
 		push	ax
 		push	ax
 		push	10h
-		call	far sub_5443
+		call	far _int86
 		add	sp, 6
 		cmp	byte [bp+var_E], 10h
 		jz	short locret_9201

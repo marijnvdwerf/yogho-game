@@ -2,7 +2,7 @@ sub_5848:
 %push local
 		pop	cx
 		add	cx, dx
-		mov	ds, word [cs:word_5786]
+		mov	ds, word [cs:SavedDS]
 		mov	word [word_1F258], bx
 		inc	bx
 		add	bx, bx
@@ -24,7 +24,7 @@ loc_586D:
 loc_5875:
 		xor	ax, ax
 		mov	[bp+0],	ax
-		mov	ds, word [cs:word_5786]
+		mov	ds, word [cs:SavedDS]
 		mov	si, word [word_1F262]
 		mov	di, word [word_1F264]
 		push	word [word_1F260]

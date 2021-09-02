@@ -4,7 +4,7 @@ sub_5676:
 		xor	bx, bx
 		push	bx
 		push	ax
-		call	sub_53C1
+		call	___sbrk
 		pop	bx
 		pop	bx
 		cmp	ax, 0FFFFh

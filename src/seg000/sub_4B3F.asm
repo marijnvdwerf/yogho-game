@@ -18,7 +18,7 @@ sub_4B3F:
 		jmp	short loc_4B5D
 loc_4B59:
 		push	ax
-		call	sub_4D11
+		call	__DOSERROR
 loc_4B5D:
 		pop	si
 		pop	bp

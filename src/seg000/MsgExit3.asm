@@ -1,10 +1,10 @@
 MsgExit3:
 %push local
 		mov	ds, [cs:dataSeg]
-		call	write_stderr
+		call	ErrorDisplay
 		mov	ax, 3
 		push	ax
 		nop
 		push	cs
-		call	near  sub_4C6A
+		call	near  _abort
 %pop

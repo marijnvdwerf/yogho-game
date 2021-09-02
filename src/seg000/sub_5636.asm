@@ -4,7 +4,7 @@ sub_5636:
 		xor	ax, ax
 		push	ax
 		push	ax
-		call	sub_53C1
+		call	___sbrk
 		pop	bx
 		pop	bx
 		and	ax, 1
@@ -12,7 +12,7 @@ sub_5636:
 		xor	dx, dx
 		push	dx
 		push	ax
-		call	sub_53C1
+		call	___sbrk
 		pop	bx
 		pop	bx
 loc_564E:
@@ -21,7 +21,7 @@ loc_564E:
 		xor	bx, bx
 		push	bx
 		push	ax
-		call	sub_53C1
+		call	___sbrk
 		pop	bx
 		pop	bx
 		cmp	ax, 0FFFFh

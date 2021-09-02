@@ -2,7 +2,7 @@ __restorezero:
 %push local
 		push	ds
 		mov	ax, 2500h
-		lds	dx, [aAbnormalProgramTerminati+1Eh]
+		lds	dx, [_Int0Vector]
 		int	21h
 		pop	ds
 		push	ds

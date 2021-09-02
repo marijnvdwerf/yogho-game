@@ -24,7 +24,7 @@ loc_554D:
 		mov	word [word_1F256], ax
 loc_5558:
 		push	bx
-		call	sub_539F
+		call	___brk
 		pop	bx
 		retn
 %pop

@@ -8,17 +8,16 @@ segment seg000
 ;ENDIF
 
 %include "seg000/start.asm"
-%include "seg000/sub_163.asm"
-%include "seg000/sub_176.asm"
-%include "seg000/ExitToDOS.asm"
+%include "seg000/__cleanup.asm"
+%include "seg000/__checknull.asm"
+%include "seg000/__terminate.asm"
 %include "seg000/ZeroDivision.asm"
 %include "seg000/SaveVectors.asm"
 %include "seg000/__restorezero.asm"
 %include "seg000/StartExit.asm"
-; sub_264 is not in C0.ASM
-%include "seg000/sub_264.asm"
-%include "seg000/write_stderr.asm"
-%include "seg000/sub_2AD.asm"
+%include "seg000/Exit.asm"
+%include "seg000/ErrorDisplay.asm"
+%include "seg000/_abort.asm"
 %include "seg000/MsgExit3.asm"
 
 dataSeg:
@@ -3163,42 +3162,71 @@ word_4A93:
 %include "seg000/sub_4AB3.asm"
 %include "seg000/sub_4AE5.asm"
 %include "seg000/sub_4AFC.asm"
-%include "seg000/fclose.asm"
-%include "seg000/sub_4B3F.asm"
-%include "seg000/sub_4B62.asm"
-%include "seg000/sub_4B76.asm"
-%include "seg000/fopen.asm"
-%include "seg000/sub_4BBD.asm"
-%include "seg000/fwrite.asm"
 
+; DOSCLOSE
+%include "seg000/__dos_close.asm"
+
+; DOSCREAT
+%include "seg000/sub_4B3F.asm"
+%include "seg000/__dos_creat.asm" ; __dos_creat
+%include "seg000/__dos_creatnew.asm" ; __dos_creatnew
+
+; DOSOPEN
+%include "seg000/__dos_open.asm"
+
+; DOSREAD
+%include "seg000/__dos_read.asm"
+
+%include "seg000/__dos_write.asm"
+
+; CC:EXIT start
 nullsub_1:
     retf
 
-%include "seg000/sub_4C04.asm"
-%include "seg000/exit.asm"
-%include "seg000/sub_4C6A.asm"
-%include "seg000/sub_4C7C.asm"
-%include "seg000/sub_4C8A.asm"
+%include "seg000/____exit.asm"
+%include "seg000/_exit.asm"
+%include "seg000/__exit.asm"
+%include "seg000/__cexit.asm"
+%include "seg000/__c_exit.asm"
+; end
+
+; LXLSH (or similar)
 		db 5Bh
 		db 0Eh
 		db 53h
 %include "seg000/sub_4C99.asm"
+
+; LXURSH (or similar)
 		db 5Bh
 		db 0Eh
 		db 53h
 %include "seg000/sub_4CBA.asm"
-%include "seg000/sub_4CD8.asm"
-%include "seg000/sub_4D11.asm"
-%include "seg000/getDeviceInformation.asm"
-%include "seg000/sub_4D34.asm"
-%include "seg000/sub_4DB1.asm"
-%include "seg000/fseek.asm"
-%include "seg000/sub_4DF7.asm"
-%include "seg000/sub_4E0F.asm"
-%include "seg000/sub_4EB4.asm"
-%include "seg000/sub_4EBB.asm"
-%include "seg000/sub_4EC4.asm"
-%include "seg000/sub_4ECC.asm"
+
+; IOERROR
+%include "seg000/__IOERROR.asm"
+%include "seg000/__DOSERROR.asm"
+
+; ISATTY
+%include "seg000/isatty.asm"
+
+; LONGTOA
+%include "seg000/__longtoa.asm"
+%include "seg000/__utoa.asm"
+
+; LSEEK
+%include "seg000/_lseek.asm"
+
+; SEGREAD
+%include "seg000/_segread.asm"
+
+; SETUPIO
+%include "seg000/__setupio.asm"
+
+; VPRINTER
+%include "seg000/Hex4.asm"
+%include "seg000/Byte2Ascii.asm"
+%include "seg000/Nibble2Ascii.asm"
+%include "seg000/__vprinter.asm"
 %include "seg000/sub_4EE6.asm"
 %include "seg000/sub_4EF3.asm"
 %include "seg000/sub_4EFC.asm"
@@ -3229,48 +3257,86 @@ off_534F:
 		dw loc_531F
 		dw loc_4FC2
 		dw loc_4FC8
-%include "seg000/malloc.asm"
-%include "seg000/sub_539F.asm"
-%include "seg000/sub_53C1.asm"
-%include "seg000/sub_53F2.asm"
-%include "seg000/sub_53FE.asm"
-%include "seg000/stderr_540E.asm"
-%include "seg000/dealloc.asm"
-%include "seg000/sub_5443.asm"
-%include "seg000/sub_546B.asm"
-%include "seg000/sub_5507.asm"
+; end VPRINTER
+
+; ALLOCMEM
+%include "seg000/_allocmem.asm"
+
+; BRK
+%include "seg000/___brk.asm"
+%include "seg000/___sbrk.asm"
+%include "seg000/_brk.asm"
+%include "seg000/_sbrk.asm"
+
+; CVTFAK
+%include "seg000/CVTFAK.asm"
+
+; FREEMEM
+%include "seg000/_freemem.asm"
+
+; INT86
+%include "seg000/_int86.asm"
+%include "seg000/_int86x.asm"
+
+; nearheap
+%include "seg000/_free.asm"
 %include "seg000/sub_5524.asm"
 %include "seg000/sub_555E.asm"
 %include "seg000/sub_5597.asm"
 %include "seg000/sub_55B3.asm"
-%include "seg000/sub_55D6.asm"
+%include "seg000/_malloc.asm"
 %include "seg000/sub_5636.asm"
 %include "seg000/sub_5676.asm"
 %include "seg000/sub_569F.asm"
 %include "seg000/sub_56B8.asm"
 %include "seg000/sub_56ED.asm"
-%include "seg000/sub_572F.asm"
-%include "seg000/sub_5782.asm"
+%include "seg000/_realloc.asm"
 
-word_5786:
+; REALCVT
+%include "seg000/__REALCVT.asm"
+
+; SETARGV.ASM
+SavedDS:
 		dw 0
-%include "seg000/sub_5788.asm"
+%include "seg000/__setargv.asm"
 %include "seg000/sub_581B.asm"
 %include "seg000/sub_5843.asm"
 %include "seg000/sub_5848.asm"
-%include "seg000/sub_589F.asm"
-%include "seg000/sub_5920.asm"
-%include "seg000/sub_5961.asm"
+
+; FFLUSH
+%include "seg000/_fflush.asm"
+
+; FLENGTH
+%include "seg000/_filelength.asm"
+
+; FLUSHALL
+%include "seg000/_flushall.asm"
+
+; FSEEK
 %include "seg000/sub_599B.asm"
-%include "seg000/sub_59F8.asm"
+%include "seg000/_fseek.asm"
 %include "seg000/sub_5A60.asm"
-%include "seg000/sub_5B27.asm"
+
+; MEMCPY
+%include "seg000/_memcpy.asm"
+
+; PRINTF
 %include "seg000/printf.asm"
-%include "seg000/sub_5B5D.asm"
-%include "seg000/sub_5B76.asm"
-%include "seg000/sub_5CAC.asm"
-%include "seg000/sub_5CBE.asm"
-%include "seg000/sub_5E66.asm"
-%include "seg000/sub_5F3E.asm"
-%include "seg000/write_to_handle.asm"
-%include "seg000/sub_6086.asm"
+
+; PUTC
+%include "seg000/__fputc.asm"
+%include "seg000/_fputc.asm"
+%include "seg000/_fputchar.asm"
+%include "seg000/__fputn.asm"
+
+; SETVBUF
+%include "seg000/_setvbuf.asm"
+
+; WRITE
+%include "seg000/___write.asm"
+
+; WRITEA
+%include "seg000/__write.asm"
+
+; XFFLUSH
+%include "seg000/__xfflush.asm"

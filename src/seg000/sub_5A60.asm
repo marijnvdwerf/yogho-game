@@ -21,7 +21,7 @@ sub_5A60:
 		push	ax
 		nop
 		push	cs
-		call	near  fseek
+		call	near  _lseek
 		add	sp, 8
 		mov	[bp+var_2], dx
 		mov	[bp+arg2], ax
@@ -51,7 +51,7 @@ loc_5A9F:
 		push	ax
 		nop
 		push	cs
-		call	near  fseek
+		call	near  _lseek
 		add	sp, 8
 		mov	[bp+var_6], dx
 		mov	[bp+var_8], ax
@@ -69,7 +69,7 @@ loc_5AD0:
 		push	ax
 		nop
 		push	cs
-		call	near  fseek
+		call	near  _lseek
 		add	sp, 8
 		cmp	dx, 0FFFFh
 		jnz	loc_5AF8
