@@ -1019,8 +1019,8 @@ stru_1BF4C:
     LevelData 88, 30, 22, 61, 62, 63, 64, 65, 32, 671, 0, 0, 0, 73
 
 levels:
-		dw levelDorp, stru_1BE3E,	stru_1BE59, stru_1BE74, stru_1BE8F, offset	stru_1BEAA
-		dw stru_1BEC5, stru_1BEE0, offset	stru_1BEFB, stru_1BF16, stru_1BF31, stru_1BF4C
+		dw levelDorp, stru_1BE3E,	stru_1BE59, stru_1BE74, stru_1BE8F, stru_1BEAA
+		dw stru_1BEC5, stru_1BEE0, stru_1BEFB, stru_1BF16, stru_1BF31, stru_1BF4C
 
 stru_1BF7F:
     struct_0 drawsub_D9D8,	-11, -35
