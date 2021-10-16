@@ -19,3 +19,8 @@ extern sub_1FEBC
 extern sub_1F75B
 extern sub_1FE64
 extern sub_1F7CC
+
+global stru_1B1B9
+global stru_1B1FA
+global stru_1B1AC
+

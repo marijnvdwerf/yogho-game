@@ -1,10 +1,10 @@
 %include "structs.asm"
 
-extern sub_1F972
-extern sub_1FEBC
-extern sub_1F75B
-extern sub_1FE64
-extern sub_1F7CC
+global sub_1F972
+global sub_1FEBC
+global sub_1F75B
+global sub_1FE64
+global sub_1F7CC
 
 extern stru_1B1B9
 extern stru_1B1FA

@@ -13,6 +13,7 @@ $(OBJECTS): $(BUILDDIR)/%.obj : src/%.asm $(DEPDIR)/%.d | dir
 	nasm -f obj -Isrc $< -o $@ $(DEPFLAGS)
 
 all: $(OBJECTS)
+	dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP"
 
 dir:
 	@mkdir -p $(DEPDIR)
