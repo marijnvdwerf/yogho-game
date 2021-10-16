@@ -6,15 +6,13 @@ OBJECTS = \
 	$(BUILDDIR)/main.obj \
 	$(BUILDDIR)/seg013.obj \
 
+game: $(OBJECTS)
+	dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP"
 
 #build/%.obj : src/%.s
 $(OBJECTS): $(BUILDDIR)/%.obj : src/%.asm $(DEPDIR)/%.d | dir
 	echo "$(DEPFLAGS)"
 	nasm -f obj -Isrc $< -o $@ $(DEPFLAGS)
-
-all: $(OBJECTS)
-	dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP"
-
 dir:
 	@mkdir -p $(DEPDIR)
 	@mkdir -p $(BUILDDIR)
