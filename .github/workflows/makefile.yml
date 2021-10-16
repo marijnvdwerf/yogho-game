@@ -13,14 +13,11 @@ jobs:
     container: marijnvdwerf/borland
 
     steps:
-    - run: dosemu -dumb -K . -E "dir C:"
-    - run: dosemu -dumb -K . -E "dir D:"
     - uses: actions/checkout@v2
     - name: Build
       run: make
     - name: Link
       run: dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c BUILD\MAIN.OBJ, BUILD\YOGHO.EXE, BUILD\YOGHO.MAP"
-    - run: ls build
     - name: Archive build folder
       uses: actions/upload-artifact@v2
       with:
