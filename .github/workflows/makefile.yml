@@ -22,3 +22,6 @@ jobs:
 
     - name: Build
       run: make
+    - name: Link
+      run: dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c BUILD/MAIN.OBJ, BUILD/YOGHO.EXE, BUILD/YOGHO.MAP"
+    - run: ls build
