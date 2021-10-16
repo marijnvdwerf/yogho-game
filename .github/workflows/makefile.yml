@@ -10,12 +10,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: marijnvdwerf/borland
 
     steps:
     - uses: actions/checkout@v2
-      
-    - name: Install dependencies
-      run: sudo apt-get install -y nasm
-
     - name: Build
       run: make
+    - name: Link
+      run: dosemu -dumb -K . -E "D:\BORLANDC\BIN\TLINK.EXE /m /s /c BUILD\MAIN.OBJ, BUILD\YOGHO.EXE, BUILD\YOGHO.MAP"
+    - name: Archive build folder
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-build
+        path: build
