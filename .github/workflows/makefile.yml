@@ -13,6 +13,8 @@ jobs:
     container: marijnvdwerf/borland
 
     steps:
+    - run: dosemu -dumb -K . -E "dir C:"
+    - run: dosemu -dumb -K . -E "dir D:"
     - uses: actions/checkout@v2
     - name: Build
       run: make
