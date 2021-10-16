@@ -14,9 +14,8 @@
 %include "dseg/segment.asm"
 %include "seg012/segment.asm"
 
-;extern sub_1F972
-;extern sub_1FEBC
-;extern sub_1F75B
-;extern sub_1FE64
-;extern sub_1F7CC
-%include "seg013/segment.asm"
+extern sub_1F972
+extern sub_1FEBC
+extern sub_1F75B
+extern sub_1FE64
+extern sub_1F7CC

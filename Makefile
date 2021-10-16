@@ -2,7 +2,10 @@ DEPDIR := .deps
 BUILDDIR := build
 DEPFLAGS = -MD -MT $@ -MP -MF $(DEPDIR)/$*.d
 
-OBJECTS = $(BUILDDIR)/main.obj
+OBJECTS = \
+	$(BUILDDIR)/main.obj \
+	$(BUILDDIR)/seg013.obj \
+
 
 #build/%.obj : src/%.s
 $(OBJECTS): $(BUILDDIR)/%.obj : src/%.asm $(DEPDIR)/%.d | dir
