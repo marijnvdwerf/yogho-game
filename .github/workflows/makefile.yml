@@ -17,6 +17,8 @@ jobs:
 
     - run: pwd
     - run: dosemu -d .
+      env:
+        TERM: dumb
 
     - name: Build
       run: make
