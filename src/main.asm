@@ -1,5 +1,21 @@
 %include "structs.asm"
 
+; C0
+extern __cleanup
+extern __restorezero
+extern __checknull
+extern __terminate
+extern errno
+extern __brklvl
+extern _abort
+extern _psp
+extern _envLng
+extern _version
+extern _envseg
+extern __C0argc
+extern __C0argv
+extern word_1A462
+
 %include "seg000/segment.asm"
 %include "seg001/segment.asm"
 %include "seg002/segment.asm"

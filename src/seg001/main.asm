@@ -45,7 +45,7 @@ loc_60FA:
 loc_610C:
 		mov	ax, word [_levelContents3]
 		mov	es, ax
-		mov	si, word [es:word_1A462]
+		mov	si, word [es:2]
 loc_6116:
 		mov	di, [es:si]
 		or	di, di
