@@ -77,7 +77,7 @@ loc_8B93:
 		mov	cl, 4
 		mov	dx, [bp+var_4]
 		mov	ax, [bp+var_6]
-		call	far sub_4CBA
+		call	far LXURSH@
 		mov	[bp+var_4], dx
 		mov	[bp+var_6], ax
 		sub	di, 0Ch

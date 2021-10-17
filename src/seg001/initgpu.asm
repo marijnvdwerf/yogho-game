@@ -5,7 +5,7 @@ initgpu:
 		cmp	byte [hasVGA], 1
 		jz	short loc_9226
 		push	 aSorryUHeeftEen
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		mov	al, 0
 		retf
@@ -15,7 +15,7 @@ loc_9226:
 		or	al, al
 		jnz	loc_9240
 		push	 aVideoInitializ
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		mov	al, 0
 		retf

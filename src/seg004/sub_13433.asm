@@ -41,7 +41,7 @@ loc_13436:
 		mov	ax, si
 loc_13470:
 		mov	cl, 4
-		call	far sub_4C99
+		call	far LXLSH@
 		add	ax, 302h
 		adc	dx, 0
 		mov	[bp+var_10], dx
@@ -63,7 +63,7 @@ loc_1348B:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		push	ax
 		call	far decompressframe
 		add	sp, 8
@@ -98,7 +98,7 @@ loc_134F7:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		push	ax
 		call	far sub_49A3
 		add	sp, 8
@@ -127,7 +127,7 @@ loc_13541:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		push	ax
 		call	far sub_49A3
 		add	sp, 8
@@ -155,7 +155,7 @@ loc_1356D:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		push	ax
 		call	far decompressframe
 		add	sp, 8
@@ -178,7 +178,7 @@ loc_1356D:
 		mov	dx, [bp+var_10]
 		mov	ax, [bp+dataPtr]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		push	ax
 		call	far sub_49A3
 		add	sp, 8

@@ -7,7 +7,7 @@ sub_9250:
 		or	al, al
 		jnz	loc_9270
 		push	 aMemoryAllocati
-		call	far printf
+		call	far _printf
 		add	sp, 2
 loc_9270:
 		cmp	byte [mousestatus], 0
