@@ -1,4 +1,4 @@
-segment seg003
+segment seg003 class=CODE
 
 		db    0
 		db  44h

@@ -1,80 +1,5 @@
-segment dseg
-
-
-word_1A460:
-		dw 0
-
-word_1A462:
-		dw 0
-
-aBorlandCCopyright1991Bor:
-		db 'Borland C++ - Copyright 1991 Borland Intl.',0
-
-aNullPointerAss:
-		db 'Null pointer assignment',0Dh,0Ah
-
-aDivideErrorAbnormalProgr:
-		db 'Divide error',0Dh,0Ah
-
-abortMSG:
-		db 'Abnormal program termination',0Dh,0Ah
-
-_Int0Vector:
-    dw 0, 0
-
-_Int4Vector:
-    dw 0, 0
-
-_Int5Vector:
-    dw 0, 0
-
-_Int6Vector:
-    dw 0, 0
-
-__C0argc:
-		dw 0
-
-__C0argv:
-		dw 0
-
-__C0environ:
-		dw 0
-
-_envLng:
-		dw 0
-
-_envseg:
-		dw 0
-
-_envSize:
-		dw 0
-
-_psp:
-		dw 0
-
-_version:
-		dw 0
-
-errno:
-		dw 0
-
-_StartTime:
-		dw 0, 0
-
-__heapbase:
-    dw edata
-
-__brklvl:
-    dw edata
-
-_heapbase:
-    dw 0, 0
-
-_brklvl:
-    dw 0, 0
-
-_heaptop:
-    dw 0, 0
+group dseg _DATA
+segment _DATA public class=DATA
 
 hasVGA:
 		db 0FFh
@@ -8092,6 +8017,8 @@ _realcvt:
 		dw _FakScanTod
 ; end
 
+segment _INIT_ public class=INITDATA
+
 InitStart:
 		db    0
 		db    2
@@ -8104,9 +8031,8 @@ InitStart:
 		db    0
 		db    0
 
+segment _BSS public class=BSS
 InitEnd:
-ExitStart:
-ExitEnd:
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
@@ -8297,12 +8223,4 @@ dword_1F5D8:
 
 byte_1F658:
 		db 0
-		db    0
-
-edata:
-		db    0
-		db    0
-		db    0
-		db    0
-		db    0
 		db    0

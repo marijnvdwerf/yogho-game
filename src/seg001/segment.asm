@@ -1,4 +1,4 @@
-segment seg001
+segment seg001 class=CODE
 
 %include "seg001/main.asm"
 %include "seg001/setBasePath.asm"

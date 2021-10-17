@@ -1,4 +1,4 @@
-segment seg000
+segment _TEXT public class=CODE
 
 ;IFDEF   __MEDIUM__              ; Large Code - Small Data
 ;        LPROG           equ     true
@@ -6,27 +6,6 @@ segment seg000
 ;        MMODEL          equ     FCODE+2
 ;        _DSSTACK_       equ     <>
 ;ENDIF
-
-%include "seg000/start.asm"
-%include "seg000/__cleanup.asm"
-%include "seg000/__checknull.asm"
-%include "seg000/__terminate.asm"
-%include "seg000/ZeroDivision.asm"
-%include "seg000/SaveVectors.asm"
-%include "seg000/__restorezero.asm"
-%include "seg000/StartExit.asm"
-%include "seg000/Exit.asm"
-%include "seg000/ErrorDisplay.asm"
-%include "seg000/_abort.asm"
-%include "seg000/MsgExit3.asm"
-
-dataSeg:
-    dw 0
-
-__MMODEL:
-    dw 8000h + 2
-
-; End C0.ASM
 
 %include "seg000/sub_2C8.asm"
 %include "seg000/sub_32B.asm"

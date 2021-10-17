@@ -23,7 +23,7 @@ loc_4CF8:
 		jg	loc_4CE8
 		mov	word [word_1F15A], 0FFFFh
 loc_4D05:
-		mov	word [errno], si
+		mov	word [_errno], si
 		mov	ax, 0FFFFh
 		pop	si
 		pop	bp

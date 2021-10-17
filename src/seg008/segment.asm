@@ -1,4 +1,4 @@
-segment seg008
+segment seg008 class=CODE
 
 
 unk_18F2C:

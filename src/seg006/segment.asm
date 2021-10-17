@@ -1,4 +1,4 @@
-segment seg006
+segment seg006 class=CODE
 
 
 unk_138EE:

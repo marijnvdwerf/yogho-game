@@ -1,4 +1,4 @@
-segment seg007
+segment seg007 class=CODE
 
 
 byte_18188:

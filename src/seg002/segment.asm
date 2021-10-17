@@ -1,4 +1,4 @@
-segment seg002
+segment seg002 class=CODE
 
 byte_92B4:
 		db 44h

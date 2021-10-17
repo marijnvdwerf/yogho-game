@@ -8,7 +8,7 @@ sub_662C:
 		jz	short loc_6661
 		mov	ax, dseg
 		mov	es, ax
-		mov	ax, word [es:word_1A460]
+		mov	ax, word [es:0]
 		sub	ah, 31h
 		add	ah, ah
 		cmp	al, 42h
