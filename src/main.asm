@@ -5,16 +5,22 @@ extern __cleanup
 extern __restorezero
 extern __checknull
 extern __terminate
-extern errno
+extern _errno
 extern __brklvl
 extern _abort
-extern _psp
-extern _envLng
-extern _version
-extern _envseg
+extern __psp
+extern __envLng
+extern __osmajor
+extern __envseg
 extern __C0argc
 extern __C0argv
-extern word_1A462
+
+global __stklen
+global __heaplen
+global __nfile
+global _main
+global _exit
+global __exit
 
 %include "seg000/segment.asm"
 %include "seg001/segment.asm"
@@ -28,7 +34,6 @@ extern word_1A462
 %include "seg009/segment.asm"
 %include "seg010/segment.asm"
 %include "dseg/segment.asm"
-%include "seg012/segment.asm"
 
 extern sub_1F972
 extern sub_1FEBC

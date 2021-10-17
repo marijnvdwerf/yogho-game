@@ -65,7 +65,7 @@ loc_5ED8:
 		jz	short loc_5F38
 		or	di, di
 		jbe	short loc_5F38
-		mov	word [__exitbuf+2],	seg000
+		mov	word [__exitbuf+2],	_TEXT
 		mov	word [__exitbuf],  __xfflush
 		cmp	word [bp+arg_2], 0
 		jnz	loc_5F22

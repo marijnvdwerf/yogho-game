@@ -1,5 +1,5 @@
 group dseg _DATA
-segment _DATA
+segment _DATA public class=DATA
 
 hasVGA:
 		db 0FFh
@@ -8017,6 +8017,8 @@ _realcvt:
 		dw _FakScanTod
 ; end
 
+segment _INIT_ public class=INITDATA
+
 InitStart:
 		db    0
 		db    2
@@ -8029,9 +8031,8 @@ InitStart:
 		db    0
 		db    0
 
+segment _BSS public class=BSS
 InitEnd:
-ExitStart:
-ExitEnd:
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
 		db 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0, 0
@@ -8222,12 +8223,4 @@ dword_1F5D8:
 
 byte_1F658:
 		db 0
-		db    0
-
-edata:
-		db    0
-		db    0
-		db    0
-		db    0
-		db    0
 		db    0

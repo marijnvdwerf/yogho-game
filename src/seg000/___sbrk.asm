@@ -18,7 +18,7 @@ ___sbrk:
 		xchg	ax, word [__brklvl]
 		jmp	short loc_53F0
 loc_53E7:
-		mov	word [errno], 8
+		mov	word [_errno], 8
 		mov	ax, 0FFFFh
 loc_53F0:
 		pop	bp

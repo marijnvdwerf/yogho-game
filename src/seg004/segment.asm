@@ -1,4 +1,4 @@
-segment seg004
+segment seg004 class=CODE
 
 %include "seg004/sub_13433.asm"
 

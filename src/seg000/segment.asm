@@ -1,4 +1,4 @@
-segment seg000
+segment _TEXT public class=CODE
 
 ;IFDEF   __MEDIUM__              ; Large Code - Small Data
 ;        LPROG           equ     true

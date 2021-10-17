@@ -1,4 +1,4 @@
-segment seg010
+segment seg010 class=CODE
 
 		db 0CBh
 %include "seg010/sub_1A331.asm"

@@ -1,4 +1,4 @@
-main:
+_main:
 %push local
 %define var_4 -4
 %define var_1 -1

@@ -7,7 +7,7 @@ __setargv:
 		mov	word [word_1F262], si
 		mov	word [word_1F264], di
 		cld
-		mov	es, [_psp]
+		mov	es, [__psp]
 		mov	si, 80h
 		xor	ah, ah
 		es lodsb
@@ -15,13 +15,13 @@ __setargv:
 		mov	bp, es
 		xchg	dx, si
 		xchg	ax, bx
-		mov	si, word [_envLng]
+		mov	si, word [__envLng]
 		inc	si
 		inc	si
 		mov	cx, 1
-		cmp	byte [_version], 3
+		cmp	byte [__osmajor], 3
 		jb	short loc_57D4
-		mov	es, word [_envseg]
+		mov	es, word [__envseg]
 		mov	di, si
 		mov	cl, 7Fh
 		xor	al, al

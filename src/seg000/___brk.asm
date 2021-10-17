@@ -12,7 +12,7 @@ ___brk:
 		xor	ax, ax
 		jmp	short loc_53BF
 loc_53B6:
-		mov	word [errno], 8
+		mov	word [_errno], 8
 		mov	ax, 0FFFFh
 loc_53BF:
 		pop	bp

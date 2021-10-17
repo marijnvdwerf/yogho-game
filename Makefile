@@ -9,6 +9,7 @@ OBJECTS = \
 game: $(OBJECTS)
 	echo "D:\BORLANDC\BIN\TLINK.EXE /m /s /c D:\BORLANDC\LIB\C0M $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP" > make.bat
 	dosemu -dumb -K . -E "make.bat"
+	dd bs=2048 skip=1 if=build/yogho.exe of=build/yogho.bin
 
 #build/%.obj : src/%.s
 $(OBJECTS): $(BUILDDIR)/%.obj : src/%.asm $(DEPDIR)/%.d | dir
