@@ -44,7 +44,7 @@ loc_7E74:
 		mov	cl, 4
 		mov	dx, [bp+var_2]
 		mov	ax, [bp+var_4]
-		call	far sub_4CBA
+		call	far LXURSH@
 		mov	[bp+var_2], dx
 		mov	[bp+var_4], ax
 		sub	si, 0Ch

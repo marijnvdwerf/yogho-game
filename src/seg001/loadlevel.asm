@@ -94,7 +94,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelLayout],	ax
 		push	ax
@@ -114,7 +114,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelData17],	ax
 		push	ax
@@ -134,7 +134,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelGraphics], ax
 		push	ax
@@ -154,7 +154,7 @@ loc_6763:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [_bgMusic_0+2], ax
 		push	word [_bgMusic_0+2]
@@ -175,7 +175,7 @@ loc_68BA:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_levelContents], ax
 		push	ax
@@ -198,7 +198,7 @@ loc_68F4:
 		mov	dx, [bp+var_6]
 		mov	ax, [bp+currentOffset]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [word_1F5C9], ax
 		push	ds

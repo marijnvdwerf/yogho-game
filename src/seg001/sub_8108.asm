@@ -10,7 +10,7 @@ sub_8108:
 		xor	dx, dx
 		xor	ax, ax
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [word_1F5C7], ax
 		push	ax
@@ -29,7 +29,7 @@ sub_8108:
 loc_814B:
 		mov	ax, [bp+var_4]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_titleScreenGFX], ax
 		push	ax
@@ -47,7 +47,7 @@ loc_814B:
 		mov	dx, [bp+var_2]
 		mov	ax, [bp+var_4]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	[_image1], ax
 		push	ax
@@ -65,7 +65,7 @@ loc_814B:
 		mov	dx, [bp+var_2]
 		mov	ax, [bp+var_4]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [_hiscoreGfx], ax
 		push	ax
@@ -83,7 +83,7 @@ loc_814B:
 		mov	dx, [bp+var_2]
 		mov	ax, [bp+var_4]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [word_1F5BF], ax
 		push	ax
@@ -102,7 +102,7 @@ loc_8204:
 		mov	dx, [bp+var_2]
 		mov	ax, [bp+var_4]
 		mov	cl, 4
-		call	far sub_4CBA
+		call	far LXURSH@
 		add	ax, word [_fruitImagePtr+2]
 		mov	word [word_1F5BD], ax
 		push	ax

@@ -7,7 +7,7 @@ OBJECTS = \
 	$(BUILDDIR)/seg013.obj \
 
 game: $(OBJECTS)
-	echo "D:\BORLANDC\BIN\TLINK.EXE /m /s /c D:\BORLANDC\LIB\C0M $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP" > make.bat
+	echo "D:\BORLANDC\BIN\TLINK.EXE /m /s /LD:\BORLANDC\LIB /c C0M $(subst /,\,$(OBJECTS)), BUILD\YOGHO.EXE, BUILD\YOGHO.MAP, CM" > make.bat
 	dosemu -dumb -K . -E "make.bat"
 	dd bs=2048 skip=1 if=build/yogho.exe of=build/yogho.bin
 

@@ -14,7 +14,7 @@ _main:
 		mov	ax, dseg
 		xor	dx, dx
 		mov	cl, 4
-		call	far sub_4C99
+		call	far LXLSH@
 		add	ax, 0
 		adc	dx, 0
 		push	ax
@@ -22,7 +22,7 @@ _main:
 		push	dx
 		xor	dx, dx
 		mov	cl, 4
-		call	far sub_4C99
+		call	far LXLSH@
 		add	ax, 0
 		adc	dx, 0
 		pop	bx
@@ -142,7 +142,7 @@ loc_61ED:
 		cmp	al, 0FFh
 		jnz	loc_6208
 		push	 aHetProgrammaKan
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		mov	ax, 100
 		pop	di
@@ -155,7 +155,7 @@ loc_6208:
 		or	ax, ax
 		jnz	loc_6225
 		push	 aHelaasKuntUHetY
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
@@ -173,7 +173,7 @@ loc_6225:
 		cmp	ax, 0FFFFh
 		jz	short loc_6251
 		push	 aUHeeftNietGenoe
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
@@ -315,7 +315,7 @@ loc_634C:
 		or	ax, ax
 		jz	short loc_63BD
 		push	 aHetProgrammaKo
-		call	far printf
+		call	far _printf
 		add	sp, 2
 		xor	ax, ax
 		pop	di
